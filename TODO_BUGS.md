@@ -38,6 +38,7 @@
 - [ ]  Create multiple DS workflow notebooks for use cases
 - [ ]  Create and install multiple DBs to make functions, ummm function.
 - [ ]  Create logging file(s)
+- [ ] Take code out of `code` folder and restructure project
 
 
 ## Additions
