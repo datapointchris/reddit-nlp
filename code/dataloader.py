@@ -1,3 +1,6 @@
+import databases
+import pandas as pd
+
 def data_selector(subreddit_list, source):
     '''Finds data for subreddits from selected source.
        
