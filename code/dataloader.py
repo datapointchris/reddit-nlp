@@ -1,5 +1,6 @@
 import databases
 import pandas as pd
+import scraping
 
 def data_selector(subreddit_list, source):
     '''Finds data for subreddits from selected source.
@@ -32,14 +33,19 @@ def data_selector(subreddit_list, source):
         Creates connection to Mysql DB
         Queries DB for subreddits
         Returns DataFrame
+
+    Returns:
+    df - DataFrame of selected data
+
+    MODIFIES:
+    'subreddit_list'
     '''
 
     if source == 'scrape':
-        scrape = Scraper()
+        scrape = scraping.Scraper()
         df = scrape.scrape_subreddit(subreddit_list)
         return df
 
-###HELP### should I make this a function?  or is that unnecessary abstraction?
     if source == 'csv':
         df = pd.DataFrame()
         trimmed_list = []
@@ -51,7 +57,7 @@ def data_selector(subreddit_list, source):
                     data = pd.read_csv(csv_file)
                     df = pd.concat([df, data], ignore_index=True)
             else:
-                print(f'No data for {sub}')
+                print(f'No data for {sub}, not adding to df')
         return df
 
 ###HELP### this bypasses the 'execute_read_query' function in the databases module...
@@ -76,10 +82,10 @@ def data_selector(subreddit_list, source):
         data = cursor.fetchall()
         df = pd.DataFrame(data=data, columns=column_names)
         
+        trimmed_list = []
         for sub in subreddit_list:
             if len(df[df['subreddit'] == sub]) == 0:
-                print(f'No data for {sub}')
-        
+                print(f'No data for {sub}, not adding to df')
         return df
 
 
