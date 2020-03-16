@@ -26,10 +26,10 @@
 
 ## ds_workflow.ipynb
 
-- [ ]  finish data loader
+- [x]  finish data loader
 - [ ]  create better functions using `05_Functions` as template
-- [ ]  Functions need to use combinatorics (?) to compare only two subreddits at a time for certain analyses
-- [ ]  This file should eventually become a `dataloader.py` file and be imported into DS workflows
+- [x]  Functions need to use combinatorics (?) to compare only two subreddits at a time for certain analyses
+- [x]  This file should eventually become a `dataloader.py` file and be imported into DS workflows
 
 
 
@@ -52,7 +52,7 @@
 ## Problems / Issues / Lack of Knowledge
 
 - [ ] Functions for engineering / bare code for EDA and analysis?
-- [ ] Copy of a slice
+- [x] Copy of a slice
 - [ ] UNIT TESTING
 - [ ] .ipynb vs .py - Keep them both? `demo.ipynb`?  
 
