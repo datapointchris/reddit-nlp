@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<h4 align="center">Program for scraping subbreddits and storing them in various user-chosen ways, later loading data from multiple sources into a standard format to perform analysis and NLP classification.<br />
+<h4>Program for scraping subbreddits and storing them in various user-chosen ways, later loading data from multiple sources into a standard format to perform analysis and NLP classification.<br />
 Saves and extracts data from multiple sources.<br />
 Using configuration files and class definitions to seperate structure and function.</h4>
 
@@ -56,11 +56,11 @@ Import modules and classes across many files, use JSON configuration files to ab
 
 ## File Descriptions
 
-`scraping.ipynb` - this file explains how the scraper works, with examples for running the scraper in Jupyter or the .py equivalent file on the command line.
-`scraping.py` - scraper without interface, set and run
-`databases.py` - handles all of the database classes for saving and extracting data (work in progress)
-`ds_workflow.ipynb` - data science workflow from loading the data to running NLP and generating visualizations **(Current work in progress, messy file, apologies)**
-`05_Functions.ipynb` - file with class and functions from original version of project to use as starter
+**`scraping.ipynb`**  - this file explains how the scraper works, with examples for running the scraper in Jupyter or the .py equivalent file on the command line.  
+**`scraping.py`** - scraper without interface, set and run.  
+**`databases.py`** - handles all of the database classes for saving and extracting data (work in progress).  
+**`ds_workflow.ipynb`** - data science workflow from loading the data to running NLP and generating visualizations **(Current work in progress, messy file, apologies)**.  
+**`05_Functions.ipynb`** - file with class and functions from original version of project to use as starter.  *This file will eventually be deleted
 
 
 
