@@ -60,7 +60,7 @@ def data_selector(subreddit_list, source):
                 print(f'No data for {sub}, not adding to df')
         return df
 
-###HELP### this bypasses the 'execute_read_query' function in the databases module...
+### NOTE ### this bypasses the 'execute_read_query' function in the databases module...
     if source == 'sqlite':
         db = databases.Sqlite()
         connection = db.create_connection('reddit.sqlite')
@@ -82,26 +82,18 @@ def data_selector(subreddit_list, source):
         data = cursor.fetchall()
         df = pd.DataFrame(data=data, columns=column_names)
         
-        trimmed_list = []
         for sub in subreddit_list:
             if len(df[df['subreddit'] == sub]) == 0:
                 print(f'No data for {sub}, not adding to df')
         return df
-
-
-    
     
     if source == 'mongo':
         db = databases.Mongo()
         return db.create_connection()
 
-
-
     if source == 'postgres':
         db = databases.Postgres()
         return db.create_connection()
-    
-    
     
     if source == 'mysql':
         db = databases.Mysql()
@@ -114,5 +106,5 @@ def subreddit_encoder(df):
     for index, subreddit in enumerate(df.subreddit.unique()):
         topic_dict.update({subreddit: index})
         df['sub_code'] = df['subreddit'].map(topic_dict)
-    print(f'Topic dict to make sure: {topic_dict}')
+    print(f'Subreddits and codes added: {topic_dict}')
     return df
