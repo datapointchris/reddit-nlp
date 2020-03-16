@@ -1,3 +1,8 @@
+### 2020-03-16
+**Added** `ds_workflow.ipynb` - Stacked barplot
+
+**Changed** `ds_workflow.ipynb` - Wordcloud function for all or each subreddit
+
 ### 2020-03-10
 **Added** `scraping.ipynb` - Multiple save features for scraper.
 
