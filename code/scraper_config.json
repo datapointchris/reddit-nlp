@@ -1,7 +1,7 @@
-{
-    "subreddit_list": ["machinelearning", "deeplearning"],
-    
-    "sorting": "new",
-    
-    "save_location": "sqlite"
+"scraper":
+    {
+        "subreddit_list": ["machinelearning", "deeplearning"],
+        "sorting": "new",
+        "save_location": "sqlite"
+    }
 }
