@@ -1,12 +1,22 @@
-import numpy as np
-import requests
-import json
-import pandas as pd
-from time import sleep
-import datetime
-import os
 import argparse
 import databases
+import datetime
+import json
+import logging
+import os
+import pandas as pd
+import requests
+import time
+
+# set path to current working directory for cron job
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
+file_handler = logging.FileHandler('scraper.log')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 headers = {'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
            'accept-encoding': 'gzip, deflate, sdch, br',
@@ -24,10 +34,7 @@ class Scraper:
     def scrape_subreddit(self, subreddit_list, sorting='new'):
         '''Scrapes a subreddit for post titles.
 
-            subname: subreddit name to scrape
-
-            pages: pages to scrape, typically 25 posts per page. Default is 42 for partial page scrape buffer.
-            Reddit seems to have a soft limit of 1000 posts, can't seem to get around it.
+            subreddit_list: list of subreddits to scrape
 
             sorting: possible sort orders
                 - new
@@ -43,21 +50,18 @@ class Scraper:
 
             url = f'https://old.reddit.com/r/{sub}/{sorting}.json'
             post_titles = []
-            prev_post_len = 0
-            curr_post_len = 0
             after = None
-            print(f'Scraping subreddit "{sub}"')
+            logger.info(f'Scraping subreddit "{sub}"')
 
-            while (prev_post_len == 0) or (prev_post_len != curr_post_len):
-                prev_post_len = curr_post_len
+            for _ in range(40):
                 if after is None:
                     params = {}
                 else:
                     params = {'after': after}
-                response = requests.get(url, params=params, headers=headers)
+                response = requests.get(url, params=params, headers=headers, timeout=None)
 
                 if response.status_code != 200:
-                    print('Error:', response.status_code)
+                    logger.info('Error:', response.status_code)
                     break
 
                 post_json = response.json()
@@ -65,12 +69,11 @@ class Scraper:
                     title = post['data']['title']
                     if title not in post_titles:
                         post_titles.append(title)
-                curr_post_len = len(post_titles)
 
                 after = post_json['data']['after']
-                sleep(.5)
+                time.sleep(.5)
 
-            print(f'Success. {len(post_titles)} total posts for "{sub}"')
+            logger.info(f'Success. {len(post_titles)} total posts for "{sub}"')
 
             data = pd.DataFrame(
                 data={'title': post_titles, 'subreddit': sub, 'date': self.date})
@@ -80,15 +83,13 @@ class Scraper:
 
     def save_to_csv(self, df):
 
-        date = str(datetime.datetime.now().date())
-
         if not os.path.exists('../scraped_subreddits/'):
             os.mkdir('../scraped_subreddits/')
 
         for sub in df.subreddit.unique():
             mask = df['subreddit'] == sub
             sub_df = df[mask]
-            df.to_csv(f'../scraped_subreddits/{sub}_{self.sorting}_{self.date}.csv', index=False)
+            sub_df.to_csv(f'../scraped_subreddits/{sub}_{self.sorting}_{self.date}.csv', index=False)
             print(f'Saved "{sub}" to CSV')
 
     def save_to_sqlite(self, df):
@@ -167,6 +168,11 @@ if __name__ == '__main__':
         sorting = args.sorting
         save_location = args.save
 
+    logger.info('Scraping subreddits')
+    start_time = time.time()
     scrape = Scraper()
     df = scrape.scrape_subreddit(subreddit_list, sorting=sorting)
     scrape.save_choice(save_location)
+    elapsed_time = time.time() - start_time
+    logger.info('Done with program')
+    logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes')
