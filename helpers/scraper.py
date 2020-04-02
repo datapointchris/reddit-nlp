@@ -11,13 +11,16 @@ import requests
 
 import databases
 
+from tqdm import tqdm
+
+
 # set path to current working directory for cron job
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
-file_handler = logging.handlers.RotatingFileHandler(filename='../logs/scraper.log', maxBytes=10000, backupCount=10)
+formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+file_handler = logging.handlers.RotatingFileHandler(filename='../logs/scraper.log', maxBytes=10000000, backupCount=10)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
@@ -29,23 +32,24 @@ headers = {'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,imag
            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36'}
 
 
+def function_timer(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        return_value = func(*args, **kwargs)
+        elapsed_time = time.time() - start_time
+        try:
+            logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {func.__name__}')
+        except:
+            print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{func.__name__}'")
+        return return_value
+    return wrapper
+
+
 class Scraper:
 
     def __init__(self):
         self.date = str(datetime.datetime.now().date())
-    
-    
-    def function_timer(self, func):
-        def wrapper(*args, **kwargs):
-            start_time = time.time()
-            return_value = func(*args, **kwargs)
-            elapsed_time = time.time() - start_time
-            try:
-                logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {func}')
-            except:
-                print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{func.__name__}'")
-            return return_value
-        return wrapper
+
 
     @function_timer
     def scrape_subreddit(self, subreddit_list, sorting='new'):
@@ -63,12 +67,11 @@ class Scraper:
 
         df = pd.DataFrame()
 
-        for sub in subreddit_list:
-
+        for i, sub in enumerate(tqdm(subreddit_list), start=1):
             url = f'https://old.reddit.com/r/{sub}/{sorting}.json'
             post_titles = []
             after = None
-            logger.info(f'Scraping subreddit "{sub}"')
+            logger.info(f'Scraping subreddit "{sub}", {i} of {len(subreddit_list)}')
 
             for _ in range(40):
                 if after is None:
@@ -91,7 +94,7 @@ class Scraper:
                 after = post_json['data']['after']
                 time.sleep(.5)
 
-            logger.info(f'Success. {len(post_titles)} total posts for "{sub}"')
+            logger.info(f'{len(post_titles)} scraped for "{sub}"')
 
             data = pd.DataFrame(
                 data={'title': post_titles, 'subreddit': sub, 'date': self.date})
@@ -161,7 +164,9 @@ def main():
 
     logger.info('PROGRAM STARTED')
     scrape = Scraper()
+    logger.info('Scraping Subreddits')
     df = scrape.scrape_subreddit(subreddit_list, sorting=sorting)
+    logger.info(f'Saving data to {save_location}')
     scrape.save_choice(df, save_location)
     logger.info('PROGRAM FINISHED')
 

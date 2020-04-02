@@ -19,22 +19,24 @@ from grid_models import preprocessors, estimators
 # Use the class to find the functions
 # call the functions to modify data assigned to a variable.
 
+def function_timer(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        return_value = func(*args, **kwargs)
+        elapsed_time = time.time() - start_time
+        try:
+            logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {func.__name__}')
+        except:
+            print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{func.__name__}'")
+        return return_value
+    return wrapper
+
+
 class Reddit:
 
-
+    def __init__(self):
+        pass
     
-    def function_timer(self, func):
-        def wrapper(*args, **kwargs):
-            start_time = time.time()
-            return_value = func(*args, **kwargs)
-            elapsed_time = time.time() - start_time
-            try:
-                logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {func}')
-            except:
-                print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{func.__name__}'")
-            return return_value
-        return wrapper
-
 
     
     def compare_models(self, X_train, X_test, y_train, y_test, preprocessors=preprocessors, estimators=estimators, cv=5, verbose=1, n_jobs=-1):
