@@ -33,7 +33,21 @@ class Scraper:
 
     def __init__(self):
         self.date = str(datetime.datetime.now().date())
+    
+    
+    def function_timer(self, func):
+        def wrapper(*args, **kwargs):
+            start_time = time.time()
+            return_value = func(*args, **kwargs)
+            elapsed_time = time.time() - start_time
+            try:
+                logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {func}')
+            except:
+                print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{func.__name__}'")
+            return return_value
+        return wrapper
 
+    @function_timer
     def scrape_subreddit(self, subreddit_list, sorting='new'):
         '''Scrapes a subreddit for post titles.
 
@@ -87,8 +101,8 @@ class Scraper:
 
     def save_to_csv(self, df):
 
-        if not os.path.exists('../scraped_subreddits/'):
-            os.mkdir('../scraped_subreddits/')
+        if not os.path.exists('../data/scraped_subreddits/'):
+            os.mkdir('../data/scraped_subreddits/')
 
         for sub in df.subreddit.unique():
             mask = df['subreddit'] == sub
@@ -99,7 +113,7 @@ class Scraper:
 
     def save_to_sqlite(self, df):
         db = databases.Sqlite()
-        connection = db.create_connection('reddit.sqlite')
+        connection = db.create_connection('../data/reddit.sqlite')
 
         create_subreddits_table = """
         CREATE TABLE IF NOT EXISTS subreddits (
@@ -127,7 +141,7 @@ class Scraper:
         return 'save to mysql'
         # for django or something
 
-    def save_choice(self, choice):
+    def save_choice(self, df, choice):
         '''
         Choice to save the scraped dataframe.
         Choices:
@@ -142,6 +156,14 @@ class Scraper:
         }
         save_function = save_options.get(choice, self.save_to_csv)
         return save_function(df)
+
+def main():
+
+    logger.info('PROGRAM STARTED')
+    scrape = Scraper()
+    df = scrape.scrape_subreddit(subreddit_list, sorting=sorting)
+    scrape.save_choice(df, save_location)
+    logger.info('PROGRAM FINISHED')
 
 
 if __name__ == '__main__':
@@ -173,11 +195,4 @@ if __name__ == '__main__':
         sorting = args.sorting
         save_location = args.save
 
-    logger.info('Scraping subreddits')
-    start_time = time.time()
-    scrape = Scraper()
-    df = scrape.scrape_subreddit(subreddit_list, sorting=sorting)
-    scrape.save_choice(save_location)
-    elapsed_time = time.time() - start_time
-    logger.info('Done with program')
-    logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes')
+    main()
