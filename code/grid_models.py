@@ -4,11 +4,12 @@ Preprocessors and estimators, along with their parameters for gridsearching.
 Used with 'compare_models' function from the Reddit class, Model class maybe
 """
 
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 
 preprocessors = {
@@ -39,46 +40,46 @@ preprocessors = {
 }
 
 estimators = {
-    "lr": {
+    "logreg": {
         "name": "Logistic Regression",
-        "abbr": "lr",
+        "abbr": "logreg",
         "estimator": LogisticRegression(),
         "pipe_params":
             {
-            "lr__penalty": ["l1", "l2"],
-            "lr__C": [.01, .1, 1, 3]
+            "logreg__penalty": ["l1", "l2"],
+            "logreg__C": [.01, .1, 1, 3]
         }
     },
-    "rf": {
+    "random_forest": {
         "name": "Random Forest",
-        "abbr": "rf",
+        "abbr": "random_forest",
         "estimator": RandomForestClassifier(),
         "pipe_params":
             {
-            "rf__n_estimators": [100, 200, 300],
-            "rf__max_depth": [200],
-            "rf__min_samples_leaf": [1, 2, 3],
-            "rf__min_samples_split": [.0005, .001, .01]
+            "randomforest__n_estimators": [100, 200, 300],
+            "randomforest__max_depth": [200],
+            "randomforest__min_samples_leaf": [1, 2, 3],
+            "randomforest__min_samples_split": [.0005, .001, .01]
         }
     },
-    "knn": {
+    "knearest": {
         "name": "K Nearest Neighbors",
-        "abbr": "knn",
+        "abbr": "knearest",
         "estimator": KNeighborsClassifier(),
         "pipe_params":
             {
-            "knn__n_neighbors": [3, 5, 7],
-            "knn__metric": ["manhattan"]
+            "knearest__n_neighbors": [3, 5, 7],
+            "knearest__metric": ["manhattan"]
         }
     },
-    "mnb": {
+    "multinomialnb": {
         "name": "Multinomial Bayes Classifier",
-        "abbr": "mnb",
+        "abbr": "multinomialnb",
         "estimator": MultinomialNB(),
         "pipe_params":
             {
-            "mnb__fit_prior": [False],
-            "mnb__alpha": [0, .1, 1]
+            "multinomialnb__fit_prior": [False],
+            "multinomialnb__alpha": [.01, .1, 1]
         }
     },
     "svc": {
