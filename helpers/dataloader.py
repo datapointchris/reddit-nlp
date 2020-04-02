@@ -1,6 +1,11 @@
 import databases
+import logging
 import pandas as pd
 import scraper
+
+from glob import glob
+
+logger = logging.getLogger(__name__)
 
 
 def data_selector(subreddit_list, source):
@@ -61,7 +66,7 @@ def data_selector(subreddit_list, source):
                 print(f'No data for {sub}, not adding to df')
         return df
 
-### NOTE ### this bypasses the 'execute_read_query' function in the databases module...
+# NOTE ### this bypasses the 'execute_read_query' function in the databases module...
     if source == 'sqlite':
         db = databases.Sqlite()
         connection = db.create_connection('reddit.sqlite')

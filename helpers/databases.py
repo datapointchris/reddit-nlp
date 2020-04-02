@@ -1,15 +1,18 @@
-import sqlite3
-from sqlite3 import Error
-    
+import logging
 import psycopg2
+import sqlite3
+
 from psycopg2 import OperationalError
+from sqlite3 import Error
+
+logger = logging.getLogger(__name__)
+
 
 class Sqlite:
-    
+
     def __init__(self):
         pass
-    
-  
+
     def create_connection(self, path):
         connection = None
         try:
@@ -17,10 +20,8 @@ class Sqlite:
             print("Connection to SQLite DB successful")
         except Error as e:
             print(f"The error '{e}' occurred")
-            
         return connection
-    
-    
+
     def execute_query(self, connection, query):
         cursor = connection.cursor()
         try:
@@ -30,7 +31,6 @@ class Sqlite:
         except Error as e:
             print(f"The error '{e}' occurred")
 
-            
     def execute_read_query(self, connection, query):
         cursor = connection.cursor()
         result = None
@@ -40,8 +40,6 @@ class Sqlite:
             return result
         except Error as e:
             print(f"The error '{e}' occurred")
-        
-        
 
 # # This is an example
 
@@ -54,9 +52,10 @@ class Sqlite:
 # column_names = [description[0] for description in cursor.description]
 # print(column_names)
 
+
 class MongoDB:
 
-    def __init__(self, user, password, host, db_name ,port='27017', authSource='admin'):
+    def __init__(self, user, password, host, db_name, port='27017', authSource='admin'):
         self.user = user
         self.password = password
         self.host = host
@@ -71,7 +70,6 @@ class MongoDB:
         except Exception as e:
             print('Connection Unsuccessful!! ERROR!!')
             print(e)
-
 
     def insert_into_db(self, data, collection):
         if isinstance(data, pd.DataFrame):
@@ -95,6 +93,7 @@ class MongoDB:
                 self.client.close()
                 print('Connection Closed!!!')
 
+
 class Postgres:
 
     def create_connection(db_name, db_user, db_password, db_host, db_port):
@@ -111,8 +110,7 @@ class Postgres:
         except OperationalError as e:
             print(f"The error '{e}' occurred")
         return connection
-    
-    
+
     def execute_query(connection, query):
         connection.autocommit = True
         cursor = connection.cursor()
@@ -121,18 +119,18 @@ class Postgres:
             print("Query executed successfully")
         except OperationalError as e:
             print(f"The error '{e}' occurred")
-        
-        
+
+
 #     create_users_table = """
 #     CREATE TABLE IF NOT EXISTS users (
 #       id SERIAL PRIMARY KEY,
-#       name TEXT NOT NULL, 
+#       name TEXT NOT NULL,
 #       age INTEGER,
 #       gender TEXT,
 #       nationality TEXT
 #     )
 #     """
-    
+
     def execute_read_query(connection, query):
         cursor = connection.cursor()
         result = None
@@ -143,18 +141,12 @@ class Postgres:
         except OperationalError as e:
             print(f"The error '{e}' occurred")
 
-        select_users = "SELECT * FROM users"
-        users = execute_read_query(connection, select_users)
+# select_users = "SELECT * FROM users"
+# users = execute_read_query(connection, select_users)
 
 #     for user in users:
 #         print(user)
-    
+
 
 class Mysql:
     pass
-
-
-
-
-
-

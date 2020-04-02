@@ -21,7 +21,7 @@ preprocessors = {
                 "count_vec__max_features": [5000],
                 "count_vec__max_df": [.3, .4, .5],
                 "count_vec__ngram_range": [(1, 2)],
-                "count_vec__stop_words": ["english"],
+                "count_vec__stop_words": ["english", custom_stop_words],
                 "count_vec__min_df": [4, 5, 6]
         }
     },
@@ -32,7 +32,7 @@ preprocessors = {
         "pipe_params":
             {
                 "tfidf__strip_accents": [None],
-                "tfidf__stop_words": ["english"],
+                "tfidf__stop_words": ["english", custom_stop_words],
                 "tfidf__ngram_range": [(1, 1)],
                 "tfidf__max_features": [5000]
         }
@@ -56,10 +56,10 @@ estimators = {
         "estimator": RandomForestClassifier(),
         "pipe_params":
             {
-            "randomforest__n_estimators": [100, 200, 300],
+            "randomforest__n_estimators": [200, 300],
             "randomforest__max_depth": [200],
             "randomforest__min_samples_leaf": [1, 2, 3],
-            "randomforest__min_samples_split": [.0005, .001, .01]
+            "randomforest__min_samples_split": [.001, .01]
         }
     },
     "knearest": {
