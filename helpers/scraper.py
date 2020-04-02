@@ -1,12 +1,15 @@
 import argparse
-import databases
 import datetime
 import json
 import logging
+import logging.handlers
 import os
+import time
+
 import pandas as pd
 import requests
-import time
+
+import databases
 
 # set path to current working directory for cron job
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -14,7 +17,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s')
-file_handler = logging.FileHandler('scraper.log')
+file_handler = logging.handlers.RotatingFileHandler(filename='../logs/scraper.log', maxBytes=10000, backupCount=10)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
@@ -58,10 +61,11 @@ class Scraper:
                     params = {}
                 else:
                     params = {'after': after}
-                response = requests.get(url, params=params, headers=headers, timeout=None)
+                response = requests.get(
+                    url, params=params, headers=headers, timeout=None)
 
                 if response.status_code != 200:
-                    logger.info('Error:', response.status_code)
+                    logger.info(f'Error: {response.status_code}')
                     break
 
                 post_json = response.json()
@@ -89,7 +93,8 @@ class Scraper:
         for sub in df.subreddit.unique():
             mask = df['subreddit'] == sub
             sub_df = df[mask]
-            sub_df.to_csv(f'../scraped_subreddits/{sub}_{self.sorting}_{self.date}.csv', index=False)
+            sub_df.to_csv(
+                f'../scraped_subreddits/{sub}_{self.sorting}_{self.date}.csv', index=False)
             print(f'Saved "{sub}" to CSV')
 
     def save_to_sqlite(self, df):
