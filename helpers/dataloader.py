@@ -1,9 +1,9 @@
-import databases
 import logging
-import pandas as pd
-import scraper
-
 from glob import glob
+
+import pandas as pd
+
+from helpers import databases, scraper
 
 logger = logging.getLogger(__name__)
 
@@ -69,7 +69,7 @@ def data_selector(subreddit_list, source):
 # NOTE ### this bypasses the 'execute_read_query' function in the databases module...
     if source == 'sqlite':
         db = databases.Sqlite()
-        connection = db.create_connection('reddit.sqlite')
+        connection = db.create_connection('../data/reddit.sqlite')
 
         placeholders = ','.join('?' for sub in subreddit_list)
 

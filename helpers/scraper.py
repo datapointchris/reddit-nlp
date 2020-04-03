@@ -9,7 +9,7 @@ import time
 import pandas as pd
 import requests
 
-import databases
+from helpers import databases
 
 from tqdm import tqdm
 
@@ -50,7 +50,6 @@ class Scraper:
     def __init__(self):
         self.date = str(datetime.datetime.now().date())
 
-
     @function_timer
     def scrape_subreddit(self, subreddit_list, sorting='new'):
         '''Scrapes a subreddit for post titles.
@@ -78,9 +77,12 @@ class Scraper:
                     params = {}
                 else:
                     params = {'after': after}
-                response = requests.get(
-                    url, params=params, headers=headers, timeout=None)
-
+                try:
+                    response = requests.get(
+                        url, params=params, headers=headers, timeout=None)
+                except (ConnectionError, ConnectionResetError):
+                    logger.exception(f'Error scraping subreddit {sub}:')
+                    continue
                 if response.status_code != 200:
                     logger.info(f'Error: {response.status_code}')
                     break
@@ -111,7 +113,7 @@ class Scraper:
             mask = df['subreddit'] == sub
             sub_df = df[mask]
             sub_df.to_csv(
-                f'../scraped_subreddits/{sub}_{self.sorting}_{self.date}.csv', index=False)
+                f'../data/scraped_subreddits/{sub}_{self.sorting}_{self.date}.csv', index=False)
             print(f'Saved "{sub}" to CSV')
 
     def save_to_sqlite(self, df):
@@ -159,6 +161,7 @@ class Scraper:
         }
         save_function = save_options.get(choice, self.save_to_csv)
         return save_function(df)
+
 
 def main():
 
