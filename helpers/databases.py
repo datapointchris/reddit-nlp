@@ -4,6 +4,7 @@ import sqlite3
 
 from psycopg2 import OperationalError
 from sqlite3 import Error
+from pymysql import connect
 
 logger = logging.getLogger(__name__)
 
@@ -149,4 +150,89 @@ class Postgres:
 
 
 class Mysql:
-    pass
+
+    def __init__():
+        pass
+
+    DB_HOST = 'localhost'  # IP or hostname of database
+    DB_NAME = 'my_test_db'  # Name of the database to use
+    DB_USER = 'nanodano'  # Username for accessing database
+    DB_PASS = 'My-$ecr3t'  # Password for database user
+
+    # db_connection = connect(host=DB_HOST,
+    #                         user=DB_USER,
+    #                         password=DB_PASS,
+    #                         db=DB_NAME)
+    # db_connection.close()
+
+    # with db_connection.cursor() as cursor:
+    #     statement = """
+    #         CREATE TABLE IF NOT EXISTS users (
+    #             id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    #             username VARCHAR(255),
+    #             password VARCHAR(255),
+    #             email VARCHAR(255)
+    #         ) ENGINE=INNODB
+    #     """
+    #     result = cursor.execute(statement)
+    #     print(type(result))  # <class 'int'>
+    #     print(result)  # 0
+
+    # db_connection.close()
+
+    # with db_connection.cursor() as cursor:
+    #     statement = """
+    #         INSERT INTO users
+    #         (username, password, email)
+    #         VALUES
+    #         ('nanodano', 'mysecret', 'nanodano@devdungeon.com');
+    #     """
+    #     result = cursor.execute(statement)
+    #     print(type(result))  # <class 'int'>
+    #     print(result)  # 1 (number of rows)
+    #     # Get ID of last row inserted
+    #     print(f'Last row ID inserted: {cursor.lastrowid}')
+
+    # db_connection.commit()
+    # db_connection.close()
+
+    #     with db_connection.cursor() as cursor:
+    #     users_to_insert = [
+    #         ('nanodano', 'Pa$$', 'nanodano@devdungeon.com'),
+    #         ('admin', '$ecret', 'admin@devdungeon.com'),
+    #         ('test_user', 'test123!', 'tester@devdungeon.com'),
+    #     ]
+    #     statement = """
+    #         INSERT INTO users
+    #         (username, password, email)
+    #         VALUES
+    #         (%s, %s, %s)
+    #     """
+    #     result = cursor.executemany(statement, users_to_insert)
+
+    # db_connection.commit()
+    # db_connection.close()
+
+    #     with db_connection.cursor() as cursor:
+    #     results = cursor.execute("SELECT * FROM users")
+    #     print(type(results))  # <class 'int'>
+    #     print(results)  # Number of rows selected
+
+    #     # Extract data from the cursor
+    #     single_row = cursor.fetchone()  # or `fetchmany()`
+    #     print(type(single_row))  # <class 'tuple'>
+    #     print(single_row)  # Column data, e.g. (9, 'nanodano', 'mysecret', 'nanodano@devdungeon.com')
+
+    #     # You can move the cursor back to the beginning (or a 'relative' position)
+    #     # Moving it back to the beginning will let you iterate through the results again
+    #     cursor.scroll(0, 'absolute')
+
+    #     # You can also use `fetchall()` and iterate through list of tuples
+    #     for row in cursor.fetchall():
+    #         print(row)
+
+    #     # Get the column names for the row tuples
+    #     for column_details in cursor.description:
+    #         print(column_details[0])  # Print column name
+
+    # db_connection.close()
