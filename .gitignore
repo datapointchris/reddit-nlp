@@ -1,3 +1,5 @@
 *.DS_Store
 *.ipynb_checkpoints
 *.code-workspace
+/data/scraped_subreddits
+*.vscode
