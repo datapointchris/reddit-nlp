@@ -10,7 +10,7 @@ import functools
 import pandas as pd
 import requests
 
-import databases
+from util import databases
 
 from tqdm import tqdm
 
