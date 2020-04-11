@@ -55,16 +55,13 @@ def data_selector(subreddit_list, source):
 
     if source == 'csv':
         df = pd.DataFrame()
-        trimmed_list = []
         for sub in subreddit_list:
-            csv_files = sorted(glob(f'../scraped_subreddits/*{sub}*.csv'))
-            if len(csv_files) > 0:
-                trimmed_list.append(sub)
-                for csv_file in csv_files:
-                    data = pd.read_csv(csv_file)
-                    df = pd.concat([df, data], ignore_index=True)
-            else:
-                print(f'No data for {sub}, not adding to df')
+            csv_files = sorted(glob(f'../data/scraped_subreddits/*{sub}*.csv'))
+            if len(csv_files) < 1:
+                raise ValueError(f'No data for "{sub}" in "{source}" source')
+            for csv_file in csv_files:
+                data = pd.read_csv(csv_file)
+                df = pd.concat([df, data], ignore_index=True)
         return df
 
 # NOTE ### this bypasses the 'execute_read_query' function in the databases module...
@@ -91,7 +88,7 @@ def data_selector(subreddit_list, source):
 
         for sub in subreddit_list:
             if len(df[df['subreddit'] == sub]) == 0:
-                raise ValueError(f'No data for {sub}')
+                raise ValueError(f'No data for "{sub}" in "{source}" source')
         return df
 
     if source == 'mongo':
