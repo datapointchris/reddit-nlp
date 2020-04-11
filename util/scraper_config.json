@@ -1,0 +1,5 @@
+{
+    "subreddit_list": ["deeplearning", "tensorflow", "scikit_learn", "pandas", "bigdata", "aws", "awscertifications", "css", "html", "javascript", "shittyprogramming", "java", "sql", "learnsql", "postgresql", "softwarearchitecture", "scala", "apachespark", "mongodb", "linux", "linux4noobs", "datascience", "machinelearning", "etl", "python", "dataengineering"],
+    "sorting": "new",
+    "save_location": "sqlite"
+}
