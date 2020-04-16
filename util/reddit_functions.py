@@ -161,7 +161,7 @@ class Visualizer:
             for label in self.labels:
                 cloud = wc.generate(
                     self.df[self.df[self.labels_column] == label][self.text_column].str.cat())
-                plt.figure(figsize=(width/100, height*len(labels)/100), dpi=100)
+                plt.figure(figsize=(width/100, height*len(self.labels)/100), dpi=100)
                 plt.title(label.upper(), fontdict={'fontsize': 15})
                 plt.axis("off")
                 plt.imshow(cloud.to_image(), interpolation='bilinear')
