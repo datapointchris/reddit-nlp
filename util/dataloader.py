@@ -103,12 +103,3 @@ def data_selector(subreddit_list, source):
         db = databases.Mysql()
         return db.create_connection()
 
-
-def subreddit_encoder(df):
-    '''Encodes each subreddit in the dataframe to numeric as 'sub_code' '''
-    topic_dict = {}
-    for index, subreddit in enumerate(df.subreddit.unique()):
-        topic_dict.update({subreddit: index})
-        df['sub_code'] = df['subreddit'].map(topic_dict)
-    print(f'Subreddits and codes added: {topic_dict}')
-    return df
