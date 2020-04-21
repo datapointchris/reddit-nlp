@@ -90,14 +90,16 @@ class Reddit:
                                     ]
 
         return model_comparison_df
+
+
 # ====================================================================================== #
 # =================================== VISUALIZER ======================================= #
 class Visualizer:
     """
     Functions to vizualize data, instantiate with pandas df with a text column, labels column, and trained model
 
-    'model': optional, use this if you have a trained model, (or transformer like Tfidf) that you want to use,
-    otherwise use 'vect' or 'tfidf' to use one of those.
+    'model': optional, use this if you have a trained model with a transformer you want to use.
+     - must also specify the pipeline transformer name in 'transformer' parameter.
     
     'transformer': required if model is specified, otherwise optional. Defaults to TfidfVectorizer
     The transformer used in the pipeline of the trained model.
@@ -115,27 +117,31 @@ class Visualizer:
         self.model = model
         self.transformer = transformer
         self.labels = self.df[self.labels_column].unique()
-
-        if model is None:
-            if transformer == 'vect':
-                vect = CountVectorizer()
-                features_data = vect.transform(self.df[self.text_column]).toarray()
-            else:
-                model.transformer = 'tfidf'
-                tfidf = TfidfVectorizer()
-                features_data = tfidf.transform(self.df[self.text_column]).toarray()
-        
-        # assume the model has a pipeline with named steps
-        features_data = self.model.named_steps[transformer].transform(self.df[self.text_column]).toarray()
-        features_columns = self.model.named_steps[transformer].get_feature_names()
-        self.features_df = pd.DataFrame(data=features_data, columns=features_columns)
-
         self.pairs = list(combinations(self.labels, 2))
 
+        # create the features df
+        if self.model is not None:
+            if self.transformer is not None:  
+                features_data = self.model.named_steps[transformer].transform(self.df[self.text_column]).toarray()
+                features_columns = self.model.named_steps[transformer].get_feature_names()
+            else:  # model is specified but transformer is not
+                raise ValueError('Please specify the transformer parameter if specifying a model')
+        else:
+            if self.transformer is None:
+                self.transformer = TfidfVectorizer()
+            self.transformer.fit(self.df[self.text_column])
+            features_data = self.transformer.transform(self.df[self.text_column]).toarray()
+            features_columns = self.transformer.get_feature_names()
+        
+        self.features_df = pd.DataFrame(data=features_data, columns=features_columns)
+
+        
+
         
 
 
-    def make_cloud(self, labels_column=None, height=300, width=800, max_words=100, split=None, stopwords=None, colormap='viridis', background_color='black'):
+    def make_cloud(self, labels_column=None, height=300, width=800, max_words=100, 
+                   split=None, stopwords=None, colormap='viridis', background_color='black'):
         '''
         Inputs:
         text_column: name of text column in dataframe
@@ -171,7 +177,6 @@ class Visualizer:
             return cloud.to_image()
 
 
-    ### CHECK ### Test output of tfidf vs countvectorizer
     def plot_most_common(self, num_features=20, standardize=False, include_combined=False):
         '''
         Plots the most common features for each subreddit in the DataFrame
@@ -200,8 +205,8 @@ class Visualizer:
         '''
 
         fig, ax = plt.subplots(ncols=1,
-                            nrows=len(self.labels) + int(1 if include_combined else 0),
-                            figsize=(15, num_features/1.3*len(self.labels)))
+                               nrows=len(self.labels) + int(1 if include_combined else 0),
+                               figsize=(15, num_features/1.3*len(self.labels)))
 
         for subplot_idx, label in enumerate(self.labels):
             label_features = self.features_df.loc[self.df[self.labels_column] == label]
@@ -215,11 +220,11 @@ class Visualizer:
 
         if include_combined:
             most_common = self.features_df.sum().sort_values(ascending=False).head(num_features)[::-1]
-            most_common.plot(kind='barh', ax=ax[subplot_idx+1])
-            ax[subplot_idx+1].set_title(f'{num_features} Most Common Words for ({", ".join(self.labels).upper()})')
+            most_common.plot(kind='barh', ax=ax[subplot_idx + 1])
+            ax[subplot_idx + 1].set_title(f'{num_features} Most Common Words for ({", ".join(self.labels).upper()})')
             
             if standardize:
-                ax[subplot_idx+1].set_xlim(0, max_occurence)
+                ax[subplot_idx + 1].set_xlim(0, max_occurence)
         
         plt.tight_layout(h_pad=7)
 
