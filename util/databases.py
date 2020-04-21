@@ -42,16 +42,16 @@ class Sqlite:
         except Error as e:
             print(f"The error '{e}' occurred")
 
-# # This is an example
+    # # This is an example
 
-# select_users = "SELECT * from users"
-# users = execute_read_query(connection, select_users)
+    # select_users = "SELECT * from users"
+    # users = execute_read_query(connection, select_users)
 
-# for user in users:
-#     print(user)
+    # for user in users:
+    #     print(user)
 
-# column_names = [description[0] for description in cursor.description]
-# print(column_names)
+    # column_names = [description[0] for description in cursor.description]
+    # print(column_names)
 
 
 class MongoDB:
@@ -122,15 +122,15 @@ class Postgres:
             print(f"The error '{e}' occurred")
 
 
-#     create_users_table = """
-#     CREATE TABLE IF NOT EXISTS users (
-#       id SERIAL PRIMARY KEY,
-#       name TEXT NOT NULL,
-#       age INTEGER,
-#       gender TEXT,
-#       nationality TEXT
-#     )
-#     """
+    #     create_users_table = """
+    #     CREATE TABLE IF NOT EXISTS users (
+    #       id SERIAL PRIMARY KEY,
+    #       name TEXT NOT NULL,
+    #       age INTEGER,
+    #       gender TEXT,
+    #       nationality TEXT
+    #     )
+    #     """
 
     def execute_read_query(connection, query):
         cursor = connection.cursor()
@@ -142,11 +142,13 @@ class Postgres:
         except OperationalError as e:
             print(f"The error '{e}' occurred")
 
-# select_users = "SELECT * FROM users"
-# users = execute_read_query(connection, select_users)
+    # select_users = "SELECT * FROM users"
+    # users = execute_read_query(connection, select_users)
 
-#     for user in users:
-#         print(user)
+    #     for user in users:
+    #         print(user)
+
+    # https://github.com/mindsdb/mindsdb/blob/master/mindsdb/libs/data_sources/postgres_ds.py
 
 
 class Mysql:
@@ -236,3 +238,5 @@ class Mysql:
     #         print(column_details[0])  # Print column name
 
     # db_connection.close()
+    
+    #     https://github.com/mindsdb/mindsdb/blob/master/mindsdb/libs/data_sources/mysql_ds.py
