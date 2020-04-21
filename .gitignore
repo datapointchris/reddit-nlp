@@ -3,3 +3,4 @@
 *.code-workspace
 /data/scraped_subreddits
 *.vscode
+/util/__pycache__
