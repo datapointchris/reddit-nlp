@@ -85,12 +85,12 @@ class Scraper:
                 try:
                     response = requests.get(
                         url, params=params, headers=headers, timeout=None)
-                except (ConnectionError, ConnectionResetError):
-                    logger.exception(f'Error scraping subreddit {sub}:')
+                except(ConnectionError, ConnectionResetError) as e:
+                    logger.exception(f'Error scraping subreddit {sub}: {e}')
                     continue
                 if response.status_code != 200:
                     logger.info(f'Error: {response.status_code}')
-                    break
+                    continue
 
                 post_json = response.json()
                 for post in post_json['data']['children']:
