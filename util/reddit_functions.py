@@ -39,6 +39,53 @@ def function_timer(func):
     return wrapper
 
 
+class Labeler:
+    '''
+    Similar to label_encoder from sci-kit learn, but this creates labels based on when they are encountered,
+    rather than alphabetically for consistency
+    '''
+    
+    def __init__(self):
+        pass
+        
+    def fit(self, y):
+        '''
+        Fit the labeler on the data
+        Exposes 'label_encodings_' mapping
+        '''
+        self.label_encodings_ = {label: i for i, label in enumerate(y.unique())}
+        
+    def transform(self, y):
+        '''
+        Transforms target using fitted model
+        Outputs: array of transformed values
+        '''
+        if self.label_encodings_:
+            encodings = y.map(self.label_encodings_)
+        else:
+            raise ValueError('Data must be fit first')
+        
+        return encodings
+        
+    def fit_transform(self, y):
+        '''
+        Fit and transform functions in one step
+        '''
+        self.fit(y)
+        self.transform(y)
+        
+    def inverse_transform(self, y):
+        '''
+        Inverse transform target using 'label_encodings_' from fit labeler
+        '''
+        if self.label_encodings_:
+            inverse = y.map({v: k for k, v in self.label_encodings_.items()})
+        else:
+            raise ValueError('Data must be fit first')
+        return inverse
+        
+        
+
 class Reddit:
 
     def __init__(self):
@@ -58,11 +105,13 @@ class Reddit:
                                                 'variance',
                                                 'prep_code',
                                                 'est_code',
-                                                'sub_list'
+                                                'sub_list',
+                                                'fit_and_score_time'
                                                 ])         
         # fit a model for each combo of preprocessor and estimator
         for est in estimators.values():
             for prep in preprocessors.values():
+                start_time = time.time()
                 print(f"Fitting model with {prep['name']} and {est['name']}")
                 pipe = Pipeline([(prep['abbr'], prep['processor']), (est['abbr'], est['estimator'])])
                 pipe_params = dict()
@@ -74,6 +123,7 @@ class Reddit:
                 test_score = model.score(X_test, y_test)
                 now = datetime.datetime.now()
                 subreddits = (', ').join(subs) if subs is not None else 'na'
+                elapsed_time = round((time.time() - start_time) / 60, 2)
 
                 # add the model result to the df
                 model_comparison_df.loc[len(model_comparison_df)] = [
@@ -86,7 +136,8 @@ class Reddit:
                                         (train_score - test_score) / train_score * 100,
                                         prep['abbr'],
                                         est['abbr'],
-                                        subreddits
+                                        subreddits,
+                                        elapsed_time
                                     ]
 
         return model_comparison_df
