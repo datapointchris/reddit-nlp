@@ -11,6 +11,8 @@ import requests
 import seaborn as sns
 from itertools import combinations
 import wordcloud
+from tqdm import tqdm
+
 from PIL import Image
 from sklearn.feature_extraction.text import (CountVectorizer, TfidfVectorizer)
 from sklearn.linear_model import LogisticRegression
@@ -51,48 +53,43 @@ class Labeler:
     def fit(self, y):
         '''
         Fit the labeler on the data
-        Exposes 'label_encodings_' mapping
+        Exposes 'encodings_' mapping
+        Exposes 'classes_'
         '''
-        self.label_encodings_ = {label: i for i, label in enumerate(y.unique())}
+        self.encodings_ = {label: i for i, label in enumerate(y.unique())}
+        self.classes_ = list(self.encodings_.keys())
         
     def transform(self, y):
         '''
         Transforms target using fitted model
         Outputs: array of transformed values
         '''
-        if self.label_encodings_:
-            encodings = y.map(self.label_encodings_)
+        if self.encodings_:
+            encodings = y.map(self.encodings_)
         else:
-            raise ValueError('Data must be fit first')
+            raise ValueError('Labeler must be fit first')
         
         return encodings
-        
-    def fit_transform(self, y):
-        '''
-        Fit and transform functions in one step
-        '''
-        self.fit(y)
-        self.transform(y)
         
     def inverse_transform(self, y):
         '''
         Inverse transform target using 'label_encodings_' from fit labeler
         '''
-        if self.label_encodings_:
-            inverse = y.map({v: k for k, v in self.label_encodings_.items()})
+        if self.encodings_:
+            y = pd.Series(y)
+            inverse = y.map({v: k for k, v in self.encodings_.items()})
         else:
-            raise ValueError('Data must be fit first')
+            raise ValueError('Labeler must be fit first')
         return inverse
         
-        
+
 
 class Reddit:
 
     def __init__(self):
         pass
 
-
-    def compare_models(self, X_train, X_test, y_train, y_test, preprocessors=preprocessors, estimators=estimators, subs=None, cv=5, verbose=1, n_jobs=-1):
+    def compare_models(self, X_train, X_test, y_train, y_test, preprocessors=preprocessors, estimators=estimators, classes=None, cv=5, verbose=1, n_jobs=-1):
 
         # Set up the dataframe
         model_comparison_df = pd.DataFrame(columns=[
@@ -105,11 +102,11 @@ class Reddit:
                                                 'variance',
                                                 'prep_code',
                                                 'est_code',
-                                                'sub_list',
+                                                'subreddits',
                                                 'fit_and_score_time'
                                                 ])         
         # fit a model for each combo of preprocessor and estimator
-        for est in estimators.values():
+        for est in tqdm(estimators.values()):
             for prep in preprocessors.values():
                 start_time = time.time()
                 print(f"Fitting model with {prep['name']} and {est['name']}")
@@ -122,8 +119,8 @@ class Reddit:
                 train_score = model.score(X_train, y_train)
                 test_score = model.score(X_test, y_test)
                 now = datetime.datetime.now()
-                subreddits = (', ').join(subs) if subs is not None else 'na'
-                elapsed_time = round((time.time() - start_time) / 60, 2)
+                subreddits = (', ').join(classes) if classes is not None else 'na'
+                elapsed_time = time.time() - start_time
 
                 # add the model result to the df
                 model_comparison_df.loc[len(model_comparison_df)] = [
@@ -138,7 +135,7 @@ class Reddit:
                                         est['abbr'],
                                         subreddits,
                                         elapsed_time
-                                    ]
+                                        ]
 
         return model_comparison_df
 
@@ -167,7 +164,9 @@ class Visualizer:
         self.labels_column = labels_column
         self.model = model
         self.transformer = transformer
-        self.labels = self.df[self.labels_column].unique()
+        labeler = Labeler()
+        labeler.fit(self.df[self.labels_column])
+        self.labels = labeler.classes_
         self.pairs = list(combinations(self.labels, 2))
 
         # create the features df

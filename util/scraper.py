@@ -1,7 +1,3 @@
-# path hack, I know it's gross
-import sys, os
-sys.path.insert(0, os.path.abspath('..'))
-
 import argparse
 import datetime
 import functools
@@ -9,16 +5,21 @@ import json
 import logging
 import logging.handlers
 import os
+import sys
 import time
 
 import pandas as pd
 import requests
 from tqdm import tqdm
 
-from util import databases
-
 # set path to current working directory for cron job
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+# path hack, I know it's gross
+sys.path.insert(0, os.path.abspath('..'))
+
+from util import databases
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
