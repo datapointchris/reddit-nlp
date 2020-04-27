@@ -1,0 +1,17 @@
+04/25/2020 11:48:17 PM:__main__:PROGRAM STARTED -- "compare_models"
+04/25/2020 11:51:36 PM:__main__:Saving comparison df
+04/26/2020 12:01:33 AM:__main__:PROGRAM STARTED -- "compare_models"
+04/26/2020 12:01:33 AM:__main__:Training models
+04/26/2020 12:04:39 AM:__main__:Saving comparison df
+04/26/2020 12:04:39 AM:__main__:Elapsed time: 3.1 minutes for 'main'
+04/26/2020 12:04:39 AM:__main__:PROGRAM FINISHED
+04/26/2020 12:19:06 AM:__main__:PROGRAM STARTED -- "compare_models"
+04/26/2020 12:19:07 AM:__main__:Training models
+04/26/2020 12:23:57 AM:__main__:Saving comparison df
+04/26/2020 12:23:57 AM:__main__:Elapsed time: 4.85 minutes for 'main'
+04/26/2020 12:23:57 AM:__main__:PROGRAM FINISHED
+04/26/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+04/26/2020 12:00:03 PM:__main__:Training models
+04/26/2020 02:21:33 PM:__main__:Saving comparison df
+04/26/2020 02:21:33 PM:__main__:Elapsed time: 141.52 minutes for 'main'
+04/26/2020 02:21:33 PM:__main__:PROGRAM FINISHED

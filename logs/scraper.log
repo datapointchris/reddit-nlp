@@ -97,3 +97,556 @@
 04/02/2020 07:02:26 PM:__main__:Elapsed time: 2.15 minutes for scrape_subreddit
 04/02/2020 07:02:26 PM:__main__:Saving data to csv
 04/02/2020 07:02:26 PM:__main__:PROGRAM FINISHED
+04/10/2020 10:23:25 PM:__main__:PROGRAM STARTED
+04/10/2020 10:23:25 PM:__main__:Scraping Subreddits
+04/10/2020 10:23:25 PM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/10/2020 10:24:05 PM:__main__:952 scraped for "deeplearning"
+04/10/2020 10:24:05 PM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/10/2020 10:24:47 PM:__main__:967 scraped for "tensorflow"
+04/10/2020 10:24:47 PM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/10/2020 10:25:58 PM:__main__:96 scraped for "scikit_learn"
+04/10/2020 10:25:58 PM:__main__:Scraping subreddit "pandas", 4 of 26
+04/10/2020 10:26:40 PM:__main__:162 scraped for "pandas"
+04/10/2020 10:26:40 PM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/10/2020 10:27:22 PM:__main__:557 scraped for "bigdata"
+04/10/2020 10:27:22 PM:__main__:Scraping subreddit "aws", 6 of 26
+04/10/2020 10:28:02 PM:__main__:997 scraped for "aws"
+04/10/2020 10:28:02 PM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/10/2020 10:28:41 PM:__main__:968 scraped for "awscertifications"
+04/10/2020 10:28:41 PM:__main__:Scraping subreddit "css", 8 of 26
+04/10/2020 10:29:19 PM:__main__:908 scraped for "css"
+04/10/2020 10:29:19 PM:__main__:Scraping subreddit "html", 9 of 26
+04/10/2020 10:30:00 PM:__main__:969 scraped for "html"
+04/10/2020 10:30:00 PM:__main__:Scraping subreddit "javascript", 10 of 26
+04/10/2020 10:30:42 PM:__main__:934 scraped for "javascript"
+04/10/2020 10:30:42 PM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/10/2020 10:31:21 PM:__main__:993 scraped for "shittyprogramming"
+04/10/2020 10:31:21 PM:__main__:Scraping subreddit "java", 12 of 26
+04/10/2020 10:32:00 PM:__main__:811 scraped for "java"
+04/10/2020 10:32:00 PM:__main__:Scraping subreddit "sql", 13 of 26
+04/10/2020 10:32:42 PM:__main__:969 scraped for "sql"
+04/10/2020 10:32:42 PM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/10/2020 10:33:24 PM:__main__:952 scraped for "learnsql"
+04/10/2020 10:33:24 PM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/10/2020 10:34:04 PM:__main__:991 scraped for "postgresql"
+04/10/2020 10:34:04 PM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/10/2020 10:34:42 PM:__main__:901 scraped for "softwarearchitecture"
+04/10/2020 10:34:42 PM:__main__:Scraping subreddit "scala", 17 of 26
+04/10/2020 10:35:26 PM:__main__:931 scraped for "scala"
+04/10/2020 10:35:26 PM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/10/2020 10:36:04 PM:__main__:910 scraped for "apachespark"
+04/10/2020 10:36:04 PM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/10/2020 10:36:47 PM:__main__:951 scraped for "mongodb"
+04/10/2020 10:36:47 PM:__main__:Scraping subreddit "linux", 20 of 26
+04/10/2020 10:37:34 PM:__main__:893 scraped for "linux"
+04/10/2020 10:37:34 PM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/10/2020 10:38:15 PM:__main__:998 scraped for "linux4noobs"
+04/10/2020 10:38:15 PM:__main__:Scraping subreddit "datascience", 22 of 26
+04/10/2020 10:38:57 PM:__main__:883 scraped for "datascience"
+04/10/2020 10:38:57 PM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/10/2020 10:39:39 PM:__main__:993 scraped for "machinelearning"
+04/10/2020 10:39:39 PM:__main__:Scraping subreddit "etl", 24 of 26
+04/10/2020 10:40:18 PM:__main__:379 scraped for "etl"
+04/10/2020 10:40:18 PM:__main__:Scraping subreddit "python", 25 of 26
+04/10/2020 10:41:14 PM:__main__:927 scraped for "python"
+04/10/2020 10:41:14 PM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/10/2020 10:41:55 PM:__main__:977 scraped for "dataengineering"
+04/10/2020 10:41:55 PM:__main__:Elapsed time: 18.5 minutes for 'scrape_subreddit'
+04/10/2020 10:41:55 PM:__main__:Saving data to sqlite
+04/10/2020 10:41:55 PM:__main__:PROGRAM FINISHED
+04/14/2020 09:18:29 PM:__main__:PROGRAM STARTED
+04/14/2020 09:18:30 PM:__main__:Scraping Subreddits
+04/14/2020 09:18:30 PM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/14/2020 09:19:07 PM:__main__:957 scraped for "deeplearning"
+04/14/2020 09:19:07 PM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/14/2020 09:19:49 PM:__main__:966 scraped for "tensorflow"
+04/14/2020 09:19:49 PM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/14/2020 09:20:29 PM:__main__:97 scraped for "scikit_learn"
+04/14/2020 09:20:29 PM:__main__:Scraping subreddit "pandas", 4 of 26
+04/14/2020 09:21:07 PM:__main__:162 scraped for "pandas"
+04/14/2020 09:21:07 PM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/14/2020 09:21:46 PM:__main__:555 scraped for "bigdata"
+04/14/2020 09:21:46 PM:__main__:Scraping subreddit "aws", 6 of 26
+04/14/2020 09:22:26 PM:__main__:998 scraped for "aws"
+04/14/2020 09:22:26 PM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/14/2020 09:23:05 PM:__main__:969 scraped for "awscertifications"
+04/14/2020 09:23:05 PM:__main__:Scraping subreddit "css", 8 of 26
+04/14/2020 09:23:44 PM:__main__:908 scraped for "css"
+04/14/2020 09:23:44 PM:__main__:Scraping subreddit "html", 9 of 26
+04/14/2020 09:24:23 PM:__main__:969 scraped for "html"
+04/14/2020 09:24:23 PM:__main__:Scraping subreddit "javascript", 10 of 26
+04/14/2020 09:25:01 PM:__main__:924 scraped for "javascript"
+04/14/2020 09:25:01 PM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/14/2020 09:25:40 PM:__main__:992 scraped for "shittyprogramming"
+04/14/2020 09:25:40 PM:__main__:Scraping subreddit "java", 12 of 26
+04/14/2020 09:26:16 PM:__main__:810 scraped for "java"
+04/14/2020 09:26:16 PM:__main__:Scraping subreddit "sql", 13 of 26
+04/14/2020 09:26:56 PM:__main__:970 scraped for "sql"
+04/14/2020 09:26:56 PM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/14/2020 09:27:36 PM:__main__:953 scraped for "learnsql"
+04/14/2020 09:27:36 PM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/14/2020 09:28:15 PM:__main__:991 scraped for "postgresql"
+04/14/2020 09:28:15 PM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/14/2020 09:28:53 PM:__main__:898 scraped for "softwarearchitecture"
+04/14/2020 09:28:53 PM:__main__:Scraping subreddit "scala", 17 of 26
+04/14/2020 09:29:32 PM:__main__:932 scraped for "scala"
+04/14/2020 09:29:32 PM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/14/2020 09:30:12 PM:__main__:909 scraped for "apachespark"
+04/14/2020 09:30:12 PM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/14/2020 09:30:50 PM:__main__:952 scraped for "mongodb"
+04/14/2020 09:30:50 PM:__main__:Scraping subreddit "linux", 20 of 26
+04/14/2020 09:31:35 PM:__main__:893 scraped for "linux"
+04/14/2020 09:31:35 PM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/14/2020 09:32:15 PM:__main__:997 scraped for "linux4noobs"
+04/14/2020 09:32:15 PM:__main__:Scraping subreddit "datascience", 22 of 26
+04/14/2020 09:32:58 PM:__main__:885 scraped for "datascience"
+04/14/2020 09:32:58 PM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/14/2020 09:33:40 PM:__main__:993 scraped for "machinelearning"
+04/14/2020 09:33:40 PM:__main__:Scraping subreddit "etl", 24 of 26
+04/14/2020 09:34:19 PM:__main__:380 scraped for "etl"
+04/14/2020 09:34:19 PM:__main__:Scraping subreddit "python", 25 of 26
+04/14/2020 09:35:00 PM:__main__:934 scraped for "python"
+04/14/2020 09:35:00 PM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/14/2020 09:35:39 PM:__main__:977 scraped for "dataengineering"
+04/14/2020 09:35:39 PM:__main__:Elapsed time: 17.16 minutes for 'scrape_subreddit'
+04/14/2020 09:35:39 PM:__main__:Saving data to sqlite
+04/14/2020 09:35:39 PM:__main__:PROGRAM FINISHED
+04/20/2020 11:46:03 AM:__main__:PROGRAM STARTED
+04/20/2020 11:46:03 AM:__main__:Scraping Subreddits
+04/20/2020 11:46:03 AM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/20/2020 11:46:41 AM:__main__:959 scraped for "deeplearning"
+04/20/2020 11:46:41 AM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/20/2020 11:47:22 AM:__main__:966 scraped for "tensorflow"
+04/20/2020 11:47:22 AM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/20/2020 11:47:59 AM:__main__:97 scraped for "scikit_learn"
+04/20/2020 11:47:59 AM:__main__:Scraping subreddit "pandas", 4 of 26
+04/20/2020 11:48:38 AM:__main__:163 scraped for "pandas"
+04/20/2020 11:48:38 AM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/20/2020 11:49:19 AM:__main__:554 scraped for "bigdata"
+04/20/2020 11:49:19 AM:__main__:Scraping subreddit "aws", 6 of 26
+04/20/2020 11:50:00 AM:__main__:998 scraped for "aws"
+04/20/2020 11:50:00 AM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/20/2020 07:22:36 PM:__main__:PROGRAM STARTED
+04/20/2020 07:22:36 PM:__main__:Scraping Subreddits
+04/20/2020 07:22:36 PM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/20/2020 07:31:42 PM:__main__:PROGRAM STARTED
+04/20/2020 07:31:42 PM:__main__:Scraping Subreddits
+04/20/2020 07:31:42 PM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/20/2020 07:32:22 PM:__main__:959 scraped for "deeplearning"
+04/20/2020 07:32:22 PM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/20/2020 07:33:17 PM:__main__:966 scraped for "tensorflow"
+04/20/2020 07:33:17 PM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/20/2020 07:34:01 PM:__main__:98 scraped for "scikit_learn"
+04/20/2020 07:34:01 PM:__main__:Scraping subreddit "pandas", 4 of 26
+04/20/2020 07:35:02 PM:__main__:163 scraped for "pandas"
+04/20/2020 07:35:02 PM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/20/2020 07:35:52 PM:__main__:554 scraped for "bigdata"
+04/20/2020 07:35:52 PM:__main__:Scraping subreddit "aws", 6 of 26
+04/20/2020 07:36:34 PM:__main__:998 scraped for "aws"
+04/20/2020 07:36:34 PM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/20/2020 07:37:15 PM:__main__:969 scraped for "awscertifications"
+04/20/2020 07:37:15 PM:__main__:Scraping subreddit "css", 8 of 26
+04/20/2020 07:37:57 PM:__main__:910 scraped for "css"
+04/20/2020 07:37:57 PM:__main__:Scraping subreddit "html", 9 of 26
+04/20/2020 07:38:49 PM:__main__:967 scraped for "html"
+04/20/2020 07:38:49 PM:__main__:Scraping subreddit "javascript", 10 of 26
+04/20/2020 07:39:28 PM:__main__:914 scraped for "javascript"
+04/20/2020 07:39:28 PM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/20/2020 07:40:10 PM:__main__:990 scraped for "shittyprogramming"
+04/20/2020 07:40:10 PM:__main__:Scraping subreddit "java", 12 of 26
+04/20/2020 07:40:48 PM:__main__:814 scraped for "java"
+04/20/2020 07:40:48 PM:__main__:Scraping subreddit "sql", 13 of 26
+04/20/2020 07:41:33 PM:__main__:970 scraped for "sql"
+04/20/2020 07:41:33 PM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/20/2020 07:42:16 PM:__main__:951 scraped for "learnsql"
+04/20/2020 07:42:16 PM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/20/2020 07:42:58 PM:__main__:991 scraped for "postgresql"
+04/20/2020 07:42:58 PM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/20/2020 07:43:39 PM:__main__:897 scraped for "softwarearchitecture"
+04/20/2020 07:43:39 PM:__main__:Scraping subreddit "scala", 17 of 26
+04/20/2020 07:44:21 PM:__main__:933 scraped for "scala"
+04/20/2020 07:44:21 PM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/20/2020 07:45:03 PM:__main__:912 scraped for "apachespark"
+04/20/2020 07:45:03 PM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/20/2020 07:45:43 PM:__main__:954 scraped for "mongodb"
+04/20/2020 07:45:43 PM:__main__:Scraping subreddit "linux", 20 of 26
+04/20/2020 07:46:30 PM:__main__:883 scraped for "linux"
+04/20/2020 07:46:30 PM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/20/2020 07:47:11 PM:__main__:999 scraped for "linux4noobs"
+04/20/2020 07:47:11 PM:__main__:Scraping subreddit "datascience", 22 of 26
+04/20/2020 07:47:56 PM:__main__:873 scraped for "datascience"
+04/20/2020 07:47:56 PM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/20/2020 07:48:41 PM:__main__:994 scraped for "machinelearning"
+04/20/2020 07:48:41 PM:__main__:Scraping subreddit "etl", 24 of 26
+04/20/2020 07:49:25 PM:__main__:386 scraped for "etl"
+04/20/2020 07:49:25 PM:__main__:Scraping subreddit "python", 25 of 26
+04/20/2020 07:50:08 PM:__main__:944 scraped for "python"
+04/20/2020 07:50:08 PM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/20/2020 07:50:52 PM:__main__:976 scraped for "dataengineering"
+04/20/2020 07:50:52 PM:__main__:Elapsed time: 19.16 minutes for 'scrape_subreddit'
+04/20/2020 07:50:52 PM:__main__:Saving data to sqlite
+04/20/2020 07:50:52 PM:__main__:PROGRAM FINISHED
+04/21/2020 11:08:44 PM:__main__:PROGRAM STARTED
+04/21/2020 11:08:44 PM:__main__:Scraping Subreddits
+04/21/2020 11:08:44 PM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/21/2020 11:09:22 PM:__main__:960 scraped for "deeplearning"
+04/21/2020 11:09:22 PM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/21/2020 11:10:02 PM:__main__:966 scraped for "tensorflow"
+04/21/2020 11:10:02 PM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/21/2020 11:10:37 PM:__main__:98 scraped for "scikit_learn"
+04/21/2020 11:10:37 PM:__main__:Scraping subreddit "pandas", 4 of 26
+04/21/2020 11:11:14 PM:__main__:163 scraped for "pandas"
+04/21/2020 11:11:14 PM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/21/2020 11:11:51 PM:__main__:552 scraped for "bigdata"
+04/21/2020 11:11:51 PM:__main__:Scraping subreddit "aws", 6 of 26
+04/21/2020 11:12:30 PM:__main__:998 scraped for "aws"
+04/21/2020 11:12:30 PM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/21/2020 11:13:08 PM:__main__:970 scraped for "awscertifications"
+04/21/2020 11:13:08 PM:__main__:Scraping subreddit "css", 8 of 26
+04/21/2020 11:13:48 PM:__main__:911 scraped for "css"
+04/21/2020 11:13:48 PM:__main__:Scraping subreddit "html", 9 of 26
+04/21/2020 11:14:28 PM:__main__:967 scraped for "html"
+04/21/2020 11:14:28 PM:__main__:Scraping subreddit "javascript", 10 of 26
+04/21/2020 11:15:06 PM:__main__:914 scraped for "javascript"
+04/21/2020 11:15:06 PM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/21/2020 11:15:44 PM:__main__:990 scraped for "shittyprogramming"
+04/21/2020 11:15:44 PM:__main__:Scraping subreddit "java", 12 of 26
+04/21/2020 11:16:20 PM:__main__:815 scraped for "java"
+04/21/2020 11:16:20 PM:__main__:Scraping subreddit "sql", 13 of 26
+04/21/2020 11:17:00 PM:__main__:974 scraped for "sql"
+04/21/2020 11:17:00 PM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/21/2020 11:17:38 PM:__main__:950 scraped for "learnsql"
+04/21/2020 11:17:38 PM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/21/2020 11:18:16 PM:__main__:991 scraped for "postgresql"
+04/21/2020 11:18:16 PM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/21/2020 11:18:52 PM:__main__:899 scraped for "softwarearchitecture"
+04/21/2020 11:18:52 PM:__main__:Scraping subreddit "scala", 17 of 26
+04/21/2020 11:19:33 PM:__main__:932 scraped for "scala"
+04/21/2020 11:19:33 PM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/21/2020 11:20:13 PM:__main__:912 scraped for "apachespark"
+04/21/2020 11:20:13 PM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/21/2020 11:20:50 PM:__main__:951 scraped for "mongodb"
+04/21/2020 11:20:50 PM:__main__:Scraping subreddit "linux", 20 of 26
+04/21/2020 11:21:33 PM:__main__:887 scraped for "linux"
+04/21/2020 11:21:33 PM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/21/2020 11:22:11 PM:__main__:999 scraped for "linux4noobs"
+04/21/2020 11:22:11 PM:__main__:Scraping subreddit "datascience", 22 of 26
+04/21/2020 11:22:50 PM:__main__:875 scraped for "datascience"
+04/21/2020 11:22:50 PM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/21/2020 11:23:30 PM:__main__:992 scraped for "machinelearning"
+04/21/2020 11:23:30 PM:__main__:Scraping subreddit "etl", 24 of 26
+04/21/2020 11:24:08 PM:__main__:388 scraped for "etl"
+04/21/2020 11:24:08 PM:__main__:Scraping subreddit "python", 25 of 26
+04/21/2020 11:24:47 PM:__main__:942 scraped for "python"
+04/21/2020 11:24:47 PM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/21/2020 11:25:24 PM:__main__:977 scraped for "dataengineering"
+04/21/2020 11:25:24 PM:__main__:Elapsed time: 16.66 minutes for 'scrape_subreddit'
+04/21/2020 11:25:24 PM:__main__:Saving data to sqlite
+04/21/2020 11:25:24 PM:__main__:PROGRAM FINISHED
+04/22/2020 10:00:01 AM:__main__:PROGRAM STARTED
+04/22/2020 10:00:01 AM:__main__:Scraping Subreddits
+04/22/2020 10:00:01 AM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/22/2020 10:00:44 AM:__main__:960 scraped for "deeplearning"
+04/22/2020 10:00:44 AM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/22/2020 10:01:37 AM:__main__:966 scraped for "tensorflow"
+04/22/2020 10:01:37 AM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/22/2020 10:02:18 AM:__main__:99 scraped for "scikit_learn"
+04/22/2020 10:02:18 AM:__main__:Scraping subreddit "pandas", 4 of 26
+04/22/2020 10:03:04 AM:__main__:163 scraped for "pandas"
+04/22/2020 10:03:04 AM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/22/2020 10:03:56 AM:__main__:552 scraped for "bigdata"
+04/22/2020 10:03:56 AM:__main__:Scraping subreddit "aws", 6 of 26
+04/22/2020 10:04:47 AM:__main__:998 scraped for "aws"
+04/22/2020 10:04:47 AM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/22/2020 10:05:38 AM:__main__:970 scraped for "awscertifications"
+04/22/2020 10:05:38 AM:__main__:Scraping subreddit "css", 8 of 26
+04/22/2020 10:06:24 AM:__main__:912 scraped for "css"
+04/22/2020 10:06:24 AM:__main__:Scraping subreddit "html", 9 of 26
+04/22/2020 10:07:06 AM:__main__:967 scraped for "html"
+04/22/2020 10:07:06 AM:__main__:Scraping subreddit "javascript", 10 of 26
+04/22/2020 10:07:48 AM:__main__:916 scraped for "javascript"
+04/22/2020 10:07:48 AM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/22/2020 10:08:30 AM:__main__:990 scraped for "shittyprogramming"
+04/22/2020 10:08:30 AM:__main__:Scraping subreddit "java", 12 of 26
+04/22/2020 10:09:10 AM:__main__:816 scraped for "java"
+04/22/2020 10:09:10 AM:__main__:Scraping subreddit "sql", 13 of 26
+04/22/2020 10:09:53 AM:__main__:974 scraped for "sql"
+04/22/2020 10:09:53 AM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/22/2020 10:10:34 AM:__main__:951 scraped for "learnsql"
+04/22/2020 10:10:34 AM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/22/2020 10:11:14 AM:__main__:990 scraped for "postgresql"
+04/22/2020 10:11:14 AM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/22/2020 10:11:53 AM:__main__:900 scraped for "softwarearchitecture"
+04/22/2020 10:11:53 AM:__main__:Scraping subreddit "scala", 17 of 26
+04/22/2020 10:12:33 AM:__main__:932 scraped for "scala"
+04/22/2020 10:12:33 AM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/22/2020 10:13:12 AM:__main__:912 scraped for "apachespark"
+04/22/2020 10:13:12 AM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/22/2020 10:13:49 AM:__main__:951 scraped for "mongodb"
+04/22/2020 10:13:49 AM:__main__:Scraping subreddit "linux", 20 of 26
+04/22/2020 10:14:32 AM:__main__:886 scraped for "linux"
+04/22/2020 10:14:32 AM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/22/2020 10:15:10 AM:__main__:998 scraped for "linux4noobs"
+04/22/2020 10:15:10 AM:__main__:Scraping subreddit "datascience", 22 of 26
+04/22/2020 10:15:50 AM:__main__:868 scraped for "datascience"
+04/22/2020 10:15:50 AM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/22/2020 10:16:30 AM:__main__:993 scraped for "machinelearning"
+04/22/2020 10:16:30 AM:__main__:Scraping subreddit "etl", 24 of 26
+04/22/2020 10:17:08 AM:__main__:388 scraped for "etl"
+04/22/2020 10:17:08 AM:__main__:Scraping subreddit "python", 25 of 26
+04/22/2020 10:17:47 AM:__main__:942 scraped for "python"
+04/22/2020 10:17:47 AM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/22/2020 10:18:24 AM:__main__:976 scraped for "dataengineering"
+04/22/2020 10:18:24 AM:__main__:Elapsed time: 18.38 minutes for 'scrape_subreddit'
+04/22/2020 10:18:24 AM:__main__:Saving data to sqlite
+04/22/2020 10:18:24 AM:__main__:PROGRAM FINISHED
+04/23/2020 10:00:02 AM:__main__:PROGRAM STARTED
+04/23/2020 10:00:02 AM:__main__:Scraping Subreddits
+04/23/2020 10:00:02 AM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/23/2020 10:00:43 AM:__main__:959 scraped for "deeplearning"
+04/23/2020 10:00:43 AM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/23/2020 10:01:26 AM:__main__:966 scraped for "tensorflow"
+04/23/2020 10:01:26 AM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/23/2020 10:02:07 AM:__main__:99 scraped for "scikit_learn"
+04/23/2020 10:02:07 AM:__main__:Scraping subreddit "pandas", 4 of 26
+04/23/2020 10:02:48 AM:__main__:163 scraped for "pandas"
+04/23/2020 10:02:48 AM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/23/2020 10:03:29 AM:__main__:554 scraped for "bigdata"
+04/23/2020 10:03:29 AM:__main__:Scraping subreddit "aws", 6 of 26
+04/23/2020 10:04:11 AM:__main__:998 scraped for "aws"
+04/23/2020 10:04:11 AM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/23/2020 10:04:51 AM:__main__:969 scraped for "awscertifications"
+04/23/2020 10:04:51 AM:__main__:Scraping subreddit "css", 8 of 26
+04/23/2020 10:05:29 AM:__main__:914 scraped for "css"
+04/23/2020 10:05:29 AM:__main__:Scraping subreddit "html", 9 of 26
+04/23/2020 10:06:12 AM:__main__:967 scraped for "html"
+04/23/2020 10:06:12 AM:__main__:Scraping subreddit "javascript", 10 of 26
+04/23/2020 10:06:52 AM:__main__:915 scraped for "javascript"
+04/23/2020 10:06:52 AM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/23/2020 10:07:33 AM:__main__:991 scraped for "shittyprogramming"
+04/23/2020 10:07:33 AM:__main__:Scraping subreddit "java", 12 of 26
+04/23/2020 10:08:14 AM:__main__:815 scraped for "java"
+04/23/2020 10:08:14 AM:__main__:Scraping subreddit "sql", 13 of 26
+04/23/2020 10:08:57 AM:__main__:973 scraped for "sql"
+04/23/2020 10:08:57 AM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/23/2020 10:09:38 AM:__main__:953 scraped for "learnsql"
+04/23/2020 10:09:38 AM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/23/2020 10:10:20 AM:__main__:991 scraped for "postgresql"
+04/23/2020 10:10:20 AM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/23/2020 10:11:00 AM:__main__:902 scraped for "softwarearchitecture"
+04/23/2020 10:11:00 AM:__main__:Scraping subreddit "scala", 17 of 26
+04/23/2020 10:11:43 AM:__main__:932 scraped for "scala"
+04/23/2020 10:11:43 AM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/23/2020 10:12:25 AM:__main__:912 scraped for "apachespark"
+04/23/2020 10:12:25 AM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/23/2020 10:13:06 AM:__main__:951 scraped for "mongodb"
+04/23/2020 10:13:06 AM:__main__:Scraping subreddit "linux", 20 of 26
+04/23/2020 10:13:49 AM:__main__:889 scraped for "linux"
+04/23/2020 10:13:49 AM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/23/2020 10:14:30 AM:__main__:999 scraped for "linux4noobs"
+04/23/2020 10:14:30 AM:__main__:Scraping subreddit "datascience", 22 of 26
+04/23/2020 10:15:12 AM:__main__:876 scraped for "datascience"
+04/23/2020 10:15:12 AM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/23/2020 10:15:54 AM:__main__:993 scraped for "machinelearning"
+04/23/2020 10:15:54 AM:__main__:Scraping subreddit "etl", 24 of 26
+04/23/2020 06:36:00 PM:__main__:PROGRAM STARTED
+04/23/2020 06:36:00 PM:__main__:Scraping Subreddits
+04/23/2020 06:36:00 PM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/23/2020 06:36:38 PM:__main__:959 scraped for "deeplearning"
+04/23/2020 06:36:38 PM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/23/2020 06:37:19 PM:__main__:966 scraped for "tensorflow"
+04/23/2020 06:37:19 PM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/23/2020 06:37:55 PM:__main__:99 scraped for "scikit_learn"
+04/23/2020 06:37:55 PM:__main__:Scraping subreddit "pandas", 4 of 26
+04/23/2020 06:38:32 PM:__main__:163 scraped for "pandas"
+04/23/2020 06:38:32 PM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/23/2020 06:39:09 PM:__main__:555 scraped for "bigdata"
+04/23/2020 06:39:09 PM:__main__:Scraping subreddit "aws", 6 of 26
+04/23/2020 06:39:50 PM:__main__:999 scraped for "aws"
+04/23/2020 06:39:50 PM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/23/2020 06:40:29 PM:__main__:969 scraped for "awscertifications"
+04/23/2020 06:40:29 PM:__main__:Scraping subreddit "css", 8 of 26
+04/23/2020 06:41:05 PM:__main__:914 scraped for "css"
+04/23/2020 06:41:05 PM:__main__:Scraping subreddit "html", 9 of 26
+04/23/2020 06:41:45 PM:__main__:967 scraped for "html"
+04/23/2020 06:41:45 PM:__main__:Scraping subreddit "javascript", 10 of 26
+04/23/2020 06:42:22 PM:__main__:916 scraped for "javascript"
+04/23/2020 06:42:22 PM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/23/2020 06:43:03 PM:__main__:986 scraped for "shittyprogramming"
+04/23/2020 06:43:03 PM:__main__:Scraping subreddit "java", 12 of 26
+04/23/2020 06:43:38 PM:__main__:815 scraped for "java"
+04/23/2020 06:43:38 PM:__main__:Scraping subreddit "sql", 13 of 26
+04/23/2020 06:44:19 PM:__main__:973 scraped for "sql"
+04/23/2020 06:44:19 PM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/23/2020 06:44:56 PM:__main__:953 scraped for "learnsql"
+04/23/2020 06:44:56 PM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/23/2020 06:45:36 PM:__main__:991 scraped for "postgresql"
+04/23/2020 06:45:36 PM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/23/2020 06:46:16 PM:__main__:902 scraped for "softwarearchitecture"
+04/23/2020 06:46:16 PM:__main__:Scraping subreddit "scala", 17 of 26
+04/23/2020 06:46:56 PM:__main__:932 scraped for "scala"
+04/23/2020 06:46:56 PM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/23/2020 06:47:37 PM:__main__:912 scraped for "apachespark"
+04/23/2020 06:47:37 PM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/23/2020 06:48:15 PM:__main__:952 scraped for "mongodb"
+04/23/2020 06:48:15 PM:__main__:Scraping subreddit "linux", 20 of 26
+04/23/2020 06:48:58 PM:__main__:889 scraped for "linux"
+04/23/2020 06:48:58 PM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/23/2020 06:49:40 PM:__main__:998 scraped for "linux4noobs"
+04/23/2020 06:49:40 PM:__main__:Scraping subreddit "datascience", 22 of 26
+04/23/2020 06:50:25 PM:__main__:871 scraped for "datascience"
+04/23/2020 06:50:25 PM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/23/2020 06:51:05 PM:__main__:992 scraped for "machinelearning"
+04/23/2020 06:51:05 PM:__main__:Scraping subreddit "etl", 24 of 26
+04/23/2020 06:51:44 PM:__main__:389 scraped for "etl"
+04/23/2020 06:51:44 PM:__main__:Scraping subreddit "python", 25 of 26
+04/23/2020 06:52:22 PM:__main__:944 scraped for "python"
+04/23/2020 06:52:22 PM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/23/2020 06:53:03 PM:__main__:976 scraped for "dataengineering"
+04/23/2020 06:53:03 PM:__main__:Elapsed time: 17.05 minutes for 'scrape_subreddit'
+04/23/2020 06:53:03 PM:__main__:Saving data to sqlite
+04/23/2020 06:53:03 PM:__main__:PROGRAM FINISHED
+04/24/2020 10:00:02 AM:__main__:PROGRAM STARTED
+04/24/2020 10:00:02 AM:__main__:Scraping Subreddits
+04/24/2020 10:00:02 AM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/24/2020 10:01:41 AM:__main__:959 scraped for "deeplearning"
+04/24/2020 10:01:41 AM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/24/2020 10:02:32 AM:__main__:966 scraped for "tensorflow"
+04/24/2020 10:02:32 AM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/24/2020 10:03:22 AM:__main__:99 scraped for "scikit_learn"
+04/24/2020 10:03:22 AM:__main__:Scraping subreddit "pandas", 4 of 26
+04/24/2020 10:04:05 AM:__main__:163 scraped for "pandas"
+04/24/2020 10:04:05 AM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/24/2020 10:04:58 AM:__main__:555 scraped for "bigdata"
+04/24/2020 10:04:58 AM:__main__:Scraping subreddit "aws", 6 of 26
+04/24/2020 10:06:33 AM:__main__:999 scraped for "aws"
+04/24/2020 10:06:33 AM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/24/2020 10:07:15 AM:__main__:969 scraped for "awscertifications"
+04/24/2020 10:07:15 AM:__main__:Scraping subreddit "css", 8 of 26
+04/24/2020 10:08:14 AM:__main__:913 scraped for "css"
+04/24/2020 10:08:14 AM:__main__:Scraping subreddit "html", 9 of 26
+04/24/2020 10:10:52 AM:__main__:968 scraped for "html"
+04/24/2020 10:10:52 AM:__main__:Scraping subreddit "javascript", 10 of 26
+04/24/2020 10:52:10 AM:__main__:PROGRAM STARTED
+04/24/2020 10:52:10 AM:__main__:Scraping Subreddits
+04/24/2020 10:52:10 AM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/24/2020 10:52:49 AM:__main__:959 scraped for "deeplearning"
+04/24/2020 10:52:49 AM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/24/2020 10:53:29 AM:__main__:966 scraped for "tensorflow"
+04/24/2020 10:53:29 AM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/24/2020 10:54:08 AM:__main__:99 scraped for "scikit_learn"
+04/24/2020 10:54:08 AM:__main__:Scraping subreddit "pandas", 4 of 26
+04/24/2020 10:54:49 AM:__main__:163 scraped for "pandas"
+04/24/2020 10:54:49 AM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/24/2020 10:55:32 AM:__main__:555 scraped for "bigdata"
+04/24/2020 10:55:32 AM:__main__:Scraping subreddit "aws", 6 of 26
+04/24/2020 10:56:11 AM:__main__:999 scraped for "aws"
+04/24/2020 10:56:11 AM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/24/2020 10:56:59 AM:__main__:969 scraped for "awscertifications"
+04/24/2020 10:56:59 AM:__main__:Scraping subreddit "css", 8 of 26
+04/24/2020 10:57:36 AM:__main__:913 scraped for "css"
+04/24/2020 10:57:36 AM:__main__:Scraping subreddit "html", 9 of 26
+04/24/2020 10:58:15 AM:__main__:969 scraped for "html"
+04/24/2020 10:58:15 AM:__main__:Scraping subreddit "javascript", 10 of 26
+04/24/2020 10:58:52 AM:__main__:915 scraped for "javascript"
+04/24/2020 10:58:52 AM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/24/2020 10:59:32 AM:__main__:986 scraped for "shittyprogramming"
+04/24/2020 10:59:32 AM:__main__:Scraping subreddit "java", 12 of 26
+04/24/2020 11:00:11 AM:__main__:816 scraped for "java"
+04/24/2020 11:00:11 AM:__main__:Scraping subreddit "sql", 13 of 26
+04/24/2020 11:00:54 AM:__main__:973 scraped for "sql"
+04/24/2020 11:00:54 AM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/24/2020 11:01:35 AM:__main__:953 scraped for "learnsql"
+04/24/2020 11:01:35 AM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/24/2020 11:02:17 AM:__main__:990 scraped for "postgresql"
+04/24/2020 11:02:17 AM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/24/2020 11:02:54 AM:__main__:900 scraped for "softwarearchitecture"
+04/24/2020 11:02:54 AM:__main__:Scraping subreddit "scala", 17 of 26
+04/24/2020 11:03:35 AM:__main__:931 scraped for "scala"
+04/24/2020 11:03:35 AM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/24/2020 11:04:13 AM:__main__:912 scraped for "apachespark"
+04/24/2020 11:04:13 AM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/24/2020 11:04:50 AM:__main__:952 scraped for "mongodb"
+04/24/2020 11:04:50 AM:__main__:Scraping subreddit "linux", 20 of 26
+04/24/2020 11:05:38 AM:__main__:885 scraped for "linux"
+04/24/2020 11:05:38 AM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/24/2020 11:06:17 AM:__main__:998 scraped for "linux4noobs"
+04/24/2020 11:06:17 AM:__main__:Scraping subreddit "datascience", 22 of 26
+04/24/2020 11:06:59 AM:__main__:873 scraped for "datascience"
+04/24/2020 11:06:59 AM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/24/2020 11:07:39 AM:__main__:992 scraped for "machinelearning"
+04/24/2020 11:07:39 AM:__main__:Scraping subreddit "etl", 24 of 26
+04/24/2020 11:08:18 AM:__main__:389 scraped for "etl"
+04/24/2020 11:08:18 AM:__main__:Scraping subreddit "python", 25 of 26
+04/24/2020 11:08:57 AM:__main__:942 scraped for "python"
+04/24/2020 11:08:57 AM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/24/2020 11:09:41 AM:__main__:977 scraped for "dataengineering"
+04/24/2020 11:09:41 AM:__main__:Elapsed time: 17.53 minutes for 'scrape_subreddit'
+04/24/2020 11:09:41 AM:__main__:Saving data to sqlite
+04/24/2020 11:09:42 AM:__main__:PROGRAM FINISHED
+04/25/2020 10:00:01 AM:__main__:PROGRAM STARTED
+04/25/2020 10:00:01 AM:__main__:Scraping Subreddits
+04/25/2020 10:00:01 AM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/25/2020 10:00:45 AM:__main__:958 scraped for "deeplearning"
+04/25/2020 10:00:45 AM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/25/2020 10:01:32 AM:__main__:965 scraped for "tensorflow"
+04/25/2020 10:01:32 AM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/25/2020 10:02:17 AM:__main__:99 scraped for "scikit_learn"
+04/25/2020 10:02:17 AM:__main__:Scraping subreddit "pandas", 4 of 26
+04/25/2020 10:02:59 AM:__main__:163 scraped for "pandas"
+04/25/2020 10:02:59 AM:__main__:Scraping subreddit "bigdata", 5 of 26
+04/25/2020 10:03:47 AM:__main__:555 scraped for "bigdata"
+04/25/2020 10:03:47 AM:__main__:Scraping subreddit "aws", 6 of 26
+04/25/2020 10:04:33 AM:__main__:998 scraped for "aws"
+04/25/2020 10:04:33 AM:__main__:Scraping subreddit "awscertifications", 7 of 26
+04/25/2020 10:06:08 AM:__main__:971 scraped for "awscertifications"
+04/25/2020 10:06:08 AM:__main__:Scraping subreddit "css", 8 of 26
+04/25/2020 10:06:53 AM:__main__:913 scraped for "css"
+04/25/2020 10:06:53 AM:__main__:Scraping subreddit "html", 9 of 26
+04/25/2020 10:07:39 AM:__main__:968 scraped for "html"
+04/25/2020 10:07:39 AM:__main__:Scraping subreddit "javascript", 10 of 26
+04/25/2020 10:08:23 AM:__main__:915 scraped for "javascript"
+04/25/2020 10:08:23 AM:__main__:Scraping subreddit "shittyprogramming", 11 of 26
+04/25/2020 10:09:08 AM:__main__:986 scraped for "shittyprogramming"
+04/25/2020 10:09:08 AM:__main__:Scraping subreddit "java", 12 of 26
+04/25/2020 10:09:51 AM:__main__:815 scraped for "java"
+04/25/2020 10:09:51 AM:__main__:Scraping subreddit "sql", 13 of 26
+04/25/2020 10:10:38 AM:__main__:975 scraped for "sql"
+04/25/2020 10:10:38 AM:__main__:Scraping subreddit "learnsql", 14 of 26
+04/25/2020 10:11:29 AM:__main__:954 scraped for "learnsql"
+04/25/2020 10:11:29 AM:__main__:Scraping subreddit "postgresql", 15 of 26
+04/25/2020 10:12:17 AM:__main__:991 scraped for "postgresql"
+04/25/2020 10:12:17 AM:__main__:Scraping subreddit "softwarearchitecture", 16 of 26
+04/25/2020 10:13:00 AM:__main__:900 scraped for "softwarearchitecture"
+04/25/2020 10:13:00 AM:__main__:Scraping subreddit "scala", 17 of 26
+04/25/2020 10:13:48 AM:__main__:932 scraped for "scala"
+04/25/2020 10:13:48 AM:__main__:Scraping subreddit "apachespark", 18 of 26
+04/25/2020 10:14:35 AM:__main__:911 scraped for "apachespark"
+04/25/2020 10:14:35 AM:__main__:Scraping subreddit "mongodb", 19 of 26
+04/25/2020 10:15:21 AM:__main__:952 scraped for "mongodb"
+04/25/2020 10:15:21 AM:__main__:Scraping subreddit "linux", 20 of 26
+04/25/2020 10:16:14 AM:__main__:885 scraped for "linux"
+04/25/2020 10:16:14 AM:__main__:Scraping subreddit "linux4noobs", 21 of 26
+04/25/2020 10:17:05 AM:__main__:998 scraped for "linux4noobs"
+04/25/2020 10:17:05 AM:__main__:Scraping subreddit "datascience", 22 of 26
+04/25/2020 10:17:56 AM:__main__:876 scraped for "datascience"
+04/25/2020 10:17:56 AM:__main__:Scraping subreddit "machinelearning", 23 of 26
+04/25/2020 10:18:54 AM:__main__:990 scraped for "machinelearning"
+04/25/2020 10:18:54 AM:__main__:Scraping subreddit "etl", 24 of 26
+04/25/2020 10:19:43 AM:__main__:389 scraped for "etl"
+04/25/2020 10:19:43 AM:__main__:Scraping subreddit "python", 25 of 26
+04/25/2020 10:21:24 AM:__main__:938 scraped for "python"
+04/25/2020 10:21:24 AM:__main__:Scraping subreddit "dataengineering", 26 of 26
+04/25/2020 10:22:12 AM:__main__:977 scraped for "dataengineering"
+04/25/2020 10:22:13 AM:__main__:Elapsed time: 22.19 minutes for 'scrape_subreddit'
+04/25/2020 10:22:13 AM:__main__:Saving data to sqlite
+04/25/2020 10:22:13 AM:__main__:PROGRAM FINISHED
+04/26/2020 10:00:02 AM:__main__:PROGRAM STARTED
+04/26/2020 10:00:02 AM:__main__:Scraping Subreddits
+04/26/2020 10:00:02 AM:__main__:Scraping subreddit "deeplearning", 1 of 26
+04/26/2020 10:00:52 AM:__main__:959 scraped for "deeplearning"
+04/26/2020 10:00:52 AM:__main__:Scraping subreddit "tensorflow", 2 of 26
+04/26/2020 10:01:43 AM:__main__:966 scraped for "tensorflow"
+04/26/2020 10:01:43 AM:__main__:Scraping subreddit "scikit_learn", 3 of 26
+04/26/2020 10:02:46 AM:__main__:99 scraped for "scikit_learn"
+04/26/2020 10:02:46 AM:__main__:Scraping subreddit "pandas", 4 of 26

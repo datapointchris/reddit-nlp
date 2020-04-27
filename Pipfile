@@ -5,10 +5,17 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+autopep8 = "*"
 
 [packages]
 pandas = "*"
 requests = "*"
+tqdm = "*"
+sklearn = "*"
+psycopg2 = "*"
+matplotlib = "*"
+seaborn = "*"
+wordcloud = "*"
 
 [requires]
 python_version = "3.7"
