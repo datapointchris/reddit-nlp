@@ -20,7 +20,7 @@ from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.pipeline import Pipeline
 
-from grid_models import estimators, preprocessors
+from util.grid_models import estimators, preprocessors
 
 # use this class and functions the same way as StandardScaler is used.
 # Use the class to find the functions
@@ -33,9 +33,9 @@ def function_timer(func):
         start_time = time.time()
         value = func(*args, **kwargs)
         elapsed_time = time.time() - start_time
-        try:
+        if logger:
             logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {repr(func.__name__)}')
-        except:
+        else:
             print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{repr(func.__name__)}'")
         return value
     return wrapper

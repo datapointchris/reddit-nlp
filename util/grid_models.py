@@ -76,99 +76,99 @@ estimators = {
             "randomforest__min_samples_split": [.001, .01]
         }
     },
-    # "knearest": {
-    #     "name": "K Nearest Neighbors",
-    #     "abbr": "knearest",
-    #     "estimator": KNeighborsClassifier(),
-    #     "pipe_params": {
-    #         "knearest__n_neighbors": [3, 5, 7],
-    #         "knearest__metric": ["manhattan"]
-    #     }
-    # },
-    # "multinomialnb": {
-    #     "name": "Multinomial Bayes Classifier",
-    #     "abbr": "multinomialnb",
-    #     "estimator": MultinomialNB(),
-    #     "pipe_params": {
-    #         "multinomialnb__fit_prior": [False],
-    #         "multinomialnb__alpha": [.01, .1, 1]
-    #     }
-    # },
-    # "svc": {
-    #     "name": "Support Vector Classifier",
-    #     "abbr": "svc",
-    #     "estimator": SVC(),
-    #     "pipe_params": {
-    #         "svc__C": [3, 4],
-    #         "svc__kernel": ["rbf"],
-    #         "svc__gamma": ["scale"],
-    #         "svc__degree": [1],
-    #         "svc__probability": [False]
-    #     }
-    # },
-    # "ada": {
-    #     "name": "AdaBoost Classifier",
-    #     "abbr": "ada",
-    #     "estimator": AdaBoostClassifier(),
-    #     "pipe_params": {
-    #         "ada__learning_rate": [.001, .01, .1],
-    #         "ada__n_estimators": [1, 2, 3]
-    #     }
-    # },
-    # "bag": {
-    #     "name": "Bagging Classifier",
-    #     "abbr": "bag",
-    #     "estimator": BaggingClassifier(),
-    #     "pipe_params": {
-    #         "bag__bootstrap": [True, False],
-    #         "bag__bootstrap_features": [False, True],
-    #         "bag__max_features": [1.0],
-    #         "bag__max_samples": [1.0],
-    #         "bag__n_estimators": [5, 10, 20]
-    #     }
-    # },
-    # "extratrees": {
-    #     "name": "Extra Trees Classifier",
-    #     "abbr": "extratrees",
-    #     "estimator": ExtraTreesClassifier(),
-    #     "pipe_params": {
-    #         "extratrees__bootstrap": [False, True],
-    #         "extratrees__class_weight": [None],
-    #         "extratrees__max_depth": [None],
-    #         "extratrees__max_leaf_nodes": [None],
-    #         "extratrees__min_samples_leaf": [1],
-    #         "extratrees__min_samples_split": [2],
-    #         "extratrees__min_weight_fraction_leaf": [0.0],
-    #         "extratrees__n_estimators": [100, 300, 500],
-    #     }
-    # },
-    # "gradboost": {
-    #     "name": "Gradient Boosting Classifier",
-    #     "abbr": "gradboost",
-    #     "estimator": GradientBoostingClassifier(),
-    #     "pipe_params": {
-    #         "gradboost__learning_rate": [0.1],
-    #         "gradboost__max_depth": [3, 5],
-    #         "gradboost__min_impurity_decrease": [0.0],
-    #         "gradboost__min_samples_leaf": [1],
-    #         "gradboost__min_samples_split": [2],
-    #         "gradboost__min_weight_fraction_leaf": [0.0],
-    #         "gradboost__n_estimators": [100, 300, 500]
-    #     }
-    # },
-    # "elastic": {
-    #     "name": "ElasticNet Classifier",
-    #     "abbr": "elastic",
-    #     "estimator": ElasticNet(),
-    #     "pipe_params": {
-    #         "elastic__alpha": [1.0],
-    #         "elastic__copy_X": [True],
-    #         "elastic__fit_intercept": [True],
-    #         "elastic__l1_ratio": [0.5],
-    #         "elastic__max_iter": [1000],
-    #         "elastic__normalize": [False, True],
-    #     }
-    # },
+    "knearest": {
+        "name": "K Nearest Neighbors",
+        "abbr": "knearest",
+        "estimator": KNeighborsClassifier(),
+        "pipe_params": {
+            "knearest__n_neighbors": [3, 5, 7],
+            "knearest__metric": ["manhattan"]
+        }
+    },
+    "multinomialnb": {
+        "name": "Multinomial Bayes Classifier",
+        "abbr": "multinomialnb",
+        "estimator": MultinomialNB(),
+        "pipe_params": {
+            "multinomialnb__fit_prior": [False],
+            "multinomialnb__alpha": [.01, .1, 1]
+        }
+    },
+    "svc": {
+        "name": "Support Vector Classifier",
+        "abbr": "svc",
+        "estimator": SVC(),
+        "pipe_params": {
+            "svc__C": [3, 4],
+            "svc__kernel": ["rbf"],
+            "svc__gamma": ["scale"],
+            "svc__degree": [1],
+            "svc__probability": [False]
+        }
+    },
+    "ada": {
+        "name": "AdaBoost Classifier",
+        "abbr": "ada",
+        "estimator": AdaBoostClassifier(),
+        "pipe_params": {
+            "ada__learning_rate": [.001, .01, .1],
+            "ada__n_estimators": [1, 2, 3]
+        }
+    },
+    "bag": {
+        "name": "Bagging Classifier",
+        "abbr": "bag",
+        "estimator": BaggingClassifier(),
+        "pipe_params": {
+            "bag__bootstrap": [True, False],
+            "bag__bootstrap_features": [False, True],
+            "bag__max_features": [1.0],
+            "bag__max_samples": [1.0],
+            "bag__n_estimators": [5, 10, 20]
+        }
+    },
+    "extratrees": {
+        "name": "Extra Trees Classifier",
+        "abbr": "extratrees",
+        "estimator": ExtraTreesClassifier(),
+        "pipe_params": {
+            "extratrees__bootstrap": [False, True],
+            "extratrees__class_weight": [None],
+            "extratrees__max_depth": [None],
+            "extratrees__max_leaf_nodes": [None],
+            "extratrees__min_samples_leaf": [1],
+            "extratrees__min_samples_split": [2],
+            "extratrees__min_weight_fraction_leaf": [0.0],
+            "extratrees__n_estimators": [100, 300, 500],
+        }
+    },
+    "gradboost": {
+        "name": "Gradient Boosting Classifier",
+        "abbr": "gradboost",
+        "estimator": GradientBoostingClassifier(),
+        "pipe_params": {
+            "gradboost__learning_rate": [0.1],
+            "gradboost__max_depth": [3, 5],
+            "gradboost__min_impurity_decrease": [0.0],
+            "gradboost__min_samples_leaf": [1],
+            "gradboost__min_samples_split": [2],
+            "gradboost__min_weight_fraction_leaf": [0.0],
+            "gradboost__n_estimators": [100, 300, 500]
+        }
+    },
+    "elastic": {
+        "name": "ElasticNet Classifier",
+        "abbr": "elastic",
+        "estimator": ElasticNet(),
+        "pipe_params": {
+            "elastic__alpha": [1.0],
+            "elastic__copy_X": [True],
+            "elastic__fit_intercept": [True],
+            "elastic__l1_ratio": [0.5],
+            "elastic__max_iter": [1000],
+            "elastic__normalize": [False, True],
+        }
+    },
     "passive": {
         "name": "Passive Agressive Classifier",
         "abbr": "passive",
@@ -184,37 +184,37 @@ estimators = {
             "passive__n_iter_no_change": [5]
         }
     },
-    # "sgd": {
-    #     "name": "Stochastic Gradient Descent Classifier",
-    #     "abbr": "sgd",
-    #     "estimator": SGDClassifier(),
-    #     "pipe_params":
-    #         {
-    #         "sgd__alpha": [0.0001],
-    #         "sgd__average": [False],
-    #         "sgd__class_weight": [None],
-    #         "sgd__early_stopping": [False],
-    #         "sgd__epsilon": [0.1],
-    #         "sgd__eta0": [0.0],
-    #         "sgd__fit_intercept": [True],
-    #         "sgd__l1_ratio": [0.15],
-    #         "sgd__max_iter": [1000],
-    #         "sgd__n_iter_no_change": [5],
-    #         "sgd__n_jobs": [None],
-    #         "sgd__penalty": ["l2", "l1", "elasticnet"],
-    #         "sgd__power_t": [0.5]
-    #     }
-    # },
-    # "nusvc": {
-    #     "name": "Nu Support Vector Classifier",
-    #     "abbr": "nusvc",
-    #     "estimator": NuSVC(),
-    #     "pipe_params":
-    #         {
-    #         "nusvc__cache_size": [200, 400, 800],
-    #         "nusvc__decision_function_shape": ["ovr"],
-    #         "nusvc__degree": [3]
-    #     }
-    # }
+    "sgd": {
+        "name": "Stochastic Gradient Descent Classifier",
+        "abbr": "sgd",
+        "estimator": SGDClassifier(),
+        "pipe_params":
+            {
+            "sgd__alpha": [0.0001],
+            "sgd__average": [False],
+            "sgd__class_weight": [None],
+            "sgd__early_stopping": [False],
+            "sgd__epsilon": [0.1],
+            "sgd__eta0": [0.0],
+            "sgd__fit_intercept": [True],
+            "sgd__l1_ratio": [0.15],
+            "sgd__max_iter": [1000],
+            "sgd__n_iter_no_change": [5],
+            "sgd__n_jobs": [None],
+            "sgd__penalty": ["l2", "l1", "elasticnet"],
+            "sgd__power_t": [0.5]
+        }
+    },
+    "nusvc": {
+        "name": "Nu Support Vector Classifier",
+        "abbr": "nusvc",
+        "estimator": NuSVC(),
+        "pipe_params":
+            {
+            "nusvc__cache_size": [200, 400, 800],
+            "nusvc__decision_function_shape": ["ovr"],
+            "nusvc__degree": [3]
+        }
+    }
 
 }
