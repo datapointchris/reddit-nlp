@@ -43,9 +43,9 @@ def function_timer(func):
         start_time = time.time()
         value = func(*args, **kwargs)
         elapsed_time = time.time() - start_time
-        try:
+        if logger:
             logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {repr(func.__name__)}')
-        except:
+        else:
             print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{repr(func.__name__)}'")
         return value
     return wrapper

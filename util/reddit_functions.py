@@ -19,6 +19,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, roc_auc_score, roc_curve
 from sklearn.model_selection import GridSearchCV, train_test_split
 from sklearn.pipeline import Pipeline
+from matplotlib.colors import LogNorm
 
 from util.grid_models import estimators, preprocessors
 
@@ -40,6 +41,36 @@ def function_timer(func):
         return value
     return wrapper
 
+
+def plot_confusion_matrix(model, y_true, y_pred, classes, cmap='Blues'):
+    '''
+    Plots confusion matrix for fitted model, better than scikit-learn version
+    '''
+    cm = confusion_matrix(y_true, y_pred)
+
+    fig, ax = plt.subplots(figsize=(2.2*len(classes),2.2*len(classes)))
+
+    sns.heatmap(cm, 
+                annot=True, 
+                fmt="d",
+                square=True,
+                cbar=False, 
+                cmap=cmap, 
+                ax=ax, 
+                norm=LogNorm(),  # to get color diff on small values
+                vmin=0.00001 # to avoid non-positive error for '0' cells
+               )
+
+    fontdict={'fontsize': 24}
+    ax.set_xlabel('Predicted labels')
+    ax.set_ylabel('True labels')
+    ax.set_yticklabels(labels=classes, rotation='horizontal', fontdict=fontdict)
+    ax.set_xticklabels(labels=classes, rotation=20, fontdict=fontdict)
+    ax.xaxis.set_ticks_position('top')
+    ax.xaxis.set_label_position('top')
+
+class NotFittedError(Exception):
+    pass
 
 class Labeler:
     '''
@@ -67,7 +98,7 @@ class Labeler:
         if self.encodings_:
             encodings = y.map(self.encodings_)
         else:
-            raise ValueError('Labeler must be fit first')
+            raise NotFittedError('Labeler must be fit first')
         
         return encodings
         
@@ -79,7 +110,7 @@ class Labeler:
             y = pd.Series(y)
             inverse = y.map({v: k for k, v in self.encodings_.items()})
         else:
-            raise ValueError('Labeler must be fit first')
+            raise NotFittedError('Labeler must be fit first')
         return inverse
         
 
