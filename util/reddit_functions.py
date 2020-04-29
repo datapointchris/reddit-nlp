@@ -47,11 +47,12 @@ def plot_confusion_matrix(model, y_true, y_pred, classes, cmap='Blues'):
     Plots confusion matrix for fitted model, better than scikit-learn version
     '''
     cm = confusion_matrix(y_true, y_pred)
-
-    fig, ax = plt.subplots(figsize=(2.2*len(classes),2.2*len(classes)))
+    fontdict = {'fontsize': 16}
+    fig, ax = plt.subplots(figsize=(2.2*len(classes), 2.2*len(classes)))
 
     sns.heatmap(cm, 
-                annot=True, 
+                annot=True,
+                annot_kws=fontdict, 
                 fmt="d",
                 square=True,
                 cbar=False, 
@@ -61,9 +62,8 @@ def plot_confusion_matrix(model, y_true, y_pred, classes, cmap='Blues'):
                 vmin=0.00001 # to avoid non-positive error for '0' cells
                )
 
-    fontdict={'fontsize': 24}
-    ax.set_xlabel('Predicted labels')
-    ax.set_ylabel('True labels')
+    ax.set_xlabel('Predicted labels', fontdict=fontdict)
+    ax.set_ylabel('True labels', fontdict=fontdict)
     ax.set_yticklabels(labels=classes, rotation='horizontal', fontdict=fontdict)
     ax.set_xticklabels(labels=classes, rotation=20, fontdict=fontdict)
     ax.xaxis.set_ticks_position('top')
