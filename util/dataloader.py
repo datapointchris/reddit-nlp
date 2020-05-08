@@ -82,7 +82,7 @@ def data_selector(class_labels, data_source):
         column_names = [description[0] for description in cursor.description]
         data = cursor.fetchall()
         df = pd.DataFrame(data=data, columns=column_names)
-
+        df = df.drop_duplicates(subset='title')
         for label in class_labels:
             if len(df[df['subreddit'] == label]) == 0:
                 raise ValueError(f'No data for "{label}" in "{data_source}" data_source')

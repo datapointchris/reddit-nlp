@@ -13,7 +13,7 @@ from sklearn.linear_model import (LogisticRegression,
                                   PassiveAggressiveClassifier, SGDClassifier)
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC, NuSVC
+from sklearn.svm import SVC, NuSVC, LinearSVC
 from sklearn.neural_network import MLPClassifier
 from xgboost import XGBClassifier
 
@@ -144,7 +144,7 @@ estimators = {
     },
     "baggingclassifierlog": {
         "name": "Bagging Classifier Logistic Regression",
-        "estimator": BaggingClassifier(LogisticRegression()),
+        "estimator": BaggingClassifier(LogisticRegression(max_iter=1000)),
         "pipe_params": {
             "baggingclassifier__n_estimators": [5, 10, 20]
         }
@@ -227,5 +227,4 @@ estimators = {
             "nusvc__degree": [3]
         }
     }
-
 }
