@@ -3,91 +3,121 @@ Preprocessors and estimators, along with their parameters for gridsearching.
 Used with "compare_models" function from the Reddit class, Model class maybe
 """
 
+import numpy as np
 from sklearn.ensemble import (AdaBoostClassifier, BaggingClassifier,
                               ExtraTreesClassifier, GradientBoostingClassifier,
                               RandomForestClassifier)
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer, ENGLISH_STOP_WORDS
-from sklearn.linear_model import (ElasticNet, LogisticRegression,
+from sklearn.feature_extraction.text import (ENGLISH_STOP_WORDS,
+                                             CountVectorizer, TfidfVectorizer)
+from sklearn.linear_model import (LogisticRegression,
                                   PassiveAggressiveClassifier, SGDClassifier)
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC, NuSVC
+from sklearn.neural_network import MLPClassifier
+from xgboost import XGBClassifier
+
+# ========================= CLASS LABELS ========================= #
+
+class_labels_all = ["deeplearning", "tensorflow", "scikit_learn", "pandas", "bigdata", "aws",
+                    "awscertifications", "css", "html", "javascript", "shittyprogramming",
+                    "java", "sql", "learnsql", "postgresql", "softwarearchitecture", "scala",
+                    "apachespark", "mongodb", "linux", "linux4noobs", "datascience", "machinelearning",
+                    "etl", "python", "dataengineering"]
+
+class_labels = ["scikit_learn", "pandas", "bigdata", "aws",
+                "shittyprogramming", "java", "sql", "learnsql",
+                "postgresql", "etl", "python", "dataengineering"]
+
+class_labels_random = np.random.choice(class_labels_all, 8, replace=False)
 
 
 # ========================= STOP WORDS ========================= #
 
-useless_words = set(['postgres', 'big', 'panda', 'using', 'scikit', 'sklearn', 'apache', 'spark', 'lambda', 's3', 
-                     'does', 'looking', 'help', 'new', 'data', 'science', 'scientist', 'machine', 'learning', 'use', 
+useless_words = set(['postgres', 'big', 'panda', 'using', 'scikit', 'sklearn', 'apache', 'spark', 'lambda', 's3',
+                     'does', 'looking', 'help', 'new', 'data', 'science', 'scientist', 'machine', 'learning', 'use',
                      'need', 'engineer', 'engineering'])
 
 custom_stop_words = ENGLISH_STOP_WORDS.union(useless_words)
 
+
 # ========================= PREPROCESSORS ========================= #
 
 preprocessors = {
-    "count_vec": {
+    "countvectorizer": {
         "name": "CountVectorizer",
-        "abbr": "count_vec",
-        "processor": CountVectorizer(),
+        "preprocessor": CountVectorizer(),
         "pipe_params": {
-            "count_vec__max_features": [5000],
-            # "count_vec__max_df": [.3, .4, .5],
-            "count_vec__ngram_range": [(1, 2)],
-            "count_vec__stop_words": [custom_stop_words],
-            # "count_vec__min_df": [4, 5, 6]
+            "countvectorizer__max_features": [5000],
+            # "countvectorizer__max_df": [.3, .4, .5],
+            "countvectorizer__ngram_range": [(1, 2)],
+            "countvectorizer__stop_words": [custom_stop_words],
+            # "countvectorizer__min_df": [4, 5, 6]
         }
     },
-    "tfidf": {
+    "tfidfvectorizer": {
         "name": "TfidVectorizer",
-        "abbr": "tfidf",
-        "processor": TfidfVectorizer(),
+        "preprocessor": TfidfVectorizer(),
         "pipe_params": {
-            "tfidf__strip_accents": [None],
-            "tfidf__stop_words": [custom_stop_words],
-            "tfidf__ngram_range": [(1, 2)],
-            "tfidf__max_features": [5000],
-            "tfidf__norm": ("l1", "l2"),
+            "tfidfvectorizer__strip_accents": [None],
+            "tfidfvectorizer__stop_words": [custom_stop_words],
+            "tfidfvectorizer__ngram_range": [(1, 2)],
+            "tfidfvectorizer__max_features": [5000],
+            "tfidfvectorizer__norm": ("l1", "l2"),
         }
     }
 }
 
+
 # ========================= ESTIMATORS ========================= #
 
 estimators = {
-    "logreg": {
+    'xgbclassifier': {
+        'name': 'XGBoost Classifier',
+        'estimator': XGBClassifier(),
+        'pipe_params': {
+            "xgbclassifier__hidden_layer_sizes": [10, 25, 50],
+            "xgbclassifier__n_estimators": [50, 100, 200],
+            "xgbclassifier__max_depth": [5, 10, 20]
+        }
+    },
+    'mlpclassifier': {
+        'name': 'Multi Layer Percetpron Classifier',
+        'estimator': MLPClassifier(),
+        'pipe_params': {
+            "mlpclassifier__hidden_layer_sizes": [50, 100, 200]
+        }
+    },
+    "logisticregression": {
         "name": "Logistic Regression",
-        "abbr": "logreg",
         "estimator": LogisticRegression(),
         "pipe_params": {
-            "logreg__penalty": ["l2"],
-            "logreg__C": [.01, .1, 1, 3],
-            "logreg__max_iter": [1000, 5000],
-            "logreg__solver": ["lbfgs", "liblinear"]
+            "logisticregression__penalty": ["l2"],
+            "logisticregression__C": [.01, .1, 1, 3],
+            "logisticregression__max_iter": [1000],
+            "logisticregression__solver": ["lbfgs", "saga"]
         }
     },
-    "randomforest": {
+    "randomforestclassifier": {
         "name": "Random Forest",
-        "abbr": "randomforest",
         "estimator": RandomForestClassifier(),
         "pipe_params": {
-            "randomforest__n_estimators": [200, 300],
-            "randomforest__max_depth": [200],
-            "randomforest__min_samples_leaf": [1, 2, 3],
-            "randomforest__min_samples_split": [.001, .01]
+            "randomforestclassifier__n_estimators": [100, 300],
+            "randomforestclassifier__max_depth": np.linspace(5, 500, 5),
+            "randomforestclassifier__min_samples_leaf": [1, 2, 3],
+            "randomforestclassifier__min_samples_split": [.01, .05, .1]
         }
     },
-    "knearest": {
+    "kneighborsclassifier": {
         "name": "K Nearest Neighbors",
-        "abbr": "knearest",
         "estimator": KNeighborsClassifier(),
         "pipe_params": {
-            "knearest__n_neighbors": [3, 5, 7],
-            "knearest__metric": ["manhattan"]
+            "kneighborsclassifier__n_neighbors": [3, 5, 7],
+            "kneighborsclassifier__metric": ["manhattan"]
         }
     },
     "multinomialnb": {
         "name": "Multinomial Bayes Classifier",
-        "abbr": "multinomialnb",
         "estimator": MultinomialNB(),
         "pipe_params": {
             "multinomialnb__fit_prior": [False],
@@ -96,118 +126,99 @@ estimators = {
     },
     "svc": {
         "name": "Support Vector Classifier",
-        "abbr": "svc",
         "estimator": SVC(),
         "pipe_params": {
-            "svc__C": [3, 4],
-            "svc__kernel": ["rbf"],
+            "svc__C": [1, 10, 100],
+            "svc__kernel": ["rbf", "sigmoid", "poly"],
             "svc__gamma": ["scale"],
-            "svc__degree": [1],
             "svc__probability": [False]
         }
     },
-    "ada": {
-        "name": "AdaBoost Classifier",
-        "abbr": "ada",
+    "adaboostclassifier": {
+        "name": "AdaBoost Classifier Logistic Regression",
         "estimator": AdaBoostClassifier(),
         "pipe_params": {
-            "ada__learning_rate": [.001, .01, .1],
-            "ada__n_estimators": [1, 2, 3]
+            "adaboostclassifier__learning_rate": [.001, .01, .1],
+            "adaboostclassifier__n_estimators": [1, 2, 3]
         }
     },
-    "bag": {
-        "name": "Bagging Classifier",
-        "abbr": "bag",
-        "estimator": BaggingClassifier(),
+    "baggingclassifierlog": {
+        "name": "Bagging Classifier Logistic Regression",
+        "estimator": BaggingClassifier(LogisticRegression()),
         "pipe_params": {
-            "bag__bootstrap": [True, False],
-            "bag__bootstrap_features": [False, True],
-            "bag__max_features": [1.0],
-            "bag__max_samples": [1.0],
-            "bag__n_estimators": [5, 10, 20]
+            "baggingclassifier__n_estimators": [5, 10, 20]
         }
     },
-    "extratrees": {
+    "baggingclassifiermnb": {
+        "name": "Bagging Classifier MultinomalNB",
+        "estimator": BaggingClassifier(MultinomialNB()),
+        "pipe_params": {
+            "baggingclassifier__n_estimators": [10, 50, 100, 200, 500]
+        }
+    },
+    "extratreesclassifier": {
         "name": "Extra Trees Classifier",
-        "abbr": "extratrees",
         "estimator": ExtraTreesClassifier(),
         "pipe_params": {
-            "extratrees__bootstrap": [False, True],
-            "extratrees__class_weight": [None],
-            "extratrees__max_depth": [None],
-            "extratrees__max_leaf_nodes": [None],
-            "extratrees__min_samples_leaf": [1],
-            "extratrees__min_samples_split": [2],
-            "extratrees__min_weight_fraction_leaf": [0.0],
-            "extratrees__n_estimators": [100, 300, 500],
+            "extratreesclassifier__bootstrap": [True],
+            "extratreesclassifier__class_weight": [None],
+            "extratreesclassifier__max_depth": [None],
+            "extratreesclassifier__max_leaf_nodes": [None],
+            "extratreesclassifier__min_samples_leaf": [1],
+            "extratreesclassifier__min_samples_split": [2],
+            "extratreesclassifier__min_weight_fraction_leaf": [0.0],
+            "extratreesclassifier__n_estimators": [100, 300, 500],
         }
     },
-    "gradboost": {
+    "gradientboostingclassifier": {
         "name": "Gradient Boosting Classifier",
-        "abbr": "gradboost",
         "estimator": GradientBoostingClassifier(),
         "pipe_params": {
-            "gradboost__learning_rate": [0.1],
-            "gradboost__max_depth": [3, 5],
-            "gradboost__min_impurity_decrease": [0.0],
-            "gradboost__min_samples_leaf": [1],
-            "gradboost__min_samples_split": [2],
-            "gradboost__min_weight_fraction_leaf": [0.0],
-            "gradboost__n_estimators": [100, 300, 500]
+            "gradientboostingclassifier__learning_rate": [0.1],
+            "gradientboostingclassifier__max_depth": [3, 5],
+            "gradientboostingclassifier__min_impurity_decrease": [0.0],
+            "gradientboostingclassifier__min_samples_leaf": [1],
+            "gradientboostingclassifier__min_samples_split": [2],
+            "gradientboostingclassifier__min_weight_fraction_leaf": [0.0],
+            "gradientboostingclassifier__n_estimators": [100, 300, 500]
         }
     },
-    "elastic": {
-        "name": "ElasticNet Classifier",
-        "abbr": "elastic",
-        "estimator": ElasticNet(),
-        "pipe_params": {
-            "elastic__alpha": [1.0],
-            "elastic__copy_X": [True],
-            "elastic__fit_intercept": [True],
-            "elastic__l1_ratio": [0.5],
-            "elastic__max_iter": [1000],
-            "elastic__normalize": [False, True],
-        }
-    },
-    "passive": {
+    "passiveaggressiveclassifier": {
         "name": "Passive Agressive Classifier",
-        "abbr": "passive",
         "estimator": PassiveAggressiveClassifier(),
         "pipe_params":
             {
-            "passive__C": [1.0],
-            "passive__average": [False],
-            "passive__class_weight": [None],
-            "passive__early_stopping": [False],
-            "passive__fit_intercept": [True],
-            "passive__max_iter": [1000],
-            "passive__n_iter_no_change": [5]
+            "passiveaggressiveclassifier__C": [1.0],
+            "passiveaggressiveclassifier__average": [False],
+            "passiveaggressiveclassifier__class_weight": [None],
+            "passiveaggressiveclassifier__early_stopping": [False],
+            "passiveaggressiveclassifier__fit_intercept": [True],
+            "passiveaggressiveclassifier__max_iter": [1000],
+            "passiveaggressiveclassifier__n_iter_no_change": [5]
         }
     },
-    "sgd": {
+    "sgdclassifier": {
         "name": "Stochastic Gradient Descent Classifier",
-        "abbr": "sgd",
         "estimator": SGDClassifier(),
         "pipe_params":
             {
-            "sgd__alpha": [0.0001],
-            "sgd__average": [False],
-            "sgd__class_weight": [None],
-            "sgd__early_stopping": [False],
-            "sgd__epsilon": [0.1],
-            "sgd__eta0": [0.0],
-            "sgd__fit_intercept": [True],
-            "sgd__l1_ratio": [0.15],
-            "sgd__max_iter": [1000],
-            "sgd__n_iter_no_change": [5],
-            "sgd__n_jobs": [None],
-            "sgd__penalty": ["l2", "l1", "elasticnet"],
-            "sgd__power_t": [0.5]
+            "sgdclassifier__alpha": [0.0001],
+            "sgdclassifier__average": [False],
+            "sgdclassifier__class_weight": [None],
+            "sgdclassifier__early_stopping": [False],
+            "sgdclassifier__epsilon": [0.1],
+            "sgdclassifier__eta0": [0.0],
+            "sgdclassifier__fit_intercept": [True],
+            "sgdclassifier__l1_ratio": [0.15],
+            "sgdclassifier__max_iter": [1000],
+            "sgdclassifier__n_iter_no_change": [5],
+            "sgdclassifier__n_jobs": [None],
+            "sgdclassifier__penalty": ["l2", "l1", "elasticnet"],
+            "sgdclassifier__power_t": [0.5]
         }
     },
     "nusvc": {
         "name": "Nu Support Vector Classifier",
-        "abbr": "nusvc",
         "estimator": NuSVC(),
         "pipe_params":
             {
