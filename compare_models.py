@@ -1,14 +1,19 @@
 import argparse
 import datetime
-import functools
-import json
 import logging
 import logging.handlers
 import os
 import sys
 import time
 
-from sklearn.model_selection import train_test_split
+import pandas as pd
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.pipeline import make_pipeline
+from tqdm import tqdm
+
+from util import dataloader, grid_models
+from util.reddit_functions import Labeler, function_timer
 
 # set path to current working directory for cron job
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -16,37 +21,21 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # path hack, I know it's gross
 sys.path.insert(0, os.path.abspath('..'))
 
-from util import dataloader, grid_models
-from util.reddit_functions import Labeler, Reddit
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-file_handler = logging.handlers.RotatingFileHandler(filename='../logs/compare_models.log', maxBytes=10000000, backupCount=10)
+formatter = logging.Formatter(
+    '%(asctime)s:%(name)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+file_handler = logging.handlers.RotatingFileHandler(filename='../logs/compare_models.log',
+                                                    maxBytes=10000000,
+                                                    backupCount=10)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 
-def function_timer(func):
-    """Prints runtime of the decorated function."""
-    @functools.wraps(func)
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        value = func(*args, **kwargs)
-        elapsed_time = time.time() - start_time
-        if logger:
-            logger.info(f'Elapsed time: {round(elapsed_time/60,2)} minutes for {repr(func.__name__)}')
-        else:
-            print(f"Elapsed time: {round(elapsed_time/60,2)} minutes for function: '{repr(func.__name__)}'")
-        return value
-    return wrapper
-
-
 @function_timer
 def main():
-    subreddit_list = ['css', 'html', 'machinelearning', 'python']
-
-    df = dataloader.data_selector(subreddit_list, 'sqlite')
+    df = dataloader.data_selector(class_labels, data_source)
 
     X = df['title']
     y = df['subreddit']
@@ -57,30 +46,98 @@ def main():
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=7)
 
-    date = str(datetime.datetime.now().strftime('%Y-%m-%d_%H%M'))
     preprocessors = grid_models.preprocessors
     estimators = grid_models.estimators
-    model = Reddit()
+    date = str(datetime.datetime.now().strftime('%Y-%m-%d_%H%M'))
+    now = datetime.datetime.now()
 
-    logger.info(f'Training models')
-    try:
-        compare_df = model.compare_models(X_train, X_test, y_train, y_test,
-                                          preprocessors=preprocessors,
-                                          estimators=estimators,
-                                          classes=subreddit_list,
-                                          cv=3,
-                                          verbose=1)
-    except Exception:
-        # I know this is bad, will change it when I convert to airflow
-        logger.exception(f'Error comparing models:')
+    model_comparison_df = pd.DataFrame(columns=[
+        'date',
+        'preprocessor',
+        'estimator',
+        'best_params',
+        'best_train_score',
+        'best_test_score',
+        'variance',
+        'roc_auc',
+        'subreddits',
+        'fit_and_score_time',
+        'time_weighted_score'
+    ])
 
-    logger.info(f'Saving comparison df')
+    for idx, est in enumerate(tqdm(estimators.values())):
+        for prep in preprocessors.values():
+            logger.info(
+                f"Fitting model with {prep.get('name')} and {est.get('name')}")
+            start_time = time.time()
+            try:
+                pipe = make_pipeline(
+                    prep.get('preprocessor'),
+                    est.get('estimator'))
+                pipe_params = dict()
+                pipe_params.update(prep.get('pipe_params'))
+                pipe_params.update(est.get('pipe_params'))
+                model = GridSearchCV(pipe,
+                                     param_grid=pipe_params,
+                                     cv=3,
+                                     verbose=1,
+                                     n_jobs=-1
+                                     )
+                model.fit(X_train, y_train)
+            except Exception:
+                logger.exception(f'ERROR BUILDING AND TRAINING MODEL:')
+                continue
+            train_score = model.score(X_train, y_train)
+            test_score = model.score(X_test, y_test)
+            if hasattr(model, 'predict_proba'):
+                y_proba = model.predict_proba(X_test)
+                roc_auc = roc_auc_score(y_test, y_proba, multi_class="ovr")
+
+            elapsed_time = time.time() - start_time
+            subreddits = (', ').join(labeler.classes_)
+            time_weighted_score = test_score / elapsed_time * 1000
+
+            # add the model result to the df
+            model_comparison_df.loc[idx] = [
+                now,
+                prep.get('name'),
+                est.get('name'),
+                model.best_params_,
+                train_score,
+                test_score,
+                (train_score - test_score) / train_score * 100,
+                roc_auc if roc_auc else 'na',
+                subreddits,
+                elapsed_time,
+                time_weighted_score
+            ]
+
+    logger.info(f'Saving comparison df to CSV')
     try:
-        compare_df.to_csv(f'../data/compare_df/{date}.csv')
+        model_comparison_df.to_csv(
+            f'../data/compare_df/{date}.csv', index=False)
     except FileNotFoundError:
-        logger.exception('Path is wrong')
+        logger.exception('ERROR SAVING MODEL:')
+    except UnboundLocalError:
+        logger.exception('No compare_df saved.  Error fitting models:')
+
 
 if __name__ == "__main__":
     logger.info('PROGRAM STARTED -- "compare_models"')
+    parser = argparse.ArgumentParser(prog='Model Comparison for Text Classification',
+                                     description='''
+                                    Compare models using preprocessors and estimators speficied in `grid_models.py`''')
+    parser.add_argument('--class_labels', action='store', nargs='+',
+                        help='Class labels to pull from database and use for model comparison')
+    parser.add_argument('--data_source', action='store', choices=['csv', 'sqlite', 'postgres', 'mongo', 'mysql'],
+                        default='sqlite', help='Source to get data from')
+    args = parser.parse_args()
+    if args.class_labels:
+        class_labels = args.class_labels
+    else:
+        class_labels = grid_models.class_labels_random
+    data_source = args.data_source
+    logger.info(f'Class Labels: {class_labels}')
+    logger.info(f'Data Source: {data_source}')
     main()
     logger.info('PROGRAM FINISHED')
