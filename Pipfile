@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 flake8 = "*"
 autopep8 = "*"
+rope = "*"
 
 [packages]
 pandas = "*"
@@ -16,6 +17,8 @@ psycopg2 = "*"
 matplotlib = "*"
 seaborn = "*"
 wordcloud = "*"
+numpy = "*"
+xgboost = "*"
 
 [requires]
 python_version = "3.7"

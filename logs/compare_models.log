@@ -15,3 +15,2139 @@
 04/26/2020 02:21:33 PM:__main__:Saving comparison df
 04/26/2020 02:21:33 PM:__main__:Elapsed time: 141.52 minutes for 'main'
 04/26/2020 02:21:33 PM:__main__:PROGRAM FINISHED
+04/27/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+04/27/2020 12:00:02 PM:__main__:Training models
+04/27/2020 02:48:44 PM:__main__:Saving comparison df
+04/27/2020 02:48:44 PM:__main__:Elapsed time: 168.7 minutes for 'main'
+04/27/2020 02:48:44 PM:__main__:PROGRAM FINISHED
+04/28/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+04/28/2020 12:00:02 PM:__main__:Training models
+04/28/2020 03:08:57 PM:__main__:Saving comparison df
+04/28/2020 03:08:57 PM:__main__:Elapsed time: 188.91 minutes for 'main'
+04/28/2020 03:08:57 PM:__main__:PROGRAM FINISHED
+04/29/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+04/29/2020 12:00:03 PM:__main__:Training models
+04/29/2020 01:51:44 PM:__main__:Saving comparison df
+04/29/2020 01:51:44 PM:__main__:Elapsed time: 111.7 minutes for 'main'
+04/29/2020 01:51:44 PM:__main__:PROGRAM FINISHED
+04/30/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+04/30/2020 12:00:02 PM:__main__:Training models
+04/30/2020 01:17:04 PM:__main__:Saving comparison df
+04/30/2020 01:17:04 PM:__main__:Elapsed time: 77.04 minutes for 'main'
+04/30/2020 01:17:04 PM:__main__:PROGRAM FINISHED
+05/01/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/01/2020 12:00:02 PM:__main__:Training models
+05/01/2020 01:17:05 PM:__main__:Saving comparison df
+05/01/2020 01:17:05 PM:__main__:Elapsed time: 77.05 minutes for 'main'
+05/01/2020 01:17:05 PM:__main__:PROGRAM FINISHED
+05/02/2020 12:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/02/2020 12:00:03 PM:__main__:Training models
+05/02/2020 01:24:15 PM:__main__:Saving comparison df
+05/02/2020 01:24:15 PM:__main__:Elapsed time: 84.21 minutes for 'main'
+05/02/2020 01:24:15 PM:__main__:PROGRAM FINISHED
+05/03/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 12:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 02:34:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 03:12:55 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 03:21:41 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 03:22:42 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 03:32:51 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 03:34:14 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/04/2020 03:34:46 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/05/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/05/2020 11:06:52 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/05/2020 11:06:52 PM:__main__:Training models
+05/05/2020 11:11:49 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/05/2020 11:11:49 PM:__main__:Training models
+05/05/2020 11:16:16 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/05/2020 11:16:17 PM:__main__:Training models
+05/05/2020 11:24:05 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/05/2020 11:24:06 PM:__main__:Training models
+05/06/2020 04:03:09 AM:__main__:Error comparing models:
+Traceback (most recent call last):
+  File "compare_models.py", line 71, in main
+    verbose=1)
+  File "/home/datapointchris/github/reddit_nlp/util/reddit_functions.py", line 148, in compare_models
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/naive_bayes.py", line 208, in fit
+    sample_weight=sample_weight)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/naive_bayes.py", line 359, in _partial_fit
+    X, y = check_X_y(X, y)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/utils/validation.py", line 755, in check_X_y
+    estimator=estimator)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/utils/validation.py", line 511, in check_array
+    accept_large_sparse=accept_large_sparse)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/utils/validation.py", line 306, in _ensure_sparse_format
+    raise TypeError('A sparse matrix was passed, but dense '
+TypeError: A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+05/06/2020 04:03:09 AM:__main__:Saving comparison df
+05/06/2020 08:52:12 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/06/2020 08:52:12 AM:__main__:Training models
+05/06/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/06/2020 12:00:03 PM:__main__:Training models
+05/06/2020 09:01:30 PM:__main__:Error comparing models:
+Traceback (most recent call last):
+  File "compare_models.py", line 71, in main
+    verbose=1)
+  File "/home/datapointchris/github/reddit_nlp/util/reddit_functions.py", line 148, in compare_models
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_bagging.py", line 243, in fit
+    return self._fit(X, y, self.max_samples, sample_weight=sample_weight)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_bagging.py", line 294, in _fit
+    self._validate_estimator()
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_bagging.py", line 605, in _validate_estimator
+    default=DecisionTreeClassifier())
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_base.py", line 127, in _validate_estimator
+    "got {0}.".format(type(self.n_estimators)))
+ValueError: n_estimators must be an integer, got <class 'numpy.float64'>.
+05/06/2020 09:01:30 PM:__main__:Saving comparison df
+05/06/2020 09:01:30 PM:__main__:No compare_df saved.  Error fitting models:
+Traceback (most recent call last):
+  File "compare_models.py", line 78, in main
+    compare_df.to_csv(f'../data/compare_df/{date}.csv', index=False)
+UnboundLocalError: local variable 'compare_df' referenced before assignment
+05/06/2020 09:01:30 PM:__main__:Elapsed time: 729.31 minutes for 'main'
+05/06/2020 09:01:30 PM:__main__:PROGRAM FINISHED
+05/07/2020 01:45:11 AM:__main__:Error comparing models:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 71, in main
+    verbose=1)
+  File "/home/datapointchris/github/reddit_nlp/util/reddit_functions.py", line 148, in compare_models
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_bagging.py", line 243, in fit
+    return self._fit(X, y, self.max_samples, sample_weight=sample_weight)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_bagging.py", line 294, in _fit
+    self._validate_estimator()
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_bagging.py", line 605, in _validate_estimator
+    default=DecisionTreeClassifier())
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_base.py", line 127, in _validate_estimator
+    "got {0}.".format(type(self.n_estimators)))
+ValueError: n_estimators must be an integer, got <class 'numpy.float64'>.
+05/07/2020 01:45:11 AM:__main__:Saving comparison df
+05/07/2020 01:45:11 AM:__main__:No compare_df saved.  Error fitting models:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 78, in main
+    compare_df.to_csv(f'../data/compare_df/{date}.csv', index=False)
+UnboundLocalError: local variable 'compare_df' referenced before assignment
+05/07/2020 01:45:11 AM:__main__:Elapsed time: 825.15 minutes for 'main'
+05/07/2020 01:45:11 AM:__main__:PROGRAM FINISHED
+05/07/2020 12:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 12:00:03 PM:__main__:Training models
+05/07/2020 09:04:40 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 09:04:40 PM:__main__:Class Labels: ['learnsql' 'dataengineering' 'mongodb' 'bigdata' 'javascript' 'etl' 'aws'
+ 'html']
+05/07/2020 09:04:40 PM:__main__:Data Source: sqlite
+05/07/2020 09:04:40 PM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/07/2020 09:04:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 124, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:04:40 PM:__main__:Saving comparison df to CSV
+05/07/2020 09:10:44 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 09:10:44 PM:__main__:Class Labels: ['awscertifications' 'javascript' 'linux' 'pandas' 'deeplearning' 'aws'
+ 'tensorflow' 'css']
+05/07/2020 09:10:44 PM:__main__:Data Source: sqlite
+05/07/2020 09:10:44 PM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'CountVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/07/2020 09:10:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 120, in build_and_train_model
+    pipe_params.update(preprocessor.get('pipe_params'))
+AttributeError: 'TfidfVectorizer' object has no attribute 'get'
+05/07/2020 09:10:44 PM:__main__:Saving comparison df to CSV
+05/07/2020 09:10:44 PM:__main__:PROGRAM FINISHED
+05/07/2020 09:15:43 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 09:15:43 PM:__main__:Class Labels: ['bigdata' 'scikit_learn' 'datascience' 'apachespark' 'javascript' 'etl'
+ 'dataengineering' 'linux4noobs']
+05/07/2020 09:15:43 PM:__main__:Data Source: sqlite
+05/07/2020 09:15:43 PM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/07/2020 09:15:45 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter count_vec for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('logisticregression',
+                 LogisticRegression(C=1.0, class_weight=None, dual=False,
+                                    fit_intercept=True, intercept_scaling=1,
+                                    l1_ratio=None, max_iter=100,
+                                    multi_class='auto', n_jobs=None,
+                                    penalty='l2', random_state=None,
+                                    solver='lbfgs', tol=0.0001, verbose=0,
+                                    warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter count_vec for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('logisticregression',
+                 LogisticRegression(C=1.0, class_weight=None, dual=False,
+                                    fit_intercept=True, intercept_scaling=1,
+                                    l1_ratio=None, max_iter=100,
+                                    multi_class='auto', n_jobs=None,
+                                    penalty='l2', random_state=None,
+                                    solver='lbfgs', tol=0.0001, verbose=0,
+                                    warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:45 PM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/07/2020 09:15:47 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter logreg for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('logisticregression',
+                 LogisticRegression(C=1.0, class_weight=None, dual=False,
+                                    fit_intercept=True, intercept_scaling=1,
+                                    l1_ratio=None, max_iter=100,
+                                    multi_class='auto', n_jobs=None,
+                                    penalty='l2', random_state=None,
+                                    solver='lbfgs', tol=0.0001, verbose=0,
+                                    warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter logreg for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('logisticregression',
+                 LogisticRegression(C=1.0, class_weight=None, dual=False,
+                                    fit_intercept=True, intercept_scaling=1,
+                                    l1_ratio=None, max_iter=100,
+                                    multi_class='auto', n_jobs=None,
+                                    penalty='l2', random_state=None,
+                                    solver='lbfgs', tol=0.0001, verbose=0,
+                                    warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:47 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:15:48 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter count_vec for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('multinomialnb',
+                 MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter count_vec for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('multinomialnb',
+                 MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:48 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:15:50 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter tfidf for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('multinomialnb',
+                 MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter tfidf for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('multinomialnb',
+                 MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:50 PM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier
+05/07/2020 09:15:52 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter ada for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('adaboostclassifier',
+                 AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                                    learning_rate=1.0, n_estimators=50,
+                                    random_state=None))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter ada for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('adaboostclassifier',
+                 AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                                    learning_rate=1.0, n_estimators=50,
+                                    random_state=None))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:52 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier
+05/07/2020 09:15:54 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter ada for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('adaboostclassifier',
+                 AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                                    learning_rate=1.0, n_estimators=50,
+                                    random_state=None))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter ada for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('adaboostclassifier',
+                 AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                                    learning_rate=1.0, n_estimators=50,
+                                    random_state=None))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:54 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:15:56 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter bag for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('baggingclassifier',
+                 BaggingClassifier(base_estimator=MultinomialNB(alpha=1.0,
+                                                                class_prior=None,
+                                                                fit_prior=True),
+                                   bootstrap=True, bootstrap_features=False,
+                                   max_features=1.0, max_samples=1.0,
+                                   n_estimators=10, n_jobs=None,
+                                   oob_score=False, random_state=None,
+                                   verbose=0, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter bag for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('baggingclassifier',
+                 BaggingClassifier(base_estimator=MultinomialNB(alpha=1.0,
+                                                                class_prior=None,
+                                                                fit_prior=True),
+                                   bootstrap=True, bootstrap_features=False,
+                                   max_features=1.0, max_samples=1.0,
+                                   n_estimators=10, n_jobs=None,
+                                   oob_score=False, random_state=None,
+                                   verbose=0, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:56 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:15:57 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter bag for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('baggingclassifier',
+                 BaggingClassifier(base_estimator=MultinomialNB(alpha=1.0,
+                                                                class_prior=None,
+                                                                fit_prior=True),
+                                   bootstrap=True, bootstrap_features=False,
+                                   max_features=1.0, max_samples=1.0,
+                                   n_estimators=10, n_jobs=None,
+                                   oob_score=False, random_state=None,
+                                   verbose=0, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter bag for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('baggingclassifier',
+                 BaggingClassifier(base_estimator=MultinomialNB(alpha=1.0,
+                                                                class_prior=None,
+                                                                fit_prior=True),
+                                   bootstrap=True, bootstrap_features=False,
+                                   max_features=1.0, max_samples=1.0,
+                                   n_estimators=10, n_jobs=None,
+                                   oob_score=False, random_state=None,
+                                   verbose=0, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:57 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/07/2020 09:15:59 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter count_vec for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter count_vec for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:15:59 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/07/2020 09:16:00 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter passive for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=5
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+    model.fit(text, labels)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter passive for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:16:00 PM:__main__:Saving comparison df to CSV
+05/07/2020 09:16:00 PM:__main__:PROGRAM FINISHED
+05/07/2020 09:28:29 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 09:28:29 PM:__main__:Class Labels: ['machinelearning' 'sql' 'learnsql' 'apachespark' 'java'
+ 'shittyprogramming' 'postgresql' 'awscertifications']
+05/07/2020 09:28:29 PM:__main__:Data Source: sqlite
+05/07/2020 09:28:30 PM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/07/2020 09:40:46 PM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/07/2020 09:40:47 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('logisticregression',
+                 LogisticRegression(C=1.0, class_weight=None, dual=False,
+                                    fit_intercept=True, intercept_scaling=1,
+                                    l1_ratio=None, max_iter=100,
+                                    multi_class='auto', n_jobs=None,
+                                    penalty='l2', random_state=None,
+                                    solver='lbfgs', tol=0.0001, verbose=0,
+                                    warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=2
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('logisticregression',
+                 LogisticRegression(C=1.0, class_weight=None, dual=False,
+                                    fit_intercept=True, intercept_scaling=1,
+                                    l1_ratio=None, max_iter=100,
+                                    multi_class='auto', n_jobs=None,
+                                    penalty='l2', random_state=None,
+                                    solver='lbfgs', tol=0.0001, verbose=0,
+                                    warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:40:47 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:41:18 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:41:19 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('multinomialnb',
+                 MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=2
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('multinomialnb',
+                 MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:41:19 PM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier
+05/07/2020 09:42:51 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier
+05/07/2020 09:42:52 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('adaboostclassifier',
+                 AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                                    learning_rate=1.0, n_estimators=50,
+                                    random_state=None))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=1
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('adaboostclassifier',
+                 AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                                    learning_rate=1.0, n_estimators=50,
+                                    random_state=None))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:42:52 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:46:18 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:46:18 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('baggingclassifier',
+                 BaggingClassifier(base_estimator=MultinomialNB(alpha=1.0,
+                                                                class_prior=None,
+                                                                fit_prior=True),
+                                   bootstrap=True, bootstrap_features=False,
+                                   max_features=1.0, max_samples=1.0,
+                                   n_estimators=10, n_jobs=None,
+                                   oob_score=False, random_state=None,
+                                   verbose=0, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=1
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter tfidvectorizer for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...\b\\w\\w+\\b',
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('baggingclassifier',
+                 BaggingClassifier(base_estimator=MultinomialNB(alpha=1.0,
+                                                                class_prior=None,
+                                                                fit_prior=True),
+                                   bootstrap=True, bootstrap_features=False,
+                                   max_features=1.0, max_samples=1.0,
+                                   n_estimators=10, n_jobs=None,
+                                   oob_score=False, random_state=None,
+                                   verbose=0, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:46:18 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/07/2020 09:46:20 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter passiveagressiveclassifier for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=1
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter passiveagressiveclassifier for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:46:20 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/07/2020 09:46:22 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter passiveagressiveclassifier for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 81, in main
+    verbose=1
+  File "/Users/chris/github/reddit_nlp/util/reddit_functions.py", line 126, in build_and_train_model
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter passiveagressiveclassifier for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                                 tokenizer=None, use_idf=True,
+                                 vocabulary=None)),
+                ('passiveaggressiveclassifier',
+                 PassiveAggressiveClassifier(C=1.0, average=False,
+                                             class_weight=None,
+                                             early_stopping=False,
+                                             fit_intercept=True, loss='hinge',
+                                             max_iter=1000, n_iter_no_change=5,
+                                             n_jobs=None, random_state=None,
+                                             shuffle=True, tol=0.001,
+                                             validation_fraction=0.1, verbose=0,
+                                             warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 09:46:22 PM:__main__:Saving comparison df to CSV
+05/07/2020 09:46:22 PM:__main__:PROGRAM FINISHED
+05/07/2020 09:52:08 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 09:52:08 PM:__main__:Class Labels: ['html' 'datascience' 'postgresql' 'linux' 'machinelearning' 'linux4noobs'
+ 'java' 'awscertifications']
+05/07/2020 09:52:08 PM:__main__:Data Source: sqlite
+05/07/2020 09:52:09 PM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/07/2020 09:53:47 PM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/07/2020 09:55:49 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:55:55 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/07/2020 09:56:04 PM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier Logistic Regression
+05/07/2020 09:56:24 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier Logistic Regression
+05/07/2020 09:56:53 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:57:26 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/07/2020 09:58:26 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/07/2020 09:58:32 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/07/2020 09:58:38 PM:__main__:Saving comparison df to CSV
+05/07/2020 09:58:39 PM:__main__:PROGRAM FINISHED
+05/07/2020 11:16:08 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 11:16:08 PM:__main__:Class Labels: ['aws' 'java' 'shittyprogramming' 'etl' 'awscertifications' 'css' 'html'
+ 'dataengineering']
+05/07/2020 11:16:08 PM:__main__:Data Source: sqlite
+05/07/2020 11:16:08 PM:__main__:Fitting model with CountVectorizer and XGBoost Classifier
+05/07/2020 11:16:10 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, voc...
+                 XGBClassifier(base_score=0.5, booster='gbtree',
+                               colsample_bylevel=1, colsample_bynode=1,
+                               colsample_bytree=1, gamma=0, learning_rate=0.1,
+                               max_delta_step=0, max_depth=3,
+                               min_child_weight=1, missing=nan,
+                               n_estimators=100, n_jobs=1, nthread=None,
+                               objective='binary:logistic', random_state=0,
+                               reg_alpha=0, reg_lambda=1, scale_pos_weight=1,
+                               seed=None, silent=None, subsample=1,
+                               verbosity=1))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, voc...
+                 XGBClassifier(base_score=0.5, booster='gbtree',
+                               colsample_bylevel=1, colsample_bynode=1,
+                               colsample_bytree=1, gamma=0, learning_rate=0.1,
+                               max_delta_step=0, max_depth=3,
+                               min_child_weight=1, missing=nan,
+                               n_estimators=100, n_jobs=1, nthread=None,
+                               objective='binary:logistic', random_state=0,
+                               reg_alpha=0, reg_lambda=1, scale_pos_weight=1,
+                               seed=None, silent=None, subsample=1,
+                               verbosity=1))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 11:16:10 PM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/07/2020 11:16:12 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                 XGBClassifier(base_score=0.5, booster='gbtree',
+                               colsample_bylevel=1, colsample_bynode=1,
+                               colsample_bytree=1, gamma=0, learning_rate=0.1,
+                               max_delta_step=0, max_depth=3,
+                               min_child_weight=1, missing=nan,
+                               n_estimators=100, n_jobs=1, nthread=None,
+                               objective='binary:logistic', random_state=0,
+                               reg_alpha=0, reg_lambda=1, scale_pos_weight=1,
+                               seed=None, silent=None, subsample=1,
+                               verbosity=1))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                 XGBClassifier(base_score=0.5, booster='gbtree',
+                               colsample_bylevel=1, colsample_bynode=1,
+                               colsample_bytree=1, gamma=0, learning_rate=0.1,
+                               max_delta_step=0, max_depth=3,
+                               min_child_weight=1, missing=nan,
+                               n_estimators=100, n_jobs=1, nthread=None,
+                               objective='binary:logistic', random_state=0,
+                               reg_alpha=0, reg_lambda=1, scale_pos_weight=1,
+                               seed=None, silent=None, subsample=1,
+                               verbosity=1))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 11:16:12 PM:__main__:Fitting model with CountVectorizer and Multi Layer Percetpron Classifier
+05/07/2020 11:16:14 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, voc...
+                               batch_size='auto', beta_1=0.9, beta_2=0.999,
+                               early_stopping=False, epsilon=1e-08,
+                               hidden_layer_sizes=(100,),
+                               learning_rate='constant',
+                               learning_rate_init=0.001, max_fun=15000,
+                               max_iter=200, momentum=0.9, n_iter_no_change=10,
+                               nesterovs_momentum=True, power_t=0.5,
+                               random_state=None, shuffle=True, solver='adam',
+                               tol=0.0001, validation_fraction=0.1,
+                               verbose=False, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('countvectorizer',
+                 CountVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.int64'>, encoding='utf-8',
+                                 input='content', lowercase=True, max_df=1.0,
+                                 max_features=None, min_df=1,
+                                 ngram_range=(1, 1), preprocessor=None,
+                                 stop_words=None, strip_accents=None,
+                                 token_pattern='(?u)\\b\\w\\w+\\b',
+                                 tokenizer=None, voc...
+                               batch_size='auto', beta_1=0.9, beta_2=0.999,
+                               early_stopping=False, epsilon=1e-08,
+                               hidden_layer_sizes=(100,),
+                               learning_rate='constant',
+                               learning_rate_init=0.001, max_fun=15000,
+                               max_iter=200, momentum=0.9, n_iter_no_change=10,
+                               nesterovs_momentum=True, power_t=0.5,
+                               random_state=None, shuffle=True, solver='adam',
+                               tol=0.0001, validation_fraction=0.1,
+                               verbose=False, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 11:16:14 PM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/07/2020 11:16:15 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                               batch_size='auto', beta_1=0.9, beta_2=0.999,
+                               early_stopping=False, epsilon=1e-08,
+                               hidden_layer_sizes=(100,),
+                               learning_rate='constant',
+                               learning_rate_init=0.001, max_fun=15000,
+                               max_iter=200, momentum=0.9, n_iter_no_change=10,
+                               nesterovs_momentum=True, power_t=0.5,
+                               random_state=None, shuffle=True, solver='adam',
+                               tol=0.0001, validation_fraction=0.1,
+                               verbose=False, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
+         steps=[('tfidfvectorizer',
+                 TfidfVectorizer(analyzer='word', binary=False,
+                                 decode_error='strict',
+                                 dtype=<class 'numpy.float64'>,
+                                 encoding='utf-8', input='content',
+                                 lowercase=True, max_df=1.0, max_features=None,
+                                 min_df=1, ngram_range=(1, 1), norm='l2',
+                                 preprocessor=None, smooth_idf=True,
+                                 stop_words=None, strip_accents=None,
+                                 sublinear_tf=False,
+                                 token...
+                               batch_size='auto', beta_1=0.9, beta_2=0.999,
+                               early_stopping=False, epsilon=1e-08,
+                               hidden_layer_sizes=(100,),
+                               learning_rate='constant',
+                               learning_rate_init=0.001, max_fun=15000,
+                               max_iter=200, momentum=0.9, n_iter_no_change=10,
+                               nesterovs_momentum=True, power_t=0.5,
+                               random_state=None, shuffle=True, solver='adam',
+                               tol=0.0001, validation_fraction=0.1,
+                               verbose=False, warm_start=False))],
+         verbose=False). Check the list of available parameters with `estimator.get_params().keys()`.
+05/07/2020 11:16:15 PM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/07/2020 11:20:35 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 11:20:35 PM:__main__:Class Labels: ['shittyprogramming' 'deeplearning' 'css' 'linux4noobs' 'scala' 'bigdata'
+ 'scikit_learn' 'html']
+05/07/2020 11:20:35 PM:__main__:Data Source: sqlite
+05/07/2020 11:20:35 PM:__main__:Fitting model with CountVectorizer and XGBoost Classifier
+05/07/2020 11:21:48 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 11:21:48 PM:__main__:Class Labels: ['shittyprogramming' 'awscertifications' 'pandas' 'java' 'machinelearning'
+ 'postgresql' 'datascience' 'aws']
+05/07/2020 11:21:48 PM:__main__:Data Source: sqlite
+05/07/2020 11:21:48 PM:__main__:Fitting model with CountVectorizer and Multi Layer Percetpron Classifier
