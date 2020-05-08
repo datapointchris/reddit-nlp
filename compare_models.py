@@ -36,7 +36,6 @@ logger.addHandler(file_handler)
 @function_timer
 def main():
     df = dataloader.data_selector(class_labels, data_source)
-
     X = df['title']
     y = df['subreddit']
 
@@ -52,24 +51,24 @@ def main():
     now = datetime.datetime.now()
 
     model_comparison_df = pd.DataFrame(columns=[
-        'date',
         'preprocessor',
         'estimator',
-        'best_params',
         'best_train_score',
         'best_test_score',
-        'variance',
+        'time_weighted_score',
         'roc_auc',
+        'train_test_variance',
+        'fit_time_seconds',
+        'predict_time_seconds',
+        'best_params',
         'subreddits',
-        'fit_and_score_time',
-        'time_weighted_score'
+        'date'
     ])
 
-    for idx, est in enumerate(tqdm(estimators.values())):
+    for est in tqdm(estimators.values()):
         for prep in preprocessors.values():
             logger.info(
                 f"Fitting model with {prep.get('name')} and {est.get('name')}")
-            start_time = time.time()
             try:
                 pipe = make_pipeline(
                     prep.get('preprocessor'),
@@ -83,39 +82,43 @@ def main():
                                      verbose=1,
                                      n_jobs=-1
                                      )
+                fit_start_time = time.time()
                 model.fit(X_train, y_train)
+                fit_elapsed_time = time.time() - fit_start_time
             except Exception:
                 logger.exception(f'ERROR BUILDING AND TRAINING MODEL:')
                 continue
             train_score = model.score(X_train, y_train)
+            predict_start_time = time.time()
             test_score = model.score(X_test, y_test)
+            predict_elapsed_time = time.time() - predict_start_time
             if hasattr(model, 'predict_proba'):
                 y_proba = model.predict_proba(X_test)
                 roc_auc = roc_auc_score(y_test, y_proba, multi_class="ovr")
 
-            elapsed_time = time.time() - start_time
             subreddits = (', ').join(labeler.classes_)
-            time_weighted_score = test_score / elapsed_time * 1000
-
+            time_weighted_score = test_score / (fit_elapsed_time + predict_elapsed_time) * 1000
+            train_test_score_variance = (train_score - test_score) / train_score
             # add the model result to the df
-            model_comparison_df.loc[idx] = [
-                now,
+            model_comparison_df.loc[len(model_comparison_df)] = [
                 prep.get('name'),
                 est.get('name'),
+                round(train_score, 3),
+                round(test_score, 3),
+                round(time_weighted_score, 3),
+                round(roc_auc, 3) if roc_auc else 'na',
+                round(train_test_score_variance, 3),
+                round(fit_elapsed_time, 3),
+                round(predict_elapsed_time, 3),
                 model.best_params_,
-                train_score,
-                test_score,
-                (train_score - test_score) / train_score * 100,
-                roc_auc if roc_auc else 'na',
                 subreddits,
-                elapsed_time,
-                time_weighted_score
+                now
             ]
 
     logger.info(f'Saving comparison df to CSV')
     try:
         model_comparison_df.to_csv(
-            f'../data/compare_df/{date}.csv', index=False)
+            f'../data/compare_df/{date}.csv')
     except FileNotFoundError:
         logger.exception('ERROR SAVING MODEL:')
     except UnboundLocalError:
