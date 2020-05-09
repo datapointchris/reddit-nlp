@@ -8,7 +8,7 @@ import time
 
 import pandas as pd
 from sklearn.metrics import roc_auc_score
-from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV
+from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.pipeline import make_pipeline
 from tqdm import tqdm
 
@@ -87,6 +87,7 @@ def main():
             except Exception:
                 logger.exception(f'ERROR BUILDING AND TRAINING MODEL:')
                 continue
+            
             train_score = model.score(X_train, y_train)
             predict_start_time = time.time()
             test_score = model.score(X_test, y_test)
@@ -98,6 +99,7 @@ def main():
             subreddits = (', ').join(labeler.classes_)
             time_weighted_score = test_score / (model.refit_time_ + predict_elapsed_time) * 1000
             train_test_score_variance = (train_score - test_score) / train_score
+            
             # add the model result to the df
             model_comparison_df.loc[len(model_comparison_df)] = [
                 prep.get('name'),
@@ -124,21 +126,28 @@ def main():
         logger.exception('No compare_df saved.  Error fitting models:')
 
 
+# ========================= MAIN PROGRAM ========================= #
+
 if __name__ == "__main__":
     logger.info('PROGRAM STARTED -- "compare_models"')
-    parser = argparse.ArgumentParser(prog='Model Comparison for Text Classification',
-                                     description='''
-                                    Compare models using preprocessors and estimators speficied in `grid_models.py`''')
-    parser.add_argument('--class_labels', action='store', nargs='+',
+    parser = argparse.ArgumentParser(
+        prog='Model Comparison for Text Classification',
+        description='''
+            Compare models using preprocessors and estimators speficied in `grid_models.py`
+            Specify class labels or default is random 8 labels from full list specified in `grid_models.py`
+        '''
+    )
+    parser.add_argument('--class_labels', action='store', nargs='+', default=grid_models.class_labels_random,
                         help='Class labels to pull from database and use for model comparison')
     parser.add_argument('--data_source', action='store', choices=['csv', 'sqlite', 'postgres', 'mongo', 'mysql'],
                         default='sqlite', help='Source to get data from')
+    parser.add_argument('--n_iters', action='store', default=100,
+                        help='Number of iterations to use for RandomizedSearchCV, default is 100')
+
     args = parser.parse_args()
-    if args.class_labels:
-        class_labels = args.class_labels
-    else:
-        class_labels = grid_models.class_labels_random
+    class_labels = args.class_labels
     data_source = args.data_source
+
     logger.info(f'Class Labels: {class_labels}')
     logger.info(f'Data Source: {data_source}')
     main()
