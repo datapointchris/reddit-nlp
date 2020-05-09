@@ -8,7 +8,7 @@ import time
 
 import pandas as pd
 from sklearn.metrics import roc_auc_score
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split, GridSearchCV, RandomizedSearchCV
 from sklearn.pipeline import make_pipeline
 from tqdm import tqdm
 
@@ -67,8 +67,8 @@ def main():
 
     for est in tqdm(estimators.values()):
         for prep in preprocessors.values():
-            logger.info(
-                f"Fitting model with {prep.get('name')} and {est.get('name')}")
+            logger.info(f"Fitting model with {prep.get('name')} and {est.get('name')}")
+            print(f"Fitting model with {prep.get('name')} and {est.get('name')}")
             try:
                 pipe = make_pipeline(
                     prep.get('preprocessor'),
@@ -76,15 +76,14 @@ def main():
                 pipe_params = dict()
                 pipe_params.update(prep.get('pipe_params'))
                 pipe_params.update(est.get('pipe_params'))
-                model = GridSearchCV(pipe,
-                                     param_grid=pipe_params,
-                                     cv=3,
-                                     verbose=1,
-                                     n_jobs=-1
-                                     )
-                fit_start_time = time.time()
+                model = RandomizedSearchCV(pipe,
+                                           param_distributions=pipe_params,
+                                           n_iter=100,
+                                           cv=3,
+                                           verbose=1,
+                                           n_jobs=-1
+                                           )
                 model.fit(X_train, y_train)
-                fit_elapsed_time = time.time() - fit_start_time
             except Exception:
                 logger.exception(f'ERROR BUILDING AND TRAINING MODEL:')
                 continue
@@ -97,7 +96,7 @@ def main():
                 roc_auc = roc_auc_score(y_test, y_proba, multi_class="ovr")
 
             subreddits = (', ').join(labeler.classes_)
-            time_weighted_score = test_score / (fit_elapsed_time + predict_elapsed_time) * 1000
+            time_weighted_score = test_score / (model.refit_time_ + predict_elapsed_time) * 1000
             train_test_score_variance = (train_score - test_score) / train_score
             # add the model result to the df
             model_comparison_df.loc[len(model_comparison_df)] = [
@@ -108,7 +107,7 @@ def main():
                 round(time_weighted_score, 3),
                 round(roc_auc, 3) if roc_auc else 'na',
                 round(train_test_score_variance, 3),
-                round(fit_elapsed_time, 3),
+                round(model.refit_time_, 3),
                 round(predict_elapsed_time, 3),
                 model.best_params_,
                 subreddits,
