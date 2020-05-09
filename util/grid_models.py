@@ -7,8 +7,7 @@ import numpy as np
 from sklearn.ensemble import (AdaBoostClassifier, BaggingClassifier,
                               ExtraTreesClassifier, GradientBoostingClassifier,
                               RandomForestClassifier)
-from sklearn.feature_extraction.text import (ENGLISH_STOP_WORDS,
-                                             CountVectorizer, TfidfVectorizer)
+from sklearn.feature_extraction.text import (ENGLISH_STOP_WORDS, TfidfVectorizer)
 from sklearn.linear_model import (LogisticRegression,
                                   PassiveAggressiveClassifier, SGDClassifier)
 from sklearn.naive_bayes import MultinomialNB
@@ -25,12 +24,12 @@ class_labels_all = ["deeplearning", "tensorflow", "scikit_learn", "pandas", "big
                     "apachespark", "mongodb", "linux", "linux4noobs", "datascience", "machinelearning",
                     "etl", "python", "dataengineering"]
 
-class_labels = ["scikit_learn", "pandas", "bigdata", "aws",
-                "shittyprogramming", "java", "sql", "learnsql",
-                "postgresql", "etl", "python", "dataengineering"]
 
-class_labels_random = np.random.choice(class_labels_all, 8, replace=False)
+def get_random_class_labels(num=8):
+    return np.random.choice(class_labels_all, num, replace=False)
 
+
+class_labels_random = get_random_class_labels()
 
 # ========================= STOP WORDS ========================= #
 
@@ -38,32 +37,23 @@ useless_words = set(['postgres', 'big', 'panda', 'using', 'scikit', 'sklearn', '
                      'does', 'looking', 'help', 'new', 'data', 'science', 'scientist', 'machine', 'learning', 'use',
                      'need', 'engineer', 'engineering'])
 
-custom_stop_words = ENGLISH_STOP_WORDS.union(useless_words)
+custom_stop_words = ENGLISH_STOP_WORDS.union(useless_words).union(set(class_labels_all))
 
 
 # ========================= PREPROCESSORS ========================= #
 
 preprocessors = {
-    "countvectorizer": {
-        "name": "CountVectorizer",
-        "preprocessor": CountVectorizer(),
-        "pipe_params": {
-            "countvectorizer__max_features": [5000],
-            # "countvectorizer__max_df": [.3, .4, .5],
-            "countvectorizer__ngram_range": [(1, 2)],
-            "countvectorizer__stop_words": [custom_stop_words],
-            # "countvectorizer__min_df": [4, 5, 6]
-        }
-    },
     "tfidfvectorizer": {
         "name": "TfidVectorizer",
-        "preprocessor": TfidfVectorizer(),
+        "preprocessor": TfidfVectorizer(stop_words=custom_stop_words),
         "pipe_params": {
-            "tfidfvectorizer__strip_accents": [None],
-            "tfidfvectorizer__stop_words": [custom_stop_words],
+            # "tfidfvectorizer__strip_accents": [None, 'ascii', 'unicode'],
             "tfidfvectorizer__ngram_range": [(1, 2)],
             "tfidfvectorizer__max_features": [5000],
+            "tfidfvectorizer__min_df": np.linspace(0, 1, 5),
+            "tfidfvectorizer__max_df": np.linspace(0, 1, 5),
             "tfidfvectorizer__norm": ("l1", "l2"),
+            "tfidfvectorizer__use_idf": [True, False]
         }
     }
 }
@@ -85,16 +75,17 @@ estimators = {
         'name': 'Multi Layer Percetpron Classifier',
         'estimator': MLPClassifier(),
         'pipe_params': {
-            "mlpclassifier__hidden_layer_sizes": [50, 100, 200]
+            "mlpclassifier__hidden_layer_sizes": [(100,), (250,), (500,)],
+            "mlpclassifier__alpha": np.linspace(.0001, 1, 5),
+            "mlpclassifier__activation": ['lbfgs', 'adam']
         }
     },
     "logisticregression": {
         "name": "Logistic Regression",
-        "estimator": LogisticRegression(),
+        "estimator": LogisticRegression(max_iter=1000),
         "pipe_params": {
             "logisticregression__penalty": ["l2"],
-            "logisticregression__C": [.01, .1, 1, 3],
-            "logisticregression__max_iter": [1000],
+            "logisticregression__C": [.01, .1, 1, 3, 10],
             "logisticregression__solver": ["lbfgs", "saga"]
         }
     },
@@ -103,7 +94,7 @@ estimators = {
         "estimator": RandomForestClassifier(),
         "pipe_params": {
             "randomforestclassifier__n_estimators": [100, 300],
-            "randomforestclassifier__max_depth": np.linspace(5, 500, 5),
+            "randomforestclassifier__max_depth": np.linspace(5, 500, 5, dtype=int),
             "randomforestclassifier__min_samples_leaf": [1, 2, 3],
             "randomforestclassifier__min_samples_split": [.01, .05, .1]
         }
@@ -139,34 +130,29 @@ estimators = {
         "estimator": AdaBoostClassifier(),
         "pipe_params": {
             "adaboostclassifier__learning_rate": [.001, .01, .1],
-            "adaboostclassifier__n_estimators": [1, 2, 3]
+            "adaboostclassifier__n_estimators": [50, 100, 200],
+            "adaboostclassifier__max_depth": [1, 2, 3]
         }
     },
     "baggingclassifierlog": {
         "name": "Bagging Classifier Logistic Regression",
         "estimator": BaggingClassifier(LogisticRegression(max_iter=1000)),
         "pipe_params": {
-            "baggingclassifier__n_estimators": [5, 10, 20]
+            "baggingclassifier__n_estimators": [50, 100, 200]
         }
     },
     "baggingclassifiermnb": {
         "name": "Bagging Classifier MultinomalNB",
-        "estimator": BaggingClassifier(MultinomialNB()),
+        "estimator": BaggingClassifier(),
         "pipe_params": {
-            "baggingclassifier__n_estimators": [10, 50, 100, 200, 500]
+            "baggingclassifier__n_estimators": [50, 100, 200]
         }
     },
     "extratreesclassifier": {
         "name": "Extra Trees Classifier",
         "estimator": ExtraTreesClassifier(),
         "pipe_params": {
-            "extratreesclassifier__bootstrap": [True],
-            "extratreesclassifier__class_weight": [None],
-            "extratreesclassifier__max_depth": [None],
-            "extratreesclassifier__max_leaf_nodes": [None],
-            "extratreesclassifier__min_samples_leaf": [1],
-            "extratreesclassifier__min_samples_split": [2],
-            "extratreesclassifier__min_weight_fraction_leaf": [0.0],
+            "extratreesclassifier__bootstrap": [True, False],
             "extratreesclassifier__n_estimators": [100, 300, 500],
         }
     },
@@ -174,12 +160,7 @@ estimators = {
         "name": "Gradient Boosting Classifier",
         "estimator": GradientBoostingClassifier(),
         "pipe_params": {
-            "gradientboostingclassifier__learning_rate": [0.1],
-            "gradientboostingclassifier__max_depth": [3, 5],
-            "gradientboostingclassifier__min_impurity_decrease": [0.0],
-            "gradientboostingclassifier__min_samples_leaf": [1],
-            "gradientboostingclassifier__min_samples_split": [2],
-            "gradientboostingclassifier__min_weight_fraction_leaf": [0.0],
+            "gradientboostingclassifier__max_depth": [None, 3, 5],
             "gradientboostingclassifier__n_estimators": [100, 300, 500]
         }
     },
@@ -188,13 +169,8 @@ estimators = {
         "estimator": PassiveAggressiveClassifier(),
         "pipe_params":
             {
-            "passiveaggressiveclassifier__C": [1.0],
-            "passiveaggressiveclassifier__average": [False],
-            "passiveaggressiveclassifier__class_weight": [None],
-            "passiveaggressiveclassifier__early_stopping": [False],
-            "passiveaggressiveclassifier__fit_intercept": [True],
-            "passiveaggressiveclassifier__max_iter": [1000],
-            "passiveaggressiveclassifier__n_iter_no_change": [5]
+            "passiveaggressiveclassifier__C": np.linspace(0, 1, 5),
+            "passiveaggressiveclassifier__fit_intercept": [True, False],
         }
     },
     "sgdclassifier": {
@@ -202,29 +178,29 @@ estimators = {
         "estimator": SGDClassifier(),
         "pipe_params":
             {
-            "sgdclassifier__alpha": [0.0001],
-            "sgdclassifier__average": [False],
-            "sgdclassifier__class_weight": [None],
-            "sgdclassifier__early_stopping": [False],
-            "sgdclassifier__epsilon": [0.1],
-            "sgdclassifier__eta0": [0.0],
-            "sgdclassifier__fit_intercept": [True],
-            "sgdclassifier__l1_ratio": [0.15],
-            "sgdclassifier__max_iter": [1000],
-            "sgdclassifier__n_iter_no_change": [5],
-            "sgdclassifier__n_jobs": [None],
+            "sgdclassifier__alpha": np.linspace(.0001, .1, 5),
+            "sgdclassifier__fit_intercept": [True, False],
+            "sgdclassifier__l1_ratio": np.linspace(0, 1, 5),
             "sgdclassifier__penalty": ["l2", "l1", "elasticnet"],
-            "sgdclassifier__power_t": [0.5]
         }
     },
     "nusvc": {
-        "name": "Nu Support Vector Classifier",
+        "name": "NuSVC",
         "estimator": NuSVC(),
         "pipe_params":
             {
-            "nusvc__cache_size": [200, 400, 800],
-            "nusvc__decision_function_shape": ["ovr"],
-            "nusvc__degree": [3]
+            "nusvc__nu": np.linspace(0, .9, 5),
+            "nusvc__decision_function_shape": ["ovr", 'poly'],
+            "nusvc__degree": [2, 3, 5]
+        }
+    },
+    "linearsvc": {
+        "name": "Linear SVC",
+        "estimator": LinearSVC(),
+        "pipe_params":
+            {
+            "linearsvc__C": np.linspace(0, 10, 5),
+            "linearsvc__fit_intercept": [True, False],
         }
     }
 }
