@@ -1239,3 +1239,6 @@
 05/07/2020 10:19:43 AM:__main__:Elapsed time: 19.69 minutes for 'scrape_subreddit'
 05/07/2020 10:19:43 AM:__main__:Saving data to sqlite
 05/07/2020 10:19:43 AM:__main__:PROGRAM FINISHED
+05/08/2020 10:00:01 AM:__main__:PROGRAM STARTED
+05/08/2020 10:00:01 AM:__main__:Scraping Subreddits
+05/08/2020 10:00:01 AM:__main__:Scraping subreddit "deeplearning", 1 of 26

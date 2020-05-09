@@ -2151,3 +2151,220 @@ ValueError: Invalid parameter clf for estimator Pipeline(memory=None,
  'postgresql' 'datascience' 'aws']
 05/07/2020 11:21:48 PM:__main__:Data Source: sqlite
 05/07/2020 11:21:48 PM:__main__:Fitting model with CountVectorizer and Multi Layer Percetpron Classifier
+05/07/2020 11:26:56 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/07/2020 11:26:56 PM:__main__:Class Labels: ['html' 'tensorflow' 'aws' 'datascience' 'scikit_learn' 'javascript'
+ 'scala' 'postgresql']
+05/07/2020 11:26:56 PM:__main__:Data Source: sqlite
+05/07/2020 11:26:56 PM:__main__:Fitting model with CountVectorizer and XGBoost Classifier
+05/08/2020 12:02:54 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/08/2020 02:04:51 AM:__main__:Fitting model with CountVectorizer and Multi Layer Percetpron Classifier
+05/08/2020 02:42:29 AM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/08/2020 03:52:16 AM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/08/2020 03:54:08 AM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/08/2020 03:56:55 AM:__main__:Fitting model with CountVectorizer and Random Forest
+05/08/2020 04:21:54 AM:__main__:Fitting model with TfidVectorizer and Random Forest
+05/08/2020 04:58:42 AM:__main__:Fitting model with CountVectorizer and K Nearest Neighbors
+05/08/2020 05:10:51 AM:__main__:Fitting model with TfidVectorizer and K Nearest Neighbors
+05/08/2020 05:26:22 AM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 05:26:33 AM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 05:26:47 AM:__main__:Fitting model with CountVectorizer and Support Vector Classifier
+05/08/2020 05:48:27 AM:__main__:Fitting model with TfidVectorizer and Support Vector Classifier
+05/08/2020 06:29:05 AM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier Logistic Regression
+05/08/2020 06:29:28 AM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier Logistic Regression
+05/08/2020 06:29:59 AM:__main__:Fitting model with CountVectorizer and Bagging Classifier Logistic Regression
+05/08/2020 06:34:06 AM:__main__:Fitting model with TfidVectorizer and Bagging Classifier Logistic Regression
+05/08/2020 06:39:26 AM:__main__:Fitting model with CountVectorizer and Bagging Classifier MultinomalNB
+05/08/2020 06:40:12 AM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/08/2020 06:41:52 AM:__main__:Fitting model with CountVectorizer and Extra Trees Classifier
+05/08/2020 06:51:35 AM:__main__:Fitting model with TfidVectorizer and Extra Trees Classifier
+05/08/2020 07:06:02 AM:__main__:Fitting model with CountVectorizer and Gradient Boosting Classifier
+05/08/2020 07:24:43 AM:__main__:Fitting model with TfidVectorizer and Gradient Boosting Classifier
+05/08/2020 08:14:35 AM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 08:14:43 AM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 08:14:53 AM:__main__:Fitting model with CountVectorizer and Stochastic Gradient Descent Classifier
+05/08/2020 08:15:07 AM:__main__:Fitting model with TfidVectorizer and Stochastic Gradient Descent Classifier
+05/08/2020 08:15:26 AM:__main__:Fitting model with CountVectorizer and Nu Support Vector Classifier
+05/08/2020 08:15:32 AM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/08/2020 08:15:32 AM:__main__:Fitting model with TfidVectorizer and Nu Support Vector Classifier
+05/08/2020 08:15:42 AM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/08/2020 08:15:42 AM:__main__:Saving comparison df to CSV
+05/08/2020 08:15:42 AM:__main__:PROGRAM FINISHED
+05/08/2020 08:52:18 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 08:52:18 AM:__main__:Class Labels: ['css' 'deeplearning' 'datascience' 'aws' 'etl' 'sql' 'dataengineering'
+ 'apachespark']
+05/08/2020 08:52:18 AM:__main__:Data Source: sqlite
+05/08/2020 08:52:19 AM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 08:52:30 AM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 08:52:45 AM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 08:52:53 AM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 08:53:04 AM:__main__:Fitting model with CountVectorizer and Nu Support Vector Classifier
+05/08/2020 09:45:09 AM:__main__:Fitting model with TfidVectorizer and Nu Support Vector Classifier
+05/08/2020 10:56:31 AM:__main__:Saving comparison df to CSV
+05/08/2020 10:56:31 AM:__main__:PROGRAM FINISHED
+05/08/2020 12:14:11 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:14:11 PM:__main__:Class Labels: ['python' 'mongodb' 'pandas' 'awscertifications' 'shittyprogramming'
+ 'java' 'machinelearning' 'apachespark']
+05/08/2020 12:14:11 PM:__main__:Data Source: sqlite
+05/08/2020 12:14:12 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:16:33 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:16:33 PM:__main__:Class Labels: ['java' 'tensorflow' 'datascience' 'softwarearchitecture' 'apachespark'
+ 'javascript' 'deeplearning' 'postgresql']
+05/08/2020 12:16:33 PM:__main__:Data Source: sqlite
+05/08/2020 12:16:34 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:24:06 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:24:06 PM:__main__:Class Labels: ['javascript' 'deeplearning' 'tensorflow' 'mongodb' 'awscertifications'
+ 'sql' 'scala' 'learnsql']
+05/08/2020 12:24:06 PM:__main__:Data Source: sqlite
+05/08/2020 12:24:07 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:24:14 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:24:22 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 12:24:28 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 12:24:35 PM:__main__:Saving comparison df to CSV
+05/08/2020 12:24:35 PM:__main__:PROGRAM FINISHED
+05/08/2020 12:27:34 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:27:34 PM:__main__:Class Labels: ['deeplearning' 'machinelearning' 'tensorflow' 'postgresql' 'pandas'
+ 'apachespark' 'aws' 'bigdata']
+05/08/2020 12:27:34 PM:__main__:Data Source: sqlite
+05/08/2020 12:27:34 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:27:40 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:27:47 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 12:27:53 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 12:27:59 PM:__main__:Saving comparison df to CSV
+05/08/2020 12:27:59 PM:__main__:PROGRAM FINISHED
+05/08/2020 12:29:31 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:29:31 PM:__main__:Class Labels: ['mongodb' 'aws' 'bigdata' 'shittyprogramming' 'javascript'
+ 'softwarearchitecture' 'scala' 'postgresql']
+05/08/2020 12:29:31 PM:__main__:Data Source: sqlite
+05/08/2020 12:29:32 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:29:38 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:29:46 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 12:29:51 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 12:29:57 PM:__main__:Saving comparison df to CSV
+05/08/2020 12:29:57 PM:__main__:PROGRAM FINISHED
+05/08/2020 12:32:50 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:32:50 PM:__main__:Class Labels: ['java' 'linux' 'pandas' 'css' 'apachespark' 'tensorflow' 'sql'
+ 'shittyprogramming']
+05/08/2020 12:32:50 PM:__main__:Data Source: sqlite
+05/08/2020 12:32:50 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:33:05 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:33:05 PM:__main__:Class Labels: ['machinelearning' 'postgresql' 'python' 'deeplearning'
+ 'shittyprogramming' 'css' 'bigdata' 'scikit_learn']
+05/08/2020 12:33:05 PM:__main__:Data Source: sqlite
+05/08/2020 12:33:06 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:33:12 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:33:19 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 12:33:24 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 12:33:30 PM:__main__:Saving comparison df to CSV
+05/08/2020 12:33:30 PM:__main__:PROGRAM FINISHED
+05/08/2020 12:53:56 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 12:53:56 PM:__main__:Class Labels: ['deeplearning' 'sql' 'machinelearning' 'pandas' 'html' 'learnsql'
+ 'mongodb' 'css']
+05/08/2020 12:53:56 PM:__main__:Data Source: sqlite
+05/08/2020 12:53:56 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:53:58 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 12:53:59 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 12:54:00 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 12:54:01 PM:__main__:Saving comparison df to CSV
+05/08/2020 12:54:01 PM:__main__:PROGRAM FINISHED
+05/08/2020 01:01:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 01:01:02 PM:__main__:Class Labels: ['html' 'learnsql' 'tensorflow' 'deeplearning' 'css' 'etl' 'linux4noobs'
+ 'datascience']
+05/08/2020 01:01:02 PM:__main__:Data Source: sqlite
+05/08/2020 01:01:02 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 01:01:04 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 01:01:06 PM:__main__:Fitting model with CountVectorizer and Support Vector Classifier
+05/08/2020 01:01:23 PM:__main__:Fitting model with TfidVectorizer and Support Vector Classifier
+05/08/2020 01:01:59 PM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier Logistic Regression
+05/08/2020 01:02:01 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier Logistic Regression
+05/08/2020 01:02:04 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier Logistic Regression
+05/08/2020 01:02:39 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier Logistic Regression
+05/08/2020 01:05:39 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 01:05:39 PM:__main__:Class Labels: ['bigdata' 'java' 'html' 'dataengineering' 'scikit_learn' 'aws' 'sql'
+ 'pandas']
+05/08/2020 01:05:39 PM:__main__:Data Source: sqlite
+05/08/2020 01:05:39 PM:__main__:Fitting model with CountVectorizer and XGBoost Classifier
+05/08/2020 01:11:01 PM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/08/2020 01:23:14 PM:__main__:Fitting model with CountVectorizer and Multi Layer Percetpron Classifier
+05/08/2020 01:27:07 PM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/08/2020 01:36:02 PM:__main__:Fitting model with CountVectorizer and Logistic Regression
+05/08/2020 01:36:08 PM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/08/2020 01:36:13 PM:__main__:Fitting model with CountVectorizer and Random Forest
+05/08/2020 01:37:28 PM:__main__:Fitting model with TfidVectorizer and Random Forest
+05/08/2020 01:40:14 PM:__main__:Fitting model with CountVectorizer and K Nearest Neighbors
+05/08/2020 01:40:18 PM:__main__:Fitting model with TfidVectorizer and K Nearest Neighbors
+05/08/2020 01:40:23 PM:__main__:Fitting model with CountVectorizer and Multinomial Bayes Classifier
+05/08/2020 01:40:24 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 01:40:25 PM:__main__:Fitting model with CountVectorizer and Support Vector Classifier
+05/08/2020 01:40:45 PM:__main__:Fitting model with TfidVectorizer and Support Vector Classifier
+05/08/2020 01:41:25 PM:__main__:Fitting model with CountVectorizer and AdaBoost Classifier Logistic Regression
+05/08/2020 01:41:26 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier Logistic Regression
+05/08/2020 01:41:28 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier Logistic Regression
+05/08/2020 01:42:01 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier Logistic Regression
+05/08/2020 01:42:50 PM:__main__:Fitting model with CountVectorizer and Bagging Classifier MultinomalNB
+05/08/2020 01:43:00 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/08/2020 01:43:19 PM:__main__:Fitting model with CountVectorizer and Extra Trees Classifier
+05/08/2020 01:44:19 PM:__main__:Fitting model with TfidVectorizer and Extra Trees Classifier
+05/08/2020 01:45:26 PM:__main__:Fitting model with CountVectorizer and Gradient Boosting Classifier
+05/08/2020 01:47:27 PM:__main__:Fitting model with TfidVectorizer and Gradient Boosting Classifier
+05/08/2020 01:51:59 PM:__main__:Fitting model with CountVectorizer and Passive Agressive Classifier
+05/08/2020 01:52:00 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/08/2020 01:52:01 PM:__main__:Fitting model with CountVectorizer and Stochastic Gradient Descent Classifier
+05/08/2020 01:52:03 PM:__main__:Fitting model with TfidVectorizer and Stochastic Gradient Descent Classifier
+05/08/2020 01:52:05 PM:__main__:Fitting model with CountVectorizer and Nu Support Vector Classifier
+05/08/2020 01:52:06 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/08/2020 01:52:06 PM:__main__:Fitting model with TfidVectorizer and Nu Support Vector Classifier
+05/08/2020 01:52:07 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/08/2020 01:52:07 PM:__main__:Saving comparison df to CSV
+05/08/2020 01:52:07 PM:__main__:PROGRAM FINISHED
