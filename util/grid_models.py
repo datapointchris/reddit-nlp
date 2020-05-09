@@ -18,7 +18,7 @@ from xgboost import XGBClassifier
 
 # ========================= CLASS LABELS ========================= #
 
-class_labels_all = ["deeplearning", "tensorflow", "scikit_learn", "pandas", "bigdata", "aws",
+class_labels_all = ["deeplearning", "tensorflow", "scikit_learn", "bigdata", "aws",
                     "awscertifications", "css", "html", "javascript", "shittyprogramming",
                     "java", "sql", "learnsql", "postgresql", "softwarearchitecture", "scala",
                     "apachespark", "mongodb", "linux", "linux4noobs", "datascience", "machinelearning",
@@ -44,14 +44,14 @@ custom_stop_words = ENGLISH_STOP_WORDS.union(useless_words).union(set(class_labe
 
 preprocessors = {
     "tfidfvectorizer": {
-        "name": "TfidVectorizer",
+        "name": "TfidfVectorizer",
         "preprocessor": TfidfVectorizer(stop_words=custom_stop_words),
         "pipe_params": {
-            # "tfidfvectorizer__strip_accents": [None, 'ascii', 'unicode'],
-            "tfidfvectorizer__ngram_range": [(1, 2)],
-            "tfidfvectorizer__max_features": [5000],
-            "tfidfvectorizer__min_df": np.linspace(0, 1, 5),
-            "tfidfvectorizer__max_df": np.linspace(0, 1, 5),
+            "tfidfvectorizer__strip_accents": [None, 'ascii', 'unicode'],
+            "tfidfvectorizer__ngram_range": [(1, 1), (1, 2)],
+            "tfidfvectorizer__max_features": [5000, 6000, 7000],
+            "tfidfvectorizer__min_df": np.arange(2, 20, 4),
+            "tfidfvectorizer__max_df": np.linspace(.8, .99, 5),
             "tfidfvectorizer__norm": ("l1", "l2"),
             "tfidfvectorizer__use_idf": [True, False]
         }
@@ -72,12 +72,12 @@ estimators = {
         }
     },
     'mlpclassifier': {
-        'name': 'Multi Layer Percetpron Classifier',
+        'name': 'MLPClassifier',
         'estimator': MLPClassifier(),
         'pipe_params': {
             "mlpclassifier__hidden_layer_sizes": [(100,), (250,), (500,)],
             "mlpclassifier__alpha": np.linspace(.0001, 1, 5),
-            "mlpclassifier__activation": ['lbfgs', 'adam']
+            "mlpclassifier__activation": ['logistic', 'relu']
         }
     },
     "logisticregression": {
@@ -111,7 +111,7 @@ estimators = {
         "name": "Multinomial Bayes Classifier",
         "estimator": MultinomialNB(),
         "pipe_params": {
-            "multinomialnb__fit_prior": [False],
+            "multinomialnb__fit_prior": [True, False],
             "multinomialnb__alpha": [.01, .1, 1]
         }
     },
@@ -120,18 +120,15 @@ estimators = {
         "estimator": SVC(),
         "pipe_params": {
             "svc__C": [1, 10, 100],
-            "svc__kernel": ["rbf", "sigmoid", "poly"],
-            "svc__gamma": ["scale"],
-            "svc__probability": [False]
+            "svc__kernel": ["rbf", "sigmoid", "poly"]
         }
     },
     "adaboostclassifier": {
-        "name": "AdaBoost Classifier Logistic Regression",
+        "name": "AdaBoost Classifier",
         "estimator": AdaBoostClassifier(),
         "pipe_params": {
             "adaboostclassifier__learning_rate": [.001, .01, .1],
-            "adaboostclassifier__n_estimators": [50, 100, 200],
-            "adaboostclassifier__max_depth": [1, 2, 3]
+            "adaboostclassifier__n_estimators": [50, 100, 200]
         }
     },
     "baggingclassifierlog": {
@@ -141,8 +138,8 @@ estimators = {
             "baggingclassifier__n_estimators": [50, 100, 200]
         }
     },
-    "baggingclassifiermnb": {
-        "name": "Bagging Classifier MultinomalNB",
+    "baggingclassifier": {
+        "name": "Bagging Classifier",
         "estimator": BaggingClassifier(),
         "pipe_params": {
             "baggingclassifier__n_estimators": [50, 100, 200]
@@ -169,7 +166,7 @@ estimators = {
         "estimator": PassiveAggressiveClassifier(),
         "pipe_params":
             {
-            "passiveaggressiveclassifier__C": np.linspace(0, 1, 5),
+            "passiveaggressiveclassifier__C": np.linspace(0, 1, 20),
             "passiveaggressiveclassifier__fit_intercept": [True, False],
         }
     },
