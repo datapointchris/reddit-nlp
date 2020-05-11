@@ -78,7 +78,7 @@ def main():
                 pipe_params.update(est.get('pipe_params'))
                 model = RandomizedSearchCV(pipe,
                                            param_distributions=pipe_params,
-                                           n_iter=100,
+                                           n_iter=n_iter,
                                            cv=3,
                                            verbose=1,
                                            n_jobs=-1
@@ -87,7 +87,7 @@ def main():
             except Exception:
                 logger.exception(f'ERROR BUILDING AND TRAINING MODEL:')
                 continue
-            
+
             train_score = model.score(X_train, y_train)
             predict_start_time = time.time()
             test_score = model.score(X_test, y_test)
@@ -99,7 +99,7 @@ def main():
             subreddits = (', ').join(labeler.classes_)
             time_weighted_score = test_score / (model.refit_time_ + predict_elapsed_time) * 1000
             train_test_score_variance = (train_score - test_score) / train_score
-            
+
             # add the model result to the df
             model_comparison_df.loc[len(model_comparison_df)] = [
                 prep.get('name'),
@@ -141,14 +141,19 @@ if __name__ == "__main__":
                         help='Class labels to pull from database and use for model comparison')
     parser.add_argument('--data_source', action='store', choices=['csv', 'sqlite', 'postgres', 'mongo', 'mysql'],
                         default='sqlite', help='Source to get data from')
-    parser.add_argument('--n_iters', action='store', default=100,
+    parser.add_argument('--n_iter', action='store', default=100,
                         help='Number of iterations to use for RandomizedSearchCV, default is 100')
 
     args = parser.parse_args()
     class_labels = args.class_labels
     data_source = args.data_source
+    n_iter = int(args.n_iter)
 
     logger.info(f'Class Labels: {class_labels}')
     logger.info(f'Data Source: {data_source}')
+    logger.info(f'Number of Iterations: {n_iter}')
+
+    main_start = time.time()
     main()
+    logger.info(f'Total Run Time: {round((time.time() - main_start) / 60, 2)} minutes')
     logger.info('PROGRAM FINISHED')
