@@ -4,16 +4,18 @@ Used with "compare_models" function from the Reddit class, Model class maybe
 """
 
 import numpy as np
+from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import (AdaBoostClassifier, BaggingClassifier,
-                              ExtraTreesClassifier, GradientBoostingClassifier,
+                              ExtraTreesClassifier,
+                              HistGradientBoostingClassifier,
                               RandomForestClassifier)
-from sklearn.feature_extraction.text import (ENGLISH_STOP_WORDS, TfidfVectorizer)
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS, TfidfVectorizer
 from sklearn.linear_model import (LogisticRegression,
                                   PassiveAggressiveClassifier, SGDClassifier)
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC, NuSVC, LinearSVC
 from sklearn.neural_network import MLPClassifier
+from sklearn.svm import SVC, LinearSVC
 from xgboost import XGBClassifier
 
 # ========================= CLASS LABELS ========================= #
@@ -112,14 +114,14 @@ estimators = {
         "estimator": MultinomialNB(),
         "pipe_params": {
             "multinomialnb__fit_prior": [True, False],
-            "multinomialnb__alpha": [.01, .1, 1]
+            "multinomialnb__alpha": np.linspace(.01, .99, 10)
         }
     },
     "svc": {
         "name": "Support Vector Classifier",
         "estimator": SVC(),
         "pipe_params": {
-            "svc__C": [1, 10, 100],
+            "svc__C": np.linspace(.01, .99, 10),
             "svc__kernel": ["rbf", "sigmoid", "poly"]
         }
     },
@@ -153,14 +155,15 @@ estimators = {
             "extratreesclassifier__n_estimators": [100, 300, 500],
         }
     },
-    "gradientboostingclassifier": {
-        "name": "Gradient Boosting Classifier",
-        "estimator": GradientBoostingClassifier(),
-        "pipe_params": {
-            "gradientboostingclassifier__max_depth": [None, 3, 5],
-            "gradientboostingclassifier__n_estimators": [100, 300, 500]
-        }
-    },
+    # REQUIRES DENSE MATRIX INSTEAD OF SPARSE
+    # "histgradientboostingclassifier": {
+    #     "name": "Hist Gradient Boosting Classifier",
+    #     "estimator": HistGradientBoostingClassifier(),
+    #     "pipe_params": {
+    #         "histgradientboostingclassifier__max_iter": [100, 300, 500],
+    #         "histgradientboostingclassifier__l2_regularization": np.linspace(.1, .9, 10)
+    #     }
+    # },
     "passiveaggressiveclassifier": {
         "name": "Passive Agressive Classifier",
         "estimator": PassiveAggressiveClassifier(),
@@ -181,22 +184,12 @@ estimators = {
             "sgdclassifier__penalty": ["l2", "l1", "elasticnet"],
         }
     },
-    "nusvc": {
-        "name": "NuSVC",
-        "estimator": NuSVC(),
-        "pipe_params":
-            {
-            "nusvc__nu": np.linspace(0, .9, 5),
-            "nusvc__decision_function_shape": ["ovr", 'poly'],
-            "nusvc__degree": [2, 3, 5]
-        }
-    },
     "linearsvc": {
         "name": "Linear SVC",
         "estimator": LinearSVC(),
         "pipe_params":
             {
-            "linearsvc__C": np.linspace(0, 10, 5),
+            "linearsvc__C": np.linspace(.1, 10, 5),
             "linearsvc__fit_intercept": [True, False],
         }
     }
