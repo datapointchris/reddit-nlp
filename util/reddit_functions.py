@@ -1,3 +1,4 @@
+import CONFIG
 import datetime
 import functools
 import time

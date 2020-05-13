@@ -2,7 +2,6 @@
 Preprocessors and estimators, along with their parameters for gridsearching.
 Used with "compare_models" function from the Reddit class, Model class maybe
 """
-
 import numpy as np
 from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import (AdaBoostClassifier, BaggingClassifier,

@@ -12,19 +12,17 @@ import pandas as pd
 import requests
 from tqdm import tqdm
 
-# set path to current working directory for cron job
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
-# path hack, I know it's gross
+# add upper level to path so project imports work correctly
 sys.path.insert(0, os.path.abspath('..'))
 
+import CONFIG
 from util import databases
 
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s:%(name)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-file_handler = logging.handlers.RotatingFileHandler(filename='../logs/scraper.log', maxBytes=10000000, backupCount=10)
+file_handler = logging.handlers.RotatingFileHandler(filename=CONFIG.LOGS_DIR / 'scraper.log', maxBytes=10000000, backupCount=10)
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
@@ -112,19 +110,19 @@ class Scraper:
 
     def save_to_csv(self, df):
 
-        if not os.path.exists('../data/scraped_subreddits/'):
-            os.mkdir('../data/scraped_subreddits/')
+        if not os.path.exists(CONFIG.SCRAPED_SUBREDDITS_DIR):
+            os.mkdir(CONFIG.SCRAPED_SUBREDDITS_DIR)
 
         for sub in df.subreddit.unique():
             mask = df['subreddit'] == sub
             sub_df = df[mask]
             sub_df.to_csv(
-                f'../data/scraped_subreddits/{sub}_{self.sorting}_{self.date}.csv', index=False)
+                f'{CONFIG.SCRAPED_SUBREDDITS_DIR}/{sub}_{self.sorting}_{self.date}.csv', index=False)
             print(f'Saved "{sub}" to CSV')
 
     def save_to_sqlite(self, df):
         db = databases.Sqlite()
-        connection = db.create_connection('../data/reddit.sqlite')
+        connection = db.create_connection(CONFIG.DATA_DIR / 'reddit.sqlite')
 
         create_subreddits_table = """
         CREATE TABLE IF NOT EXISTS subreddits (

@@ -5,6 +5,7 @@ import pandas as pd
 
 from util import databases
 from util import scraper
+import CONFIG
 
 logger = logging.getLogger(__name__)
 
@@ -53,7 +54,7 @@ def data_selector(class_labels, data_source):
     if data_source == 'csv':
         df = pd.DataFrame()
         for label in class_labels:
-            csv_files = sorted(glob(f'../data/scraped_subreddits/*{label}*.csv'))
+            csv_files = sorted(glob(f'{CONFIG.SCRAPED_SUBREDDITS_DIR}/*{label}*.csv'))
             if len(csv_files) < 1:
                 raise ValueError(f'No data for "{label}" in "{data_source}" data_source')
             for csv_file in csv_files:
@@ -64,7 +65,7 @@ def data_selector(class_labels, data_source):
     # === NOTE === # this bypasses the 'execute_read_query' function in the databases module...
     if data_source == 'sqlite':
         db = databases.Sqlite()
-        connection = db.create_connection('../data/reddit.sqlite')
+        connection = db.create_connection(CONFIG.DATA_DIR / 'reddit.sqlite')
 
         placeholders = ','.join('?' for label in class_labels)
 
