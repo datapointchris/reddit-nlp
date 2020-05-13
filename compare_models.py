@@ -14,19 +14,13 @@ from tqdm import tqdm
 
 from util import dataloader, grid_models
 from util.reddit_functions import Labeler, function_timer
-
-# set path to current working directory for cron job
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
-
-# path hack, I know it's gross
-sys.path.insert(0, os.path.abspath('..'))
-
+import CONFIG
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter(
     '%(asctime)s:%(name)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-file_handler = logging.handlers.RotatingFileHandler(filename='../logs/compare_models.log',
+file_handler = logging.handlers.RotatingFileHandler(filename=CONFIG.LOGS_DIR / 'compare_models.log',
                                                     maxBytes=10000000,
                                                     backupCount=10)
 file_handler.setFormatter(formatter)
@@ -119,7 +113,7 @@ def main():
     logger.info(f'Saving comparison df to CSV')
     try:
         model_comparison_df.to_csv(
-            f'../data/compare_df/{date}.csv')
+            f'{CONFIG.MODEL_COMPARE_DIR}/{date}.csv')
     except FileNotFoundError:
         logger.exception('ERROR SAVING MODEL:')
     except UnboundLocalError:
