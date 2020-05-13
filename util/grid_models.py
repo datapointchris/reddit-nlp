@@ -86,9 +86,9 @@ estimators = {
         "name": "Logistic Regression",
         "estimator": LogisticRegression(max_iter=1000),
         "pipe_params": {
-            "logisticregression__penalty": ["l2"],
-            "logisticregression__C": [.01, .1, 1, 3, 10],
-            "logisticregression__solver": ["lbfgs", "saga"]
+            "logisticregression__C": np.linspace(.01, .99, 5),
+            "logisticregression__solver": ["lbfgs", "saga"],
+            "logisticregression__fit_intercept": [True, False]
         }
     },
     "randomforestclassifier": {
