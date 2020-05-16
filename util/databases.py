@@ -1,8 +1,8 @@
 import logging
-import psycopg2
+# import psycopg2
 import sqlite3
 
-from psycopg2 import OperationalError
+# from psycopg2 import OperationalError
 from sqlite3 import Error
 # from pymysql import connect
 
