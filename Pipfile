@@ -18,7 +18,6 @@ matplotlib = "*"
 seaborn = "*"
 numpy = "*"
 xgboost = "*"
-wordcloud = "*"
 
 [requires]
 python_version = "3.8.2"
