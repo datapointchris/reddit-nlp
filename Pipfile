@@ -16,6 +16,7 @@ tqdm = "*"
 sklearn = "*"
 matplotlib = "*"
 seaborn = "*"
+wordcloud = "*"
 numpy = "*"
 xgboost = "*"
 
