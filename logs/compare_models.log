@@ -2368,3 +2368,2392 @@ Traceback (most recent call last):
 ValueError: b'specified nu is infeasible'
 05/08/2020 01:52:07 PM:__main__:Saving comparison df to CSV
 05/08/2020 01:52:07 PM:__main__:PROGRAM FINISHED
+05/08/2020 03:09:37 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/08/2020 03:09:37 PM:__main__:Class Labels: ['linux' 'awscertifications' 'css' 'mongodb' 'datascience' 'tensorflow'
+ 'learnsql' 'etl']
+05/08/2020 03:09:37 PM:__main__:Data Source: sqlite
+05/08/2020 03:09:38 PM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/08/2020 04:49:13 PM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/08/2020 04:53:01 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1859, in fit_transform
+    X = super().fit_transform(raw_documents)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1241, in fit_transform
+    max_features)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1109, in _limit_features
+    raise ValueError("After pruning, no terms remain. Try a lower"
+ValueError: After pruning, no terms remain. Try a lower min_df or a higher max_df.
+05/08/2020 04:53:01 PM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/08/2020 04:55:07 PM:__main__:Fitting model with TfidVectorizer and Random Forest
+05/08/2020 05:26:16 PM:__main__:Fitting model with TfidVectorizer and K Nearest Neighbors
+05/08/2020 05:27:06 PM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/08/2020 05:27:29 PM:__main__:Fitting model with TfidVectorizer and Support Vector Classifier
+05/08/2020 05:33:01 PM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier Logistic Regression
+05/08/2020 05:33:02 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 245, in set_params
+    valid_params[key].set_params(**sub_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter max_depth for estimator AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                   learning_rate=0.001, n_estimators=50, random_state=None). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1151, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/home/datapointchris/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/home/datapointchris/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter max_depth for estimator AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None,
+                   learning_rate=0.001, n_estimators=50, random_state=None). Check the list of available parameters with `estimator.get_params().keys()`.
+05/08/2020 05:33:02 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier Logistic Regression
+05/08/2020 06:20:09 PM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/08/2020 06:39:10 PM:__main__:Fitting model with TfidVectorizer and Extra Trees Classifier
+05/08/2020 06:52:25 PM:__main__:Fitting model with TfidVectorizer and Gradient Boosting Classifier
+05/09/2020 12:02:44 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 12:02:44 AM:__main__:Class Labels: ['etl' 'datascience' 'python' 'machinelearning' 'javascript'
+ 'scikit_learn' 'postgresql' 'awscertifications']
+05/09/2020 12:02:44 AM:__main__:Data Source: sqlite
+05/09/2020 12:02:44 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 12:23:16 AM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/09/2020 09:04:31 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 09:04:31 AM:__main__:Class Labels: ['dataengineering' 'css' 'linux' 'pandas' 'deeplearning'
+ 'awscertifications' 'sql' 'etl']
+05/09/2020 09:04:31 AM:__main__:Data Source: sqlite
+05/09/2020 09:04:31 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 09:08:43 AM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/09/2020 09:08:49 AM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1859, in fit_transform
+    X = super().fit_transform(raw_documents)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1241, in fit_transform
+    max_features)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1109, in _limit_features
+    raise ValueError("After pruning, no terms remain. Try a lower"
+ValueError: After pruning, no terms remain. Try a lower min_df or a higher max_df.
+05/09/2020 09:08:50 AM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/09/2020 09:08:58 AM:__main__:Fitting model with TfidVectorizer and Random Forest
+05/09/2020 09:09:10 AM:__main__:Fitting model with TfidVectorizer and K Nearest Neighbors
+05/09/2020 09:09:22 AM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/09/2020 09:09:29 AM:__main__:Fitting model with TfidVectorizer and Support Vector Classifier
+05/09/2020 09:24:00 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 09:24:00 AM:__main__:Class Labels: ['aws' 'scala' 'learnsql' 'bigdata' 'linux4noobs' 'awscertifications'
+ 'sql' 'dataengineering']
+05/09/2020 09:24:00 AM:__main__:Data Source: sqlite
+05/09/2020 09:24:00 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 09:24:21 AM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/09/2020 09:24:26 AM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/neural_network/_multilayer_perceptron.py", line 995, in fit
+    hasattr(self, "classes_")))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/neural_network/_multilayer_perceptron.py", line 320, in _fit
+    self._validate_hyperparameters()
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/neural_network/_multilayer_perceptron.py", line 420, in _validate_hyperparameters
+    % (self.activation, list(sorted(ACTIVATIONS))))
+ValueError: The activation 'lbfgs' is not supported. Supported activations are ['identity', 'logistic', 'relu', 'softmax', 'tanh'].
+05/09/2020 09:24:26 AM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/09/2020 09:24:33 AM:__main__:Fitting model with TfidVectorizer and Random Forest
+05/09/2020 09:24:45 AM:__main__:Fitting model with TfidVectorizer and K Nearest Neighbors
+05/09/2020 09:24:59 AM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/09/2020 09:28:52 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 09:28:52 AM:__main__:Class Labels: ['datascience' 'postgresql' 'mongodb' 'python' 'aws' 'scikit_learn'
+ 'shittyprogramming' 'bigdata']
+05/09/2020 09:28:52 AM:__main__:Data Source: sqlite
+05/09/2020 09:28:53 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 09:29:52 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 09:29:52 AM:__main__:Class Labels: ['softwarearchitecture' 'dataengineering' 'java' 'scala' 'mongodb' 'etl'
+ 'html' 'scikit_learn']
+05/09/2020 09:29:52 AM:__main__:Data Source: sqlite
+05/09/2020 09:29:53 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 09:30:36 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 09:30:36 AM:__main__:Class Labels: ['machinelearning' 'dataengineering' 'mongodb' 'css' 'java' 'aws'
+ 'softwarearchitecture' 'etl']
+05/09/2020 09:30:36 AM:__main__:Data Source: sqlite
+05/09/2020 09:30:36 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 09:31:14 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 09:31:14 AM:__main__:Class Labels: ['learnsql' 'aws' 'dataengineering' 'tensorflow' 'scikit_learn'
+ 'postgresql' 'bigdata' 'linux4noobs']
+05/09/2020 09:31:14 AM:__main__:Data Source: sqlite
+05/09/2020 09:31:14 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 09:38:28 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 09:38:28 AM:__main__:Class Labels: ['javascript' 'tensorflow' 'learnsql' 'deeplearning' 'dataengineering'
+ 'datascience' 'mongodb' 'html']
+05/09/2020 09:38:28 AM:__main__:Data Source: sqlite
+05/09/2020 09:38:28 AM:__main__:Fitting model with TfidVectorizer and XGBoost Classifier
+05/09/2020 09:46:57 AM:__main__:Fitting model with TfidVectorizer and Multi Layer Percetpron Classifier
+05/09/2020 10:36:08 AM:__main__:Fitting model with TfidVectorizer and Logistic Regression
+05/09/2020 10:36:24 AM:__main__:Fitting model with TfidVectorizer and Random Forest
+05/09/2020 10:37:33 AM:__main__:Fitting model with TfidVectorizer and K Nearest Neighbors
+05/09/2020 10:38:03 AM:__main__:Fitting model with TfidVectorizer and Multinomial Bayes Classifier
+05/09/2020 10:38:10 AM:__main__:Fitting model with TfidVectorizer and Support Vector Classifier
+05/09/2020 10:39:47 AM:__main__:Fitting model with TfidVectorizer and AdaBoost Classifier Logistic Regression
+05/09/2020 10:39:48 AM:__main__:ERROR BUILDING AND TRAINING MODEL:
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 418, in _process_worker
+    r = call_item()
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 272, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 608, in __call__
+    return self.func(*args, **kwargs)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/parallel.py", line 256, in __call__
+    for func, args, kwargs in self.items]
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/parallel.py", line 256, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 504, in _fit_and_score
+    estimator = estimator.set_params(**cloned_parameters)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/pipeline.py", line 163, in set_params
+    self._set_params('steps', **kwargs)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/utils/metaestimators.py", line 50, in _set_params
+    super().set_params(**params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/base.py", line 245, in set_params
+    valid_params[key].set_params(**sub_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/base.py", line 236, in set_params
+    (key, self))
+ValueError: Invalid parameter max_depth for estimator AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=1.0,
+                   n_estimators=100, random_state=None). Check the list of available parameters with `estimator.get_params().keys()`.
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 689, in evaluate_candidates
+    cv.split(X, y, groups)))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/parallel.py", line 1017, in __call__
+    self.retrieve()
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/parallel.py", line 909, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 562, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/Users/chris/opt/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Invalid parameter max_depth for estimator AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=1.0,
+                   n_estimators=100, random_state=None). Check the list of available parameters with `estimator.get_params().keys()`.
+05/09/2020 10:39:48 AM:__main__:Fitting model with TfidVectorizer and Bagging Classifier Logistic Regression
+05/09/2020 11:16:26 AM:__main__:Fitting model with TfidVectorizer and Bagging Classifier MultinomalNB
+05/09/2020 11:33:40 AM:__main__:Fitting model with TfidVectorizer and Extra Trees Classifier
+05/09/2020 11:41:33 AM:__main__:Fitting model with TfidVectorizer and Gradient Boosting Classifier
+05/09/2020 02:23:11 PM:__main__:Fitting model with TfidVectorizer and Passive Agressive Classifier
+05/09/2020 02:23:20 PM:__main__:Fitting model with TfidVectorizer and Stochastic Gradient Descent Classifier
+05/09/2020 02:23:29 PM:__main__:Fitting model with TfidVectorizer and NuSVC
+05/09/2020 02:24:44 PM:__main__:Fitting model with TfidVectorizer and Linear SVC
+05/09/2020 02:24:58 PM:__main__:Saving comparison df to CSV
+05/09/2020 02:24:58 PM:__main__:PROGRAM FINISHED
+05/09/2020 02:25:58 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 02:25:58 PM:__main__:Class Labels: ['apachespark' 'html' 'sql' 'tensorflow' 'postgresql' 'scala'
+ 'linux4noobs' 'java']
+05/09/2020 02:25:58 PM:__main__:Data Source: sqlite
+05/09/2020 02:25:58 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 02:27:41 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 02:27:41 PM:__main__:Class Labels: ['aws' 'deeplearning' 'scikit_learn' 'awscertifications'
+ 'shittyprogramming' 'linux4noobs' 'java' 'etl']
+05/09/2020 02:27:41 PM:__main__:Data Source: sqlite
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Gradient Boosting Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and NuSVC
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/09/2020 02:27:41 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 710, in fit
+    self._run_search(evaluate_candidates)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 1484, in _run_search
+    random_state=self.random_state))
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 674, in evaluate_candidates
+    candidate_params = list(candidate_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 276, in __iter__
+    if grid_size < n_iter:
+TypeError: '<' not supported between instances of 'int' and 'str'
+05/09/2020 02:27:41 PM:__main__:Saving comparison df to CSV
+05/09/2020 02:27:41 PM:__main__:PROGRAM FINISHED
+05/09/2020 02:28:45 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 02:28:45 PM:__main__:Class Labels: ['machinelearning' 'scikit_learn' 'sql' 'softwarearchitecture' 'java'
+ 'etl' 'aws' 'awscertifications']
+05/09/2020 02:28:45 PM:__main__:Data Source: sqlite
+05/09/2020 02:28:46 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 02:29:45 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/09/2020 02:35:15 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/09/2020 02:35:17 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/09/2020 02:35:27 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/09/2020 02:35:32 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/09/2020 02:35:33 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/09/2020 02:35:46 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/09/2020 02:35:51 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/09/2020 02:42:25 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/09/2020 02:47:22 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/09/2020 02:48:15 PM:__main__:Fitting model with TfidfVectorizer and Gradient Boosting Classifier
+05/09/2020 03:53:23 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/09/2020 03:53:25 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/09/2020 03:53:27 PM:__main__:Fitting model with TfidfVectorizer and NuSVC
+05/09/2020 03:53:27 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/09/2020 03:53:27 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/09/2020 03:53:29 PM:__main__:Saving comparison df to CSV
+05/09/2020 03:53:29 PM:__main__:PROGRAM FINISHED
+05/09/2020 04:07:01 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 04:07:01 PM:__main__:Class Labels: ['awscertifications' 'scala' 'dataengineering' 'linux4noobs' 'apachespark'
+ 'html' 'deeplearning' 'postgresql']
+05/09/2020 04:07:01 PM:__main__:Data Source: sqlite
+05/09/2020 04:07:02 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 04:07:33 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 04:07:33 PM:__main__:Class Labels: ['scikit_learn' 'linux4noobs' 'datascience' 'dataengineering' 'learnsql'
+ 'awscertifications' 'bigdata' 'tensorflow']
+05/09/2020 04:07:33 PM:__main__:Data Source: sqlite
+05/09/2020 04:07:33 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 04:09:21 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/09/2020 04:25:51 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/09/2020 04:25:54 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/09/2020 04:26:04 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/09/2020 04:26:09 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/09/2020 04:26:10 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/09/2020 04:26:24 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/09/2020 04:26:28 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/09/2020 04:31:14 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/09/2020 04:33:29 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/09/2020 04:34:57 PM:__main__:Fitting model with TfidfVectorizer and Gradient Boosting Classifier
+05/09/2020 06:12:53 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/09/2020 06:12:55 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/09/2020 06:12:56 PM:__main__:Fitting model with TfidfVectorizer and NuSVC
+05/09/2020 06:12:57 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/Users/chris/.local/share/virtualenvs/reddit_nlp-ngO2gC0X/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/09/2020 06:12:57 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/09/2020 06:12:58 PM:__main__:Saving comparison df to CSV
+05/09/2020 06:12:58 PM:__main__:PROGRAM FINISHED
+05/09/2020 06:44:25 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 06:44:25 PM:__main__:Class Labels: ['awscertifications' 'aws' 'mongodb' 'css' 'scikit_learn'
+ 'softwarearchitecture' 'etl' 'html']
+05/09/2020 06:44:25 PM:__main__:Data Source: sqlite
+05/09/2020 06:44:25 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 06:45:35 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/09/2020 06:50:47 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/09/2020 06:50:50 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/09/2020 06:51:00 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/09/2020 06:51:06 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/09/2020 06:51:07 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/09/2020 06:51:29 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/09/2020 06:51:37 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/09/2020 06:56:57 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/09/2020 06:59:26 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/09/2020 07:01:50 PM:__main__:Fitting model with TfidfVectorizer and Gradient Boosting Classifier
+05/09/2020 07:40:28 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/09/2020 07:40:31 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/09/2020 07:40:34 PM:__main__:Fitting model with TfidfVectorizer and NuSVC
+05/09/2020 07:40:35 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/09/2020 07:40:35 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/09/2020 07:40:40 PM:__main__:Saving comparison df to CSV
+05/09/2020 07:40:40 PM:__main__:PROGRAM FINISHED
+05/09/2020 07:40:42 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 07:40:42 PM:__main__:Class Labels: ['scala' 'learnsql' 'python' 'mongodb' 'tensorflow' 'linux' 'apachespark'
+ 'scikit_learn']
+05/09/2020 07:40:42 PM:__main__:Data Source: sqlite
+05/09/2020 07:40:42 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 07:41:48 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/09/2020 07:44:02 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/09/2020 07:44:10 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/09/2020 07:44:30 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/09/2020 07:44:38 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/09/2020 07:44:40 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/09/2020 07:45:09 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/09/2020 07:45:19 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/09/2020 07:51:43 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/09/2020 07:56:27 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/09/2020 07:57:57 PM:__main__:Fitting model with TfidfVectorizer and Gradient Boosting Classifier
+05/09/2020 08:20:32 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/09/2020 08:20:35 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/09/2020 08:20:38 PM:__main__:Fitting model with TfidfVectorizer and NuSVC
+05/09/2020 08:20:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 199, in fit
+    fit(X, y, sample_weight, solver_type, kernel, random_seed=seed)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/svm/_base.py", line 280, in _sparse_fit
+    random_seed)
+  File "sklearn/svm/_libsvm_sparse.pyx", line 145, in sklearn.svm._libsvm_sparse.libsvm_sparse_train
+ValueError: b'specified nu is infeasible'
+05/09/2020 08:20:40 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/09/2020 08:20:46 PM:__main__:Saving comparison df to CSV
+05/09/2020 08:20:46 PM:__main__:PROGRAM FINISHED
+05/09/2020 08:20:48 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/09/2020 08:20:48 PM:__main__:Class Labels: ['datascience' 'dataengineering' 'aws' 'html' 'learnsql' 'scala' 'python'
+ 'css']
+05/09/2020 08:20:48 PM:__main__:Data Source: sqlite
+05/09/2020 08:20:48 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/09/2020 08:22:27 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/09/2020 08:39:09 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/09/2020 08:39:15 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/09/2020 08:39:30 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/09/2020 08:39:43 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/09/2020 08:39:44 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/09/2020 08:40:38 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/09/2020 08:40:56 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/09/2020 08:52:07 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/09/2020 08:59:01 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/09/2020 09:03:01 PM:__main__:Fitting model with TfidfVectorizer and Gradient Boosting Classifier
+05/10/2020 10:10:50 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/10/2020 10:10:50 AM:__main__:Class Labels: ['linux4noobs' 'dataengineering' 'scala' 'machinelearning' 'linux' 'aws'
+ 'datascience' 'awscertifications']
+05/10/2020 10:10:50 AM:__main__:Data Source: sqlite
+05/10/2020 10:10:50 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/10/2020 10:15:28 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/10/2020 10:26:01 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/10/2020 10:26:06 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/10/2020 10:26:17 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/10/2020 10:26:30 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/10/2020 10:26:31 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/10/2020 10:27:05 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/10/2020 10:27:13 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/10/2020 10:34:06 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/10/2020 10:38:29 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/10/2020 10:39:47 AM:__main__:Fitting model with TfidfVectorizer and Gradient Boosting Classifier
+05/10/2020 01:20:24 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/10/2020 01:20:24 PM:__main__:Class Labels: ['tensorflow' 'python' 'java' 'shittyprogramming' 'scikit_learn' 'sql'
+ 'awscertifications' 'javascript']
+05/10/2020 01:20:24 PM:__main__:Data Source: sqlite
+05/10/2020 01:20:24 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/10/2020 01:20:52 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/10/2020 01:22:00 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/10/2020 01:22:02 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/10/2020 01:22:04 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/10/2020 01:22:08 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/10/2020 01:22:09 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/10/2020 01:22:26 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/10/2020 01:22:27 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/10/2020 01:25:01 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/10/2020 01:26:04 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/10/2020 01:26:38 PM:__main__:Fitting model with TfidfVectorizer and Hist Gradient Boosting Classifier
+05/10/2020 01:26:39 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "compare_models.py", line 86, in main
+    model.fit(X_train, y_train)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 354, in fit
+    self._final_estimator.fit(Xt, y, **fit_params)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/_hist_gradient_boosting/gradient_boosting.py", line 104, in fit
+    X, y = check_X_y(X, y, dtype=[X_DTYPE], force_all_finite=False)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/validation.py", line 755, in check_X_y
+    estimator=estimator)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/validation.py", line 511, in check_array
+    accept_large_sparse=accept_large_sparse)
+  File "/Users/chris/opt/anaconda3/lib/python3.7/site-packages/sklearn/utils/validation.py", line 306, in _ensure_sparse_format
+    raise TypeError('A sparse matrix was passed, but dense '
+TypeError: A sparse matrix was passed, but dense data is required. Use X.toarray() to convert to a dense numpy array.
+05/10/2020 01:26:39 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/10/2020 01:26:40 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/10/2020 01:26:41 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/10/2020 01:26:42 PM:__main__:Saving comparison df to CSV
+05/10/2020 01:33:11 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/10/2020 01:33:11 PM:__main__:Class Labels: ['mongodb' 'deeplearning' 'etl' 'html' 'apachespark' 'sql' 'learnsql'
+ 'machinelearning']
+05/10/2020 01:33:11 PM:__main__:Data Source: sqlite
+05/10/2020 01:33:11 PM:__main__:Number of Iterations: 1
+05/10/2020 01:33:11 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/10/2020 01:33:26 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/10/2020 01:33:35 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/10/2020 01:33:36 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/10/2020 01:33:38 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/10/2020 01:33:41 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/10/2020 01:33:41 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/10/2020 01:33:46 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/10/2020 01:33:47 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/10/2020 01:34:42 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/10/2020 01:34:58 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/10/2020 01:35:08 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/10/2020 01:35:08 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/10/2020 01:35:09 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/10/2020 01:35:09 PM:__main__:Saving comparison df to CSV
+05/10/2020 01:35:09 PM:__main__:Total Run Time: 1.98
+05/10/2020 01:35:09 PM:__main__:PROGRAM FINISHED
+05/10/2020 01:37:01 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/10/2020 01:37:01 PM:__main__:Class Labels: ['softwarearchitecture' 'tensorflow' 'linux' 'scala' 'awscertifications'
+ 'bigdata' 'postgresql' 'machinelearning']
+05/10/2020 01:37:01 PM:__main__:Data Source: sqlite
+05/10/2020 01:37:01 PM:__main__:Number of Iterations: 10
+05/10/2020 01:37:02 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/10/2020 01:40:37 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/10/2020 01:46:59 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/10/2020 01:47:05 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/10/2020 01:47:16 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/10/2020 01:47:24 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/10/2020 01:47:25 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/10/2020 01:47:40 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/10/2020 01:47:46 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/10/2020 01:54:05 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/10/2020 01:58:22 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/10/2020 02:00:08 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/10/2020 02:00:10 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/10/2020 02:00:11 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/10/2020 02:00:12 PM:__main__:Saving comparison df to CSV
+05/10/2020 02:00:12 PM:__main__:Total Run Time: 23.18 minutes
+05/10/2020 02:00:12 PM:__main__:PROGRAM FINISHED
+05/10/2020 02:04:30 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/10/2020 02:04:30 PM:__main__:Class Labels: ['scikit_learn' 'tensorflow' 'datascience' 'sql' 'etl' 'apachespark'
+ 'softwarearchitecture' 'deeplearning']
+05/10/2020 02:04:30 PM:__main__:Data Source: sqlite
+05/10/2020 02:04:30 PM:__main__:Number of Iterations: 10
+05/10/2020 02:04:30 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/10/2020 02:05:13 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/10/2020 02:11:07 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/10/2020 02:11:10 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/10/2020 02:11:20 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/10/2020 02:11:25 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/10/2020 02:11:26 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/10/2020 02:11:37 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/10/2020 02:11:43 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/10/2020 02:15:06 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/10/2020 02:16:18 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/10/2020 02:18:09 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/10/2020 02:18:10 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/10/2020 02:18:11 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/10/2020 02:18:13 PM:__main__:Saving comparison df to CSV
+05/10/2020 02:18:13 PM:__main__:Total Run Time: 13.72 minutes
+05/10/2020 02:18:13 PM:__main__:PROGRAM FINISHED
+05/10/2020 02:24:11 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/10/2020 02:24:11 PM:__main__:Class Labels: ['mongodb' 'linux4noobs' 'css' 'java' 'sql' 'dataengineering'
+ 'datascience' 'shittyprogramming']
+05/10/2020 02:24:11 PM:__main__:Data Source: sqlite
+05/10/2020 02:24:11 PM:__main__:Number of Iterations: 100
+05/10/2020 02:24:11 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/10/2020 02:35:09 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/10/2020 03:48:07 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/10/2020 03:48:50 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/10/2020 03:51:07 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/10/2020 03:52:19 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/10/2020 03:52:29 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/10/2020 03:56:40 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/10/2020 03:57:48 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/10/2020 05:09:33 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/10/2020 05:41:29 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/10/2020 05:58:34 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/10/2020 05:58:49 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/10/2020 05:59:03 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/10/2020 05:59:31 PM:__main__:Saving comparison df to CSV
+05/10/2020 05:59:31 PM:__main__:Total Run Time: 215.33 minutes
+05/10/2020 05:59:31 PM:__main__:PROGRAM FINISHED
+05/10/2020 11:28:40 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/10/2020 11:28:40 PM:__main__:Class Labels: ['html' 'python' 'scala' 'shittyprogramming' 'tensorflow' 'apachespark'
+ 'dataengineering' 'linux']
+05/10/2020 11:28:40 PM:__main__:Data Source: sqlite
+05/10/2020 11:28:40 PM:__main__:Number of Iterations: 100
+05/10/2020 11:28:41 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/10/2020 11:39:54 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/11/2020 01:08:51 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/11/2020 01:09:30 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/11/2020 01:11:24 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/11/2020 01:12:41 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/11/2020 01:12:52 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/11/2020 01:17:11 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/11/2020 01:18:17 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/11/2020 02:32:01 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/11/2020 03:12:06 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/11/2020 03:31:15 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/11/2020 03:31:31 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/11/2020 03:31:45 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/11/2020 03:32:16 AM:__main__:Saving comparison df to CSV
+05/11/2020 03:32:16 AM:__main__:Total Run Time: 243.6 minutes
+05/11/2020 03:32:16 AM:__main__:PROGRAM FINISHED
+05/11/2020 01:11:19 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/11/2020 01:11:19 PM:__main__:Class Labels: ['softwarearchitecture' 'html' 'css' 'awscertifications' 'scikit_learn'
+ 'shittyprogramming' 'aws' 'python']
+05/11/2020 01:11:19 PM:__main__:Data Source: sqlite
+05/11/2020 01:11:19 PM:__main__:Number of Iterations: 100
+05/11/2020 01:11:19 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/11/2020 01:24:06 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/11/2020 02:51:56 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/11/2020 02:52:31 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/11/2020 02:54:36 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/11/2020 02:56:02 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/11/2020 02:56:13 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/11/2020 03:00:55 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/11/2020 03:02:11 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/11/2020 04:25:20 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/11/2020 05:10:54 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/11/2020 05:27:48 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/11/2020 05:28:04 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/11/2020 05:28:19 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/11/2020 05:28:45 PM:__main__:Saving comparison df to CSV
+05/11/2020 05:28:45 PM:__main__:Total Run Time: 257.44 minutes
+05/11/2020 05:28:45 PM:__main__:PROGRAM FINISHED
+05/11/2020 05:32:00 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/11/2020 05:32:00 PM:__main__:Class Labels: ['dataengineering' 'scala' 'postgresql' 'linux4noobs' 'aws'
+ 'shittyprogramming' 'mongodb' 'scikit_learn']
+05/11/2020 05:32:00 PM:__main__:Data Source: sqlite
+05/11/2020 05:32:00 PM:__main__:Number of Iterations: 100
+05/11/2020 05:32:00 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/11/2020 05:41:52 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/11/2020 07:05:53 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/11/2020 07:06:37 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/11/2020 07:08:46 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/11/2020 07:10:02 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/11/2020 07:10:13 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/11/2020 07:14:34 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/11/2020 07:15:40 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/11/2020 08:34:54 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/11/2020 09:14:37 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/11/2020 09:29:26 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/11/2020 09:29:41 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/11/2020 09:29:54 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/11/2020 09:30:18 PM:__main__:Saving comparison df to CSV
+05/11/2020 09:30:18 PM:__main__:Total Run Time: 238.31 minutes
+05/11/2020 09:30:18 PM:__main__:PROGRAM FINISHED
+05/11/2020 09:30:20 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/11/2020 09:30:20 PM:__main__:Class Labels: ['java' 'css' 'shittyprogramming' 'awscertifications' 'tensorflow'
+ 'deeplearning' 'sql' 'aws']
+05/11/2020 09:30:20 PM:__main__:Data Source: sqlite
+05/11/2020 09:30:20 PM:__main__:Number of Iterations: 100
+05/11/2020 09:30:20 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/11/2020 09:43:31 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/11/2020 11:11:24 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/11/2020 11:11:58 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/11/2020 11:14:04 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/11/2020 11:15:17 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/11/2020 11:15:28 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/11/2020 11:19:33 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/11/2020 11:20:44 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/12/2020 12:24:32 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/12/2020 12:57:01 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/12/2020 01:11:46 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/12/2020 01:12:01 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/12/2020 01:12:16 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/12/2020 01:12:41 AM:__main__:Saving comparison df to CSV
+05/12/2020 01:12:41 AM:__main__:Total Run Time: 222.34 minutes
+05/12/2020 01:12:41 AM:__main__:PROGRAM FINISHED
+05/12/2020 01:12:42 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/12/2020 01:12:42 AM:__main__:Class Labels: ['scala' 'aws' 'linux4noobs' 'etl' 'apachespark' 'dataengineering'
+ 'bigdata' 'sql']
+05/12/2020 01:12:42 AM:__main__:Data Source: sqlite
+05/12/2020 01:12:42 AM:__main__:Number of Iterations: 100
+05/12/2020 01:12:42 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/12/2020 01:25:20 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/12/2020 02:45:45 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/12/2020 02:46:17 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/12/2020 02:48:28 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/12/2020 02:49:50 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/12/2020 02:50:01 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/12/2020 02:54:21 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/12/2020 02:55:28 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/12/2020 04:13:58 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/12/2020 04:51:09 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/12/2020 05:10:42 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/12/2020 05:10:57 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/12/2020 05:11:11 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/12/2020 05:11:36 AM:__main__:Saving comparison df to CSV
+05/12/2020 05:11:36 AM:__main__:Total Run Time: 238.89 minutes
+05/12/2020 05:11:36 AM:__main__:PROGRAM FINISHED
+05/12/2020 01:26:21 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/12/2020 01:26:21 PM:__main__:Class Labels: ['java' 'shittyprogramming' 'dataengineering' 'machinelearning' 'scala'
+ 'softwarearchitecture' 'deeplearning' 'awscertifications']
+05/12/2020 01:26:21 PM:__main__:Data Source: sqlite
+05/12/2020 01:26:21 PM:__main__:Number of Iterations: 100
+05/12/2020 01:26:21 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/12/2020 01:37:14 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/12/2020 02:43:16 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/12/2020 02:43:46 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/12/2020 02:45:38 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/12/2020 02:46:38 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/12/2020 02:46:48 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/12/2020 02:50:10 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/12/2020 02:51:16 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/12/2020 03:52:17 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/12/2020 04:19:47 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/12/2020 04:31:37 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/12/2020 04:31:51 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/12/2020 04:32:05 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/12/2020 04:32:29 PM:__main__:Saving comparison df to CSV
+05/12/2020 04:32:29 PM:__main__:Total Run Time: 186.13 minutes
+05/12/2020 04:32:29 PM:__main__:PROGRAM FINISHED
+05/12/2020 04:32:31 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/12/2020 04:32:31 PM:__main__:Class Labels: ['datascience' 'awscertifications' 'tensorflow' 'scikit_learn' 'linux'
+ 'apachespark' 'html' 'etl']
+05/12/2020 04:32:31 PM:__main__:Data Source: sqlite
+05/12/2020 04:32:31 PM:__main__:Number of Iterations: 100
+05/12/2020 04:32:31 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/12/2020 04:39:55 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/12/2020 05:17:05 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/12/2020 05:17:29 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/12/2020 05:18:43 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/12/2020 05:19:19 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/12/2020 05:19:27 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/12/2020 05:21:13 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/12/2020 05:21:58 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/12/2020 06:06:25 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/12/2020 06:22:24 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/12/2020 06:29:40 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/12/2020 06:29:51 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/12/2020 06:30:02 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/12/2020 06:30:19 PM:__main__:Saving comparison df to CSV
+05/12/2020 06:30:19 PM:__main__:Total Run Time: 117.81 minutes
+05/12/2020 06:30:19 PM:__main__:PROGRAM FINISHED
+05/12/2020 06:30:21 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/12/2020 06:30:21 PM:__main__:Class Labels: ['softwarearchitecture' 'etl' 'aws' 'awscertifications' 'learnsql' 'linux'
+ 'java' 'linux4noobs']
+05/12/2020 06:30:21 PM:__main__:Data Source: sqlite
+05/12/2020 06:30:21 PM:__main__:Number of Iterations: 100
+05/12/2020 06:30:21 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/12/2020 06:43:18 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/12/2020 08:10:42 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/12/2020 08:11:22 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/12/2020 08:13:18 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/12/2020 08:14:52 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/12/2020 08:15:04 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/12/2020 08:20:12 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/12/2020 08:21:26 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/12/2020 09:48:22 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/12/2020 10:23:32 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/12/2020 10:39:52 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/12/2020 10:40:08 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/12/2020 10:40:24 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/12/2020 10:40:53 PM:__main__:Saving comparison df to CSV
+05/12/2020 10:40:53 PM:__main__:Total Run Time: 250.54 minutes
+05/12/2020 10:40:53 PM:__main__:PROGRAM FINISHED
+05/12/2020 10:40:55 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/12/2020 10:40:55 PM:__main__:Class Labels: ['bigdata' 'tensorflow' 'css' 'machinelearning' 'deeplearning'
+ 'datascience' 'shittyprogramming' 'javascript']
+05/12/2020 10:40:55 PM:__main__:Data Source: sqlite
+05/12/2020 10:40:55 PM:__main__:Number of Iterations: 100
+05/12/2020 10:40:55 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/12/2020 10:52:25 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/12/2020 11:40:47 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/12/2020 11:41:18 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/12/2020 11:43:19 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/12/2020 11:44:25 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/12/2020 11:44:36 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/12/2020 11:47:51 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/12/2020 11:48:57 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/13/2020 12:56:40 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/13/2020 01:27:17 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/13/2020 01:41:42 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/13/2020 01:41:57 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/13/2020 01:42:11 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/13/2020 01:42:36 AM:__main__:Saving comparison df to CSV
+05/13/2020 01:42:36 AM:__main__:Total Run Time: 181.68 minutes
+05/13/2020 01:42:36 AM:__main__:PROGRAM FINISHED
+05/13/2020 03:33:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/13/2020 03:33:02 PM:__main__:Class Labels: ['etl' 'softwarearchitecture' 'linux' 'bigdata' 'shittyprogramming'
+ 'apachespark' 'scikit_learn' 'html']
+05/13/2020 03:33:02 PM:__main__:Data Source: sqlite
+05/13/2020 03:33:02 PM:__main__:Number of Iterations: 100
+05/13/2020 03:39:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/13/2020 03:39:02 PM:__main__:Class Labels: ['javascript' 'mongodb' 'bigdata' 'python' 'softwarearchitecture' 'etl'
+ 'awscertifications' 'html']
+05/13/2020 03:39:02 PM:__main__:Data Source: sqlite
+05/13/2020 03:39:02 PM:__main__:Number of Iterations: 100
+05/13/2020 03:39:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/13/2020 03:49:33 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/13/2020 05:05:00 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/13/2020 05:05:21 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/13/2020 05:07:25 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/13/2020 05:08:44 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/13/2020 05:08:54 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/13/2020 05:13:19 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/13/2020 05:14:33 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/13/2020 06:23:04 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/13/2020 07:02:54 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/13/2020 07:20:32 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/13/2020 07:20:48 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/13/2020 07:21:03 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/13/2020 07:21:28 PM:__main__:Saving comparison df to CSV
+05/13/2020 07:21:28 PM:__main__:ERROR SAVING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 122, in main
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/pandas/core/generic.py", line 3204, in to_csv
+    formatter.save()
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/pandas/io/formats/csvs.py", line 188, in save
+    compression=dict(self.compression_args, method=self.compression),
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/pandas/io/common.py", line 428, in get_handle
+    f = open(path_or_buf, mode, encoding=encoding, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: '../data/compare_df/2020-05-13_1539.csv'
+05/13/2020 07:21:28 PM:__main__:Total Run Time: 222.43 minutes
+05/13/2020 07:21:28 PM:__main__:PROGRAM FINISHED
+05/13/2020 07:23:57 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/13/2020 07:23:57 PM:__main__:Class Labels: ['python' 'datascience' 'mongodb' 'aws' 'postgresql' 'html'
+ 'dataengineering' 'learnsql']
+05/13/2020 07:23:57 PM:__main__:Data Source: sqlite
+05/13/2020 07:23:57 PM:__main__:Number of Iterations: 1
+05/13/2020 07:23:57 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/13/2020 07:24:19 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/13/2020 07:29:32 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/13/2020 07:29:33 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/13/2020 07:29:40 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/13/2020 07:29:44 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/13/2020 07:29:45 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/13/2020 07:30:02 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/13/2020 07:30:07 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/13/2020 07:32:11 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/13/2020 07:33:13 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/13/2020 07:33:50 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/13/2020 07:33:51 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/13/2020 07:33:52 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/13/2020 07:33:54 PM:__main__:Saving comparison df to CSV
+05/13/2020 07:33:54 PM:__main__:Total Run Time: 9.96 minutes
+05/13/2020 07:33:54 PM:__main__:PROGRAM FINISHED
+05/13/2020 08:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/13/2020 08:00:02 PM:__main__:Class Labels: ['machinelearning' 'awscertifications' 'css' 'sql' 'tensorflow'
+ 'deeplearning' 'java' 'bigdata']
+05/13/2020 08:00:02 PM:__main__:Data Source: sqlite
+05/13/2020 08:00:02 PM:__main__:Number of Iterations: 100
+05/13/2020 08:00:02 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/13/2020 08:12:08 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/13/2020 09:28:20 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/13/2020 09:28:38 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/13/2020 09:30:35 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/13/2020 09:31:45 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/13/2020 09:31:55 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/13/2020 09:35:23 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/13/2020 09:36:26 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/13/2020 10:46:28 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/13/2020 11:14:25 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/13/2020 11:27:39 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/13/2020 11:27:54 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/13/2020 11:28:08 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/13/2020 11:28:33 PM:__main__:Saving comparison df to CSV
+05/13/2020 11:28:33 PM:__main__:Total Run Time: 208.52 minutes
+05/13/2020 11:28:33 PM:__main__:PROGRAM FINISHED
+05/14/2020 12:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/14/2020 12:00:02 AM:__main__:Class Labels: ['python' 'aws' 'postgresql' 'dataengineering' 'learnsql' 'scala'
+ 'bigdata' 'machinelearning']
+05/14/2020 12:00:02 AM:__main__:Data Source: sqlite
+05/14/2020 12:00:02 AM:__main__:Number of Iterations: 100
+05/14/2020 12:00:02 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/14/2020 12:12:42 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/14/2020 02:02:54 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/14/2020 02:03:18 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/14/2020 02:05:59 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/14/2020 02:07:46 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/14/2020 02:08:00 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/14/2020 02:13:56 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/14/2020 02:15:16 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/14/2020 03:50:06 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/14/2020 04:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/14/2020 04:00:03 AM:__main__:Class Labels: ['javascript' 'java' 'scikit_learn' 'scala' 'linux4noobs' 'python'
+ 'bigdata' 'softwarearchitecture']
+05/14/2020 04:00:03 AM:__main__:Data Source: sqlite
+05/14/2020 04:00:03 AM:__main__:Number of Iterations: 100
+05/14/2020 04:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/14/2020 04:32:38 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/14/2020 05:19:39 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/14/2020 06:13:57 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/14/2020 06:14:37 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/14/2020 06:15:16 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/14/2020 06:16:21 AM:__main__:Saving comparison df to CSV
+05/14/2020 06:16:21 AM:__main__:Total Run Time: 376.31 minutes
+05/14/2020 06:16:21 AM:__main__:PROGRAM FINISHED
+05/14/2020 06:17:06 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/14/2020 06:17:32 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/14/2020 06:20:01 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/14/2020 06:21:46 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/14/2020 06:21:59 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/14/2020 06:28:31 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/14/2020 06:29:50 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/14/2020 08:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/14/2020 08:00:03 AM:__main__:Class Labels: ['html' 'css' 'linux' 'java' 'scala' 'linux4noobs' 'postgresql'
+ 'machinelearning']
+05/14/2020 08:00:03 AM:__main__:Data Source: sqlite
+05/14/2020 08:00:03 AM:__main__:Number of Iterations: 100
+05/14/2020 08:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/14/2020 08:24:24 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/14/2020 08:26:20 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/14/2020 09:58:44 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/14/2020 09:59:36 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/14/2020 10:04:26 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/14/2020 10:07:44 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/14/2020 10:08:09 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/14/2020 10:16:07 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/14/2020 10:17:30 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/14/2020 10:19:51 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/14/2020 10:56:11 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/14/2020 10:56:51 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/14/2020 10:57:25 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/14/2020 10:58:25 AM:__main__:Saving comparison df to CSV
+05/14/2020 10:58:25 AM:__main__:Total Run Time: 418.37 minutes
+05/14/2020 10:58:25 AM:__main__:PROGRAM FINISHED
+05/14/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/14/2020 12:00:02 PM:__main__:Class Labels: ['java' 'learnsql' 'aws' 'javascript' 'html' 'shittyprogramming'
+ 'machinelearning' 'postgresql']
+05/14/2020 12:00:02 PM:__main__:Data Source: sqlite
+05/14/2020 12:00:02 PM:__main__:Number of Iterations: 100
+05/14/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/14/2020 12:13:15 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/14/2020 12:26:53 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/14/2020 01:42:11 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/14/2020 01:42:55 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/14/2020 01:47:04 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/14/2020 01:49:49 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/14/2020 01:50:10 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/14/2020 01:58:33 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/14/2020 01:59:58 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/14/2020 02:00:13 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/14/2020 02:42:33 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/14/2020 02:43:12 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/14/2020 02:43:47 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/14/2020 02:44:49 PM:__main__:Saving comparison df to CSV
+05/14/2020 02:44:49 PM:__main__:Total Run Time: 404.77 minutes
+05/14/2020 02:44:49 PM:__main__:PROGRAM FINISHED
+05/14/2020 04:28:45 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/14/2020 04:28:58 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/14/2020 04:28:58 PM:__main__:Class Labels: ['css' 'machinelearning' 'python' 'html' 'javascript' 'bigdata' 'scala'
+ 'aws']
+05/14/2020 04:28:58 PM:__main__:Data Source: sqlite
+05/14/2020 04:28:58 PM:__main__:Number of Iterations: 1
+05/14/2020 04:28:58 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/14/2020 04:29:09 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/14/2020 04:31:42 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/14/2020 04:31:43 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/14/2020 04:31:48 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/14/2020 04:31:52 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/14/2020 04:31:54 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/14/2020 04:32:08 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/14/2020 04:32:11 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/14/2020 04:35:32 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/14/2020 04:36:31 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/14/2020 04:37:24 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/14/2020 04:37:25 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/14/2020 04:37:26 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/14/2020 04:37:27 PM:__main__:Saving comparison df to CSV
+05/14/2020 04:37:27 PM:__main__:Total Run Time: 8.49 minutes
+05/14/2020 04:37:27 PM:__main__:PROGRAM FINISHED
+05/14/2020 08:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/14/2020 08:00:02 PM:__main__:Class Labels: ['postgresql' 'scala' 'learnsql' 'deeplearning' 'linux' 'bigdata' 'sql'
+ 'css']
+05/14/2020 08:00:02 PM:__main__:Data Source: sqlite
+05/14/2020 08:00:02 PM:__main__:Number of Iterations: 100
+05/14/2020 08:00:02 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/14/2020 08:23:36 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/14/2020 09:44:35 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/14/2020 09:45:12 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/14/2020 09:49:22 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/14/2020 09:51:19 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/14/2020 09:51:39 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/14/2020 09:57:53 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/14/2020 09:59:57 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 12:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/15/2020 12:00:02 AM:__main__:Class Labels: ['mongodb' 'css' 'python' 'sql' 'shittyprogramming' 'aws' 'apachespark'
+ 'etl']
+05/15/2020 12:00:02 AM:__main__:Data Source: sqlite
+05/15/2020 12:00:02 AM:__main__:Number of Iterations: 100
+05/15/2020 12:00:02 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/15/2020 12:13:14 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/15/2020 12:38:40 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/15/2020 01:33:12 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/15/2020 02:12:42 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/15/2020 02:13:28 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/15/2020 02:14:11 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/15/2020 02:15:26 AM:__main__:Saving comparison df to CSV
+05/15/2020 02:15:26 AM:__main__:Total Run Time: 375.41 minutes
+05/15/2020 02:15:26 AM:__main__:PROGRAM FINISHED
+05/15/2020 02:32:12 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/15/2020 02:33:03 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/15/2020 02:37:55 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/15/2020 02:40:58 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/15/2020 02:41:23 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/15/2020 02:52:10 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/15/2020 02:54:33 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 04:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/15/2020 04:00:03 AM:__main__:Class Labels: ['linux4noobs' 'shittyprogramming' 'html' 'tensorflow' 'dataengineering'
+ 'apachespark' 'bigdata' 'deeplearning']
+05/15/2020 04:00:03 AM:__main__:Data Source: sqlite
+05/15/2020 04:00:03 AM:__main__:Number of Iterations: 100
+05/15/2020 04:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/15/2020 04:23:27 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/15/2020 06:19:01 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/15/2020 06:30:43 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/15/2020 06:31:25 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/15/2020 06:35:10 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/15/2020 06:37:34 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/15/2020 06:37:55 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/15/2020 06:45:30 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/15/2020 06:47:48 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 08:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/15/2020 08:00:03 AM:__main__:Class Labels: ['java' 'awscertifications' 'dataengineering' 'etl' 'mongodb' 'python'
+ 'html' 'softwarearchitecture']
+05/15/2020 08:00:03 AM:__main__:Data Source: sqlite
+05/15/2020 08:00:03 AM:__main__:Number of Iterations: 100
+05/15/2020 08:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/15/2020 08:02:20 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/15/2020 08:36:49 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/15/2020 09:04:12 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/15/2020 09:05:13 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/15/2020 09:06:06 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/15/2020 09:07:49 AM:__main__:Saving comparison df to CSV
+05/15/2020 09:07:49 AM:__main__:Total Run Time: 547.78 minutes
+05/15/2020 09:07:49 AM:__main__:PROGRAM FINISHED
+05/15/2020 09:25:15 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/15/2020 10:36:22 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/15/2020 10:39:05 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/15/2020 10:39:48 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/15/2020 10:44:16 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/15/2020 10:46:43 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/15/2020 10:47:05 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/15/2020 10:54:38 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/15/2020 10:56:58 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 11:07:23 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/15/2020 11:08:00 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/15/2020 11:08:34 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/15/2020 11:09:35 AM:__main__:Saving comparison df to CSV
+05/15/2020 11:09:35 AM:__main__:Total Run Time: 429.53 minutes
+05/15/2020 11:09:35 AM:__main__:PROGRAM FINISHED
+05/15/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/15/2020 12:00:02 PM:__main__:Class Labels: ['machinelearning' 'learnsql' 'datascience' 'dataengineering' 'aws'
+ 'linux4noobs' 'etl' 'scikit_learn']
+05/15/2020 12:00:02 PM:__main__:Data Source: sqlite
+05/15/2020 12:00:02 PM:__main__:Number of Iterations: 100
+05/15/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/15/2020 12:28:07 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/15/2020 12:56:39 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/15/2020 02:05:05 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/15/2020 02:32:22 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/15/2020 02:33:07 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/15/2020 02:36:29 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/15/2020 02:36:51 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/15/2020 02:36:58 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/15/2020 02:37:27 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/15/2020 02:38:21 PM:__main__:Saving comparison df to CSV
+05/15/2020 02:38:21 PM:__main__:Total Run Time: 398.29 minutes
+05/15/2020 02:38:21 PM:__main__:PROGRAM FINISHED
+05/15/2020 02:39:07 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/15/2020 02:39:19 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/15/2020 02:44:20 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/15/2020 02:45:33 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 04:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/15/2020 04:00:03 PM:__main__:Class Labels: ['aws' 'softwarearchitecture' 'css' 'sql' 'javascript' 'java' 'postgresql'
+ 'linux']
+05/15/2020 04:00:03 PM:__main__:Data Source: sqlite
+05/15/2020 04:00:03 PM:__main__:Number of Iterations: 100
+05/15/2020 04:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/15/2020 04:27:39 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/15/2020 05:15:28 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/15/2020 06:09:27 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/15/2020 06:10:18 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/15/2020 06:14:35 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/15/2020 06:17:14 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/15/2020 06:17:29 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/15/2020 06:18:16 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/15/2020 06:26:21 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/15/2020 06:28:51 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 06:55:32 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/15/2020 06:56:07 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/15/2020 06:56:42 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/15/2020 06:57:43 PM:__main__:Saving comparison df to CSV
+05/15/2020 06:57:43 PM:__main__:Total Run Time: 417.68 minutes
+05/15/2020 06:57:43 PM:__main__:PROGRAM FINISHED
+05/15/2020 07:09:22 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/15/2020 07:09:22 PM:__main__:Class Labels: ['apachespark' 'linux' 'mongodb' 'learnsql' 'deeplearning' 'javascript'
+ 'html' 'softwarearchitecture']
+05/15/2020 07:09:22 PM:__main__:Data Source: sqlite
+05/15/2020 07:09:22 PM:__main__:Number of Iterations: 1
+05/15/2020 07:09:23 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/15/2020 07:09:44 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/15/2020 07:10:13 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/15/2020 07:10:14 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/15/2020 07:10:18 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/15/2020 07:10:21 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/15/2020 07:10:21 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/15/2020 07:10:27 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/15/2020 07:10:29 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 07:10:54 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/15/2020 07:11:22 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/15/2020 07:11:50 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/15/2020 07:11:50 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/15/2020 07:11:51 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/15/2020 07:11:52 PM:__main__:Saving comparison df to CSV
+05/15/2020 07:11:52 PM:__main__:Total Run Time: 2.5 minutes
+05/15/2020 07:11:52 PM:__main__:PROGRAM FINISHED
+05/15/2020 08:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/15/2020 08:00:02 PM:__main__:Class Labels: ['tensorflow' 'learnsql' 'apachespark' 'etl' 'mongodb' 'datascience'
+ 'linux' 'linux4noobs']
+05/15/2020 08:00:02 PM:__main__:Data Source: sqlite
+05/15/2020 08:00:02 PM:__main__:Number of Iterations: 100
+05/15/2020 08:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/15/2020 08:22:44 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/15/2020 09:41:18 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/15/2020 09:41:59 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/15/2020 09:45:50 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/15/2020 09:48:12 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/15/2020 09:48:33 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/15/2020 09:56:17 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/15/2020 09:58:34 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/15/2020 11:19:47 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/15/2020 11:53:49 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/16/2020 12:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/16/2020 12:00:03 AM:__main__:Class Labels: ['java' 'html' 'javascript' 'aws' 'tensorflow' 'scala' 'dataengineering'
+ 'awscertifications']
+05/16/2020 12:00:03 AM:__main__:Data Source: sqlite
+05/16/2020 12:00:03 AM:__main__:Number of Iterations: 100
+05/16/2020 12:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/16/2020 12:16:25 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/16/2020 12:16:55 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/16/2020 12:17:23 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/16/2020 12:18:10 AM:__main__:Saving comparison df to CSV
+05/16/2020 12:18:10 AM:__main__:Total Run Time: 258.14 minutes
+05/16/2020 12:18:10 AM:__main__:PROGRAM FINISHED
+05/16/2020 12:20:53 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/16/2020 01:53:03 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/16/2020 01:53:23 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/16/2020 01:55:26 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/16/2020 01:56:46 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/16/2020 01:56:57 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/16/2020 02:01:13 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/16/2020 02:02:25 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/16/2020 03:13:18 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/16/2020 03:42:27 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/16/2020 03:57:23 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/16/2020 03:57:40 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/16/2020 03:57:54 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/16/2020 03:58:21 AM:__main__:Saving comparison df to CSV
+05/16/2020 03:58:21 AM:__main__:Total Run Time: 238.3 minutes
+05/16/2020 03:58:21 AM:__main__:PROGRAM FINISHED
+05/16/2020 04:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/16/2020 04:00:02 AM:__main__:Class Labels: ['linux' 'sql' 'bigdata' 'learnsql' 'html' 'scala' 'postgresql'
+ 'apachespark']
+05/16/2020 04:00:02 AM:__main__:Data Source: sqlite
+05/16/2020 04:00:02 AM:__main__:Number of Iterations: 100
+05/16/2020 04:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/16/2020 04:08:13 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/16/2020 04:48:37 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/16/2020 04:48:53 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/16/2020 04:50:32 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/16/2020 04:51:21 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/16/2020 04:51:30 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/16/2020 04:54:14 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/16/2020 04:55:09 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/16/2020 05:53:27 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/16/2020 06:21:18 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/16/2020 06:34:30 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/16/2020 06:34:42 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/16/2020 06:34:54 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/16/2020 06:35:15 AM:__main__:Saving comparison df to CSV
+05/16/2020 06:35:15 AM:__main__:Total Run Time: 155.21 minutes
+05/16/2020 06:35:15 AM:__main__:PROGRAM FINISHED
+05/16/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/16/2020 12:00:02 PM:__main__:Class Labels: ['postgresql' 'scikit_learn' 'html' 'bigdata' 'deeplearning' 'apachespark'
+ 'python' 'scala']
+05/16/2020 12:00:02 PM:__main__:Data Source: sqlite
+05/16/2020 12:00:02 PM:__main__:Number of Iterations: 100
+05/16/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/16/2020 12:10:26 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/16/2020 01:21:49 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/16/2020 01:22:08 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/16/2020 01:24:10 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/16/2020 01:25:17 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/16/2020 01:25:27 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/16/2020 01:29:07 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/16/2020 01:30:10 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/16/2020 02:55:33 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/16/2020 03:45:17 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/16/2020 04:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/16/2020 04:00:02 PM:__main__:Class Labels: ['scala' 'awscertifications' 'html' 'etl' 'java' 'shittyprogramming'
+ 'postgresql' 'linux4noobs']
+05/16/2020 04:00:02 PM:__main__:Data Source: sqlite
+05/16/2020 04:00:02 PM:__main__:Number of Iterations: 100
+05/16/2020 04:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/16/2020 04:00:40 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/16/2020 04:01:06 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/16/2020 04:01:34 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/16/2020 04:02:27 PM:__main__:Saving comparison df to CSV
+05/16/2020 04:02:27 PM:__main__:Total Run Time: 242.41 minutes
+05/16/2020 04:02:27 PM:__main__:PROGRAM FINISHED
+05/16/2020 04:15:41 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/16/2020 05:25:21 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/16/2020 05:25:42 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/16/2020 05:27:43 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/16/2020 05:28:57 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/16/2020 05:29:07 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/16/2020 05:33:17 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/16/2020 05:34:26 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/16/2020 06:57:54 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/16/2020 07:24:10 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/16/2020 07:37:47 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/16/2020 07:38:02 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/16/2020 07:38:17 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/16/2020 07:38:44 PM:__main__:Saving comparison df to CSV
+05/16/2020 07:38:44 PM:__main__:Total Run Time: 218.7 minutes
+05/16/2020 07:38:44 PM:__main__:PROGRAM FINISHED
+05/16/2020 08:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/16/2020 08:00:02 PM:__main__:Class Labels: ['css' 'tensorflow' 'dataengineering' 'postgresql' 'linux4noobs'
+ 'deeplearning' 'bigdata' 'python']
+05/16/2020 08:00:02 PM:__main__:Data Source: sqlite
+05/16/2020 08:00:02 PM:__main__:Number of Iterations: 100
+05/16/2020 08:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/16/2020 08:17:39 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/16/2020 10:13:35 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/16/2020 10:14:01 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/16/2020 10:16:39 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/16/2020 10:18:51 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/16/2020 10:19:05 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/16/2020 10:26:21 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/16/2020 10:27:48 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/17/2020 12:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/17/2020 12:00:02 AM:__main__:Class Labels: ['softwarearchitecture' 'linux4noobs' 'machinelearning'
+ 'shittyprogramming' 'tensorflow' 'deeplearning' 'bigdata' 'javascript']
+05/17/2020 12:00:02 AM:__main__:Data Source: sqlite
+05/17/2020 12:00:02 AM:__main__:Number of Iterations: 100
+05/17/2020 12:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/17/2020 12:33:40 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/17/2020 12:50:56 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/17/2020 02:28:23 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/17/2020 02:29:12 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/17/2020 02:33:35 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/17/2020 02:36:58 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/17/2020 02:37:23 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/17/2020 02:48:09 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/17/2020 02:50:43 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/17/2020 03:03:36 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/17/2020 03:54:20 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/17/2020 03:55:02 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/17/2020 03:55:45 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/17/2020 03:57:07 AM:__main__:Saving comparison df to CSV
+05/17/2020 03:57:07 AM:__main__:Total Run Time: 477.09 minutes
+05/17/2020 03:57:07 AM:__main__:PROGRAM FINISHED
+05/17/2020 04:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/17/2020 04:00:02 AM:__main__:Class Labels: ['datascience' 'html' 'java' 'aws' 'deeplearning' 'linux'
+ 'dataengineering' 'css']
+05/17/2020 04:00:02 AM:__main__:Data Source: sqlite
+05/17/2020 04:00:02 AM:__main__:Number of Iterations: 100
+05/17/2020 04:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/17/2020 04:27:58 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/17/2020 06:19:14 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/17/2020 06:19:55 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/17/2020 06:21:16 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/17/2020 06:23:53 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/17/2020 06:26:27 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/17/2020 06:26:50 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/17/2020 06:35:31 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/17/2020 06:37:35 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/17/2020 07:39:04 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/17/2020 08:13:20 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/17/2020 08:13:58 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/17/2020 08:14:34 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/17/2020 08:15:34 AM:__main__:Saving comparison df to CSV
+05/17/2020 08:15:34 AM:__main__:Total Run Time: 495.53 minutes
+05/17/2020 08:15:34 AM:__main__:PROGRAM FINISHED
+05/17/2020 08:37:00 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/17/2020 09:17:46 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/17/2020 09:35:28 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/17/2020 09:35:45 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/17/2020 09:36:00 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/17/2020 09:36:27 AM:__main__:Saving comparison df to CSV
+05/17/2020 09:36:27 AM:__main__:Total Run Time: 336.41 minutes
+05/17/2020 09:36:27 AM:__main__:PROGRAM FINISHED
+05/17/2020 12:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/17/2020 12:00:03 PM:__main__:Class Labels: ['aws' 'softwarearchitecture' 'shittyprogramming' 'scala' 'apachespark'
+ 'etl' 'mongodb' 'sql']
+05/17/2020 12:00:03 PM:__main__:Data Source: sqlite
+05/17/2020 12:00:03 PM:__main__:Number of Iterations: 100
+05/17/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/17/2020 12:10:24 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/17/2020 01:10:20 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/17/2020 01:10:37 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/17/2020 01:12:21 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/17/2020 01:13:18 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/17/2020 01:13:26 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/17/2020 01:16:15 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/17/2020 01:17:16 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/17/2020 02:15:48 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/17/2020 02:36:41 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/17/2020 02:48:40 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/17/2020 02:48:53 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/17/2020 02:49:05 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/17/2020 02:49:28 PM:__main__:Saving comparison df to CSV
+05/17/2020 02:49:28 PM:__main__:Total Run Time: 169.42 minutes
+05/17/2020 02:49:28 PM:__main__:PROGRAM FINISHED
+05/17/2020 04:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/17/2020 04:00:03 PM:__main__:Class Labels: ['dataengineering' 'apachespark' 'java' 'linux' 'python' 'sql'
+ 'postgresql' 'aws']
+05/17/2020 04:00:03 PM:__main__:Data Source: sqlite
+05/17/2020 04:00:03 PM:__main__:Number of Iterations: 100
+05/17/2020 04:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/17/2020 04:15:23 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/17/2020 05:39:47 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/17/2020 05:40:14 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/17/2020 05:43:02 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/17/2020 05:44:59 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/17/2020 05:45:13 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/17/2020 05:52:03 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/17/2020 05:53:19 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/17/2020 07:39:36 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/17/2020 08:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/17/2020 08:00:03 PM:__main__:Class Labels: ['softwarearchitecture' 'datascience' 'tensorflow' 'bigdata' 'linux' 'sql'
+ 'etl' 'python']
+05/17/2020 08:00:03 PM:__main__:Data Source: sqlite
+05/17/2020 08:00:03 PM:__main__:Number of Iterations: 100
+05/17/2020 08:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/17/2020 08:28:51 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/17/2020 09:16:32 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/17/2020 10:06:18 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/17/2020 10:06:58 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/17/2020 10:07:38 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/17/2020 10:08:54 PM:__main__:Saving comparison df to CSV
+05/17/2020 10:08:54 PM:__main__:Total Run Time: 368.86 minutes
+05/17/2020 10:08:54 PM:__main__:PROGRAM FINISHED
+05/17/2020 10:10:37 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/17/2020 10:11:00 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/17/2020 10:13:26 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/17/2020 10:14:46 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/17/2020 10:14:58 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/17/2020 10:19:44 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/17/2020 10:20:58 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/17/2020 11:37:47 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/18/2020 12:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/18/2020 12:00:03 AM:__main__:Class Labels: ['learnsql' 'javascript' 'etl' 'linux4noobs' 'html' 'awscertifications'
+ 'apachespark' 'python']
+05/18/2020 12:00:03 AM:__main__:Data Source: sqlite
+05/18/2020 12:00:03 AM:__main__:Number of Iterations: 100
+05/18/2020 12:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/18/2020 12:26:39 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/18/2020 01:11:10 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/18/2020 01:42:51 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/18/2020 01:43:31 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/18/2020 01:44:10 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/18/2020 01:45:15 AM:__main__:Saving comparison df to CSV
+05/18/2020 01:45:15 AM:__main__:Total Run Time: 345.2 minutes
+05/18/2020 01:45:15 AM:__main__:PROGRAM FINISHED
+05/18/2020 02:54:15 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/18/2020 02:54:45 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/18/2020 02:57:10 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/18/2020 02:59:21 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/18/2020 02:59:34 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/18/2020 03:06:58 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/18/2020 03:08:30 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/18/2020 04:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/18/2020 04:00:03 AM:__main__:Class Labels: ['postgresql' 'javascript' 'awscertifications' 'machinelearning'
+ 'tensorflow' 'scala' 'datascience' 'css']
+05/18/2020 04:00:03 AM:__main__:Data Source: sqlite
+05/18/2020 04:00:03 AM:__main__:Number of Iterations: 100
+05/18/2020 04:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/18/2020 04:24:16 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/18/2020 06:00:27 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/18/2020 06:09:11 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/18/2020 06:09:53 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/18/2020 06:14:01 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/18/2020 06:16:30 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/18/2020 06:16:53 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/18/2020 06:24:41 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/18/2020 06:26:54 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/18/2020 07:54:00 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/18/2020 08:37:31 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/18/2020 08:38:14 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/18/2020 08:38:52 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/18/2020 08:40:10 AM:__main__:Saving comparison df to CSV
+05/18/2020 08:40:10 AM:__main__:Total Run Time: 520.11 minutes
+05/18/2020 08:40:10 AM:__main__:PROGRAM FINISHED
+05/18/2020 08:48:33 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/18/2020 09:29:01 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/18/2020 09:44:16 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/18/2020 09:44:32 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/18/2020 09:44:48 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/18/2020 09:45:14 AM:__main__:Saving comparison df to CSV
+05/18/2020 09:45:14 AM:__main__:Total Run Time: 345.18 minutes
+05/18/2020 09:45:14 AM:__main__:PROGRAM FINISHED
+05/18/2020 12:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/18/2020 12:00:03 PM:__main__:Class Labels: ['tensorflow' 'awscertifications' 'etl' 'deeplearning' 'learnsql' 'sql'
+ 'linux4noobs' 'apachespark']
+05/18/2020 12:00:03 PM:__main__:Data Source: sqlite
+05/18/2020 12:00:03 PM:__main__:Number of Iterations: 100
+05/18/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/18/2020 12:11:21 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/18/2020 01:12:44 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/18/2020 01:13:06 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/18/2020 01:14:52 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/18/2020 01:16:19 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/18/2020 01:16:30 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/18/2020 01:20:56 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/18/2020 01:22:08 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/18/2020 02:54:00 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/18/2020 03:24:36 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/18/2020 03:40:47 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/18/2020 03:41:03 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/18/2020 03:41:18 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/18/2020 03:41:45 PM:__main__:Saving comparison df to CSV
+05/18/2020 03:41:45 PM:__main__:Total Run Time: 221.7 minutes
+05/18/2020 03:41:45 PM:__main__:PROGRAM FINISHED
+05/18/2020 04:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/18/2020 04:00:02 PM:__main__:Class Labels: ['postgresql' 'softwarearchitecture' 'shittyprogramming' 'bigdata'
+ 'linux4noobs' 'python' 'sql' 'mongodb']
+05/18/2020 04:00:02 PM:__main__:Data Source: sqlite
+05/18/2020 04:00:02 PM:__main__:Number of Iterations: 100
+05/18/2020 04:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/18/2020 04:15:02 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/18/2020 06:19:43 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/18/2020 06:20:13 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/18/2020 06:23:24 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/18/2020 06:25:30 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/18/2020 06:25:43 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/18/2020 06:33:12 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/18/2020 06:34:40 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/18/2020 08:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/18/2020 08:00:03 PM:__main__:Class Labels: ['apachespark' 'dataengineering' 'aws' 'machinelearning' 'etl' 'html'
+ 'linux' 'shittyprogramming']
+05/18/2020 08:00:03 PM:__main__:Data Source: sqlite
+05/18/2020 08:00:03 PM:__main__:Number of Iterations: 100
+05/18/2020 08:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/18/2020 08:27:27 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/18/2020 08:54:02 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/18/2020 09:59:17 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/18/2020 09:59:58 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/18/2020 10:03:58 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/18/2020 10:06:24 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/18/2020 10:06:46 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/18/2020 10:14:36 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/18/2020 10:16:51 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/18/2020 11:15:50 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/19/2020 12:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/19/2020 12:00:03 AM:__main__:Class Labels: ['python' 'html' 'apachespark' 'aws' 'bigdata' 'datascience' 'java'
+ 'tensorflow']
+05/19/2020 12:00:03 AM:__main__:Data Source: sqlite
+05/19/2020 12:00:03 AM:__main__:Number of Iterations: 100
+05/19/2020 12:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/19/2020 12:07:18 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/19/2020 12:08:18 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/19/2020 12:09:19 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/19/2020 12:10:59 AM:__main__:Saving comparison df to CSV
+05/19/2020 12:10:59 AM:__main__:Total Run Time: 490.94 minutes
+05/19/2020 12:10:59 AM:__main__:PROGRAM FINISHED
+05/19/2020 12:31:34 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/19/2020 12:38:16 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/19/2020 01:44:20 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/19/2020 02:09:53 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/19/2020 02:10:42 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/19/2020 02:15:19 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/19/2020 02:17:10 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/19/2020 02:17:43 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/19/2020 02:18:12 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/19/2020 02:18:19 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/19/2020 02:18:44 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/19/2020 02:18:59 AM:__main__:Saving comparison df to CSV
+05/19/2020 02:18:59 AM:__main__:Total Run Time: 378.95 minutes
+05/19/2020 02:18:59 AM:__main__:PROGRAM FINISHED
+05/19/2020 02:24:34 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/19/2020 02:25:48 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/19/2020 03:54:55 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/19/2020 04:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/19/2020 04:00:02 AM:__main__:Class Labels: ['postgresql' 'deeplearning' 'etl' 'css' 'linux' 'datascience' 'sql'
+ 'tensorflow']
+05/19/2020 04:00:02 AM:__main__:Data Source: sqlite
+05/19/2020 04:00:02 AM:__main__:Number of Iterations: 100
+05/19/2020 04:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/19/2020 04:24:24 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/19/2020 05:12:22 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/19/2020 05:12:56 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/19/2020 05:16:31 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/19/2020 05:18:25 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/19/2020 05:18:46 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/19/2020 05:24:49 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/19/2020 05:26:54 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/19/2020 05:38:55 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/19/2020 06:21:20 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/19/2020 06:21:57 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/19/2020 06:22:35 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/19/2020 06:23:40 AM:__main__:Saving comparison df to CSV
+05/19/2020 06:23:40 AM:__main__:Total Run Time: 383.62 minutes
+05/19/2020 06:23:40 AM:__main__:PROGRAM FINISHED
+05/19/2020 06:52:45 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/19/2020 07:18:07 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/19/2020 07:31:20 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/19/2020 07:31:33 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/19/2020 07:31:46 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/19/2020 07:32:10 AM:__main__:Saving comparison df to CSV
+05/19/2020 07:32:10 AM:__main__:Total Run Time: 212.13 minutes
+05/19/2020 07:32:10 AM:__main__:PROGRAM FINISHED
+05/19/2020 12:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/19/2020 12:00:03 PM:__main__:Class Labels: ['javascript' 'dataengineering' 'deeplearning' 'scala' 'java' 'tensorflow'
+ 'softwarearchitecture' 'aws']
+05/19/2020 12:00:03 PM:__main__:Data Source: sqlite
+05/19/2020 12:00:03 PM:__main__:Number of Iterations: 100
+05/19/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/19/2020 12:14:31 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/19/2020 01:35:45 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/19/2020 01:36:07 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/19/2020 01:38:14 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/19/2020 01:39:35 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/19/2020 01:39:46 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/19/2020 01:44:17 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/19/2020 01:45:26 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/19/2020 03:00:50 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/19/2020 03:38:28 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/19/2020 03:55:06 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/19/2020 03:55:23 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/19/2020 03:55:38 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/19/2020 03:56:06 PM:__main__:Saving comparison df to CSV
+05/19/2020 03:56:06 PM:__main__:Total Run Time: 236.06 minutes
+05/19/2020 03:56:06 PM:__main__:PROGRAM FINISHED
+05/19/2020 04:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/19/2020 04:00:03 PM:__main__:Class Labels: ['softwarearchitecture' 'sql' 'scala' 'dataengineering' 'deeplearning'
+ 'machinelearning' 'datascience' 'python']
+05/19/2020 04:00:03 PM:__main__:Data Source: sqlite
+05/19/2020 04:00:03 PM:__main__:Number of Iterations: 100
+05/19/2020 04:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/19/2020 04:17:44 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/19/2020 06:07:10 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/19/2020 06:07:40 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/19/2020 06:10:29 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/19/2020 06:12:23 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/19/2020 06:12:36 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/19/2020 06:19:02 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/19/2020 06:20:26 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/19/2020 07:56:40 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/19/2020 08:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/19/2020 08:00:03 PM:__main__:Class Labels: ['sql' 'html' 'machinelearning' 'apachespark' 'datascience' 'java' 'css'
+ 'bigdata']
+05/19/2020 08:00:03 PM:__main__:Data Source: sqlite
+05/19/2020 08:00:03 PM:__main__:Number of Iterations: 100
+05/19/2020 08:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/19/2020 08:21:06 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/19/2020 09:23:30 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/19/2020 09:24:04 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/19/2020 09:27:52 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/19/2020 09:29:56 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/19/2020 09:30:17 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/19/2020 09:36:43 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/19/2020 09:38:58 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/19/2020 09:53:15 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/19/2020 10:47:16 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/19/2020 10:47:57 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/19/2020 10:48:37 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/19/2020 10:49:51 PM:__main__:Saving comparison df to CSV
+05/19/2020 10:49:51 PM:__main__:Total Run Time: 409.8 minutes
+05/19/2020 10:49:51 PM:__main__:PROGRAM FINISHED
+05/19/2020 11:19:10 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/19/2020 11:52:21 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/20/2020 12:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/20/2020 12:00:03 AM:__main__:Class Labels: ['learnsql' 'java' 'deeplearning' 'etl' 'html' 'datascience' 'postgresql'
+ 'tensorflow']
+05/20/2020 12:00:03 AM:__main__:Data Source: sqlite
+05/20/2020 12:00:03 AM:__main__:Number of Iterations: 100
+05/20/2020 12:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/20/2020 12:10:53 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/20/2020 12:11:21 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/20/2020 12:11:47 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/20/2020 12:12:36 AM:__main__:Saving comparison df to CSV
+05/20/2020 12:12:36 AM:__main__:Total Run Time: 252.56 minutes
+05/20/2020 12:12:36 AM:__main__:PROGRAM FINISHED
+05/20/2020 12:15:30 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/20/2020 12:49:23 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/20/2020 12:49:37 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/20/2020 12:51:14 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/20/2020 12:52:00 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/20/2020 12:52:08 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/20/2020 12:54:22 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/20/2020 12:55:16 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/20/2020 01:47:33 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/20/2020 02:04:40 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/20/2020 02:14:56 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/20/2020 02:15:08 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/20/2020 02:15:19 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/20/2020 02:15:40 AM:__main__:Saving comparison df to CSV
+05/20/2020 02:15:40 AM:__main__:Total Run Time: 135.63 minutes
+05/20/2020 02:15:40 AM:__main__:PROGRAM FINISHED
+05/20/2020 04:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/20/2020 04:00:02 AM:__main__:Class Labels: ['awscertifications' 'dataengineering' 'tensorflow' 'scala' 'apachespark'
+ 'html' 'learnsql' 'datascience']
+05/20/2020 04:00:02 AM:__main__:Data Source: sqlite
+05/20/2020 04:00:02 AM:__main__:Number of Iterations: 100
+05/20/2020 04:00:02 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/20/2020 04:07:57 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/20/2020 04:59:07 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/20/2020 04:59:22 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/20/2020 05:00:56 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/20/2020 05:01:47 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/20/2020 05:01:56 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/20/2020 05:04:37 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/20/2020 05:05:40 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/20/2020 06:04:55 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/20/2020 06:30:51 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/20/2020 06:41:44 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/20/2020 06:41:56 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/20/2020 06:42:08 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/20/2020 06:42:29 AM:__main__:Saving comparison df to CSV
+05/20/2020 06:42:29 AM:__main__:Total Run Time: 162.45 minutes
+05/20/2020 06:42:29 AM:__main__:PROGRAM FINISHED
+05/20/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/20/2020 12:00:02 PM:__main__:Class Labels: ['etl' 'python' 'dataengineering' 'linux4noobs' 'postgresql' 'aws'
+ 'javascript' 'scikit_learn']
+05/20/2020 12:00:02 PM:__main__:Data Source: sqlite
+05/20/2020 12:00:02 PM:__main__:Number of Iterations: 100
+05/20/2020 12:00:02 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/20/2020 12:16:04 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/20/2020 02:03:10 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/20/2020 02:03:44 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/20/2020 02:06:54 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/20/2020 02:09:22 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/20/2020 02:09:37 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/20/2020 02:18:29 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/20/2020 02:20:07 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/20/2020 04:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/20/2020 04:00:02 PM:__main__:Class Labels: ['postgresql' 'machinelearning' 'java' 'scikit_learn' 'linux'
+ 'softwarearchitecture' 'html' 'apachespark']
+05/20/2020 04:00:02 PM:__main__:Data Source: sqlite
+05/20/2020 04:00:02 PM:__main__:Number of Iterations: 100
+05/20/2020 04:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/20/2020 04:19:37 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/20/2020 05:11:54 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/20/2020 05:24:10 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/20/2020 05:24:48 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/20/2020 05:28:11 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/20/2020 05:29:56 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/20/2020 05:30:16 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/20/2020 05:35:51 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/20/2020 05:37:41 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/20/2020 07:48:50 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/20/2020 07:49:41 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/20/2020 08:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/20/2020 08:00:02 PM:__main__:Class Labels: ['aws' 'postgresql' 'etl' 'scikit_learn' 'html' 'scala' 'deeplearning'
+ 'machinelearning']
+05/20/2020 08:00:02 PM:__main__:Data Source: sqlite
+05/20/2020 08:00:02 PM:__main__:Number of Iterations: 100
+05/20/2020 08:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/20/2020 08:33:53 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/20/2020 08:53:21 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/20/2020 09:13:23 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/20/2020 09:14:37 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/20/2020 09:15:46 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/20/2020 09:17:51 PM:__main__:Saving comparison df to CSV
+05/20/2020 09:17:51 PM:__main__:Total Run Time: 557.82 minutes
+05/20/2020 09:17:51 PM:__main__:PROGRAM FINISHED
+05/20/2020 09:23:31 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/20/2020 09:24:03 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/20/2020 09:24:33 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/20/2020 09:25:20 PM:__main__:Saving comparison df to CSV
+05/20/2020 09:25:20 PM:__main__:Total Run Time: 325.29 minutes
+05/20/2020 09:25:20 PM:__main__:PROGRAM FINISHED
+05/20/2020 10:04:21 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/20/2020 10:04:44 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/20/2020 10:06:33 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/20/2020 10:07:40 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/20/2020 10:07:51 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/20/2020 10:11:16 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/20/2020 10:12:19 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/20/2020 11:24:06 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/20/2020 11:53:44 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/21/2020 12:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/21/2020 12:00:02 AM:__main__:Class Labels: ['python' 'linux' 'html' 'postgresql' 'css' 'mongodb' 'datascience'
+ 'bigdata']
+05/21/2020 12:00:02 AM:__main__:Data Source: sqlite
+05/21/2020 12:00:02 AM:__main__:Number of Iterations: 100
+05/21/2020 12:00:02 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/21/2020 12:12:18 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/21/2020 12:12:46 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/21/2020 12:13:12 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/21/2020 12:13:59 AM:__main__:Saving comparison df to CSV
+05/21/2020 12:13:59 AM:__main__:Total Run Time: 253.95 minutes
+05/21/2020 12:13:59 AM:__main__:PROGRAM FINISHED
+05/21/2020 12:21:59 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/21/2020 01:55:14 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/21/2020 01:55:39 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/21/2020 01:58:04 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/21/2020 01:59:39 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/21/2020 01:59:52 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/21/2020 02:05:07 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/21/2020 02:06:34 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/21/2020 03:29:14 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/21/2020 04:00:02 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/21/2020 04:00:02 AM:__main__:Class Labels: ['apachespark' 'java' 'deeplearning' 'javascript' 'tensorflow' 'etl'
+ 'html' 'postgresql']
+05/21/2020 04:00:02 AM:__main__:Data Source: sqlite
+05/21/2020 04:00:02 AM:__main__:Number of Iterations: 100
+05/21/2020 04:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/21/2020 04:19:39 AM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/21/2020 04:40:14 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/21/2020 04:55:20 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/21/2020 04:55:54 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/21/2020 04:59:04 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/21/2020 05:00:52 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/21/2020 05:01:10 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/21/2020 05:06:30 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/21/2020 05:08:29 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/21/2020 05:26:53 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/21/2020 05:27:32 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/21/2020 05:28:09 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/21/2020 05:29:19 AM:__main__:Saving comparison df to CSV
+05/21/2020 05:29:19 AM:__main__:Total Run Time: 329.28 minutes
+05/21/2020 05:29:19 AM:__main__:PROGRAM FINISHED
+05/21/2020 06:08:05 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/21/2020 06:32:13 AM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/21/2020 06:43:31 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/21/2020 06:43:44 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/21/2020 06:43:57 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/21/2020 06:44:21 AM:__main__:Saving comparison df to CSV
+05/21/2020 06:44:21 AM:__main__:Total Run Time: 164.32 minutes
+05/21/2020 06:44:21 AM:__main__:PROGRAM FINISHED
+05/21/2020 12:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/21/2020 12:00:03 PM:__main__:Class Labels: ['datascience' 'tensorflow' 'scikit_learn' 'dataengineering' 'apachespark'
+ 'learnsql' 'deeplearning' 'linux4noobs']
+05/21/2020 12:00:03 PM:__main__:Data Source: sqlite
+05/21/2020 12:00:03 PM:__main__:Number of Iterations: 100
+05/21/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/21/2020 12:00:12 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:00:12 PM:__main__:Fitting model with TfidfVectorizer and MLPClassifier
+05/21/2020 12:00:20 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:00:20 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/21/2020 12:00:28 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:00:28 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/21/2020 12:00:36 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: '2' is not a supported norm
+05/21/2020 12:00:36 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/21/2020 12:00:44 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: '2' is not a supported norm
+05/21/2020 12:00:44 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/21/2020 12:00:52 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: '2' is not a supported norm
+05/21/2020 12:00:52 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/21/2020 12:01:01 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:01:01 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/21/2020 12:01:09 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: '2' is not a supported norm
+05/21/2020 12:01:09 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/21/2020 12:01:17 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:01:17 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/21/2020 12:01:24 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:01:24 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/21/2020 12:01:32 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: '2' is not a supported norm
+05/21/2020 12:01:32 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/21/2020 12:01:40 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: '2' is not a supported norm
+05/21/2020 12:01:40 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/21/2020 12:01:48 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:01:48 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/21/2020 12:01:56 PM:__main__:ERROR BUILDING AND TRAINING MODEL:
+Traceback (most recent call last):
+  File "/home/datapointchris/github/reddit_nlp/compare_models.py", line 80, in main
+    model.fit(X_train, y_train)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/model_selection/_search.py", line 739, in fit
+    self.best_estimator_.fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 350, in fit
+    Xt, fit_params = self._fit(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 315, in _fit
+    **fit_params_steps[name])
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/joblib/memory.py", line 355, in __call__
+    return self.func(*args, **kwargs)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/pipeline.py", line 728, in _fit_transform_one
+    res = transformer.fit_transform(X, y, **fit_params)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1863, in fit_transform
+    return self._tfidf.transform(X, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/feature_extraction/text.py", line 1516, in transform
+    X = normalize(X, norm=self.norm, copy=False)
+  File "/home/datapointchris/anaconda3/lib/python3.7/site-packages/sklearn/preprocessing/_data.py", line 1695, in normalize
+    raise ValueError("'%s' is not a supported norm" % norm)
+ValueError: 'l' is not a supported norm
+05/21/2020 12:01:56 PM:__main__:Saving comparison df to CSV
+05/21/2020 12:01:56 PM:__main__:Total Run Time: 1.89 minutes
+05/21/2020 12:01:56 PM:__main__:PROGRAM FINISHED
+05/21/2020 04:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/21/2020 04:00:02 PM:__main__:Class Labels: ['etl' 'shittyprogramming' 'scikit_learn' 'postgresql' 'aws' 'html'
+ 'javascript' 'scala']
+05/21/2020 04:00:02 PM:__main__:Data Source: sqlite
+05/21/2020 04:00:02 PM:__main__:Number of Iterations: 100
+05/21/2020 04:00:02 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/21/2020 04:23:34 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/21/2020 04:23:52 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/21/2020 04:26:00 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/21/2020 04:27:21 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/21/2020 04:27:31 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/21/2020 04:31:04 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/21/2020 04:34:24 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/21/2020 08:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/21/2020 08:00:02 PM:__main__:Class Labels: ['python' 'apachespark' 'bigdata' 'dataengineering' 'learnsql'
+ 'machinelearning' 'linux' 'scikit_learn']
+05/21/2020 08:00:02 PM:__main__:Data Source: sqlite
+05/21/2020 08:00:02 PM:__main__:Number of Iterations: 100
+05/21/2020 08:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/21/2020 08:36:59 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/21/2020 08:57:43 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/21/2020 08:58:27 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/21/2020 09:03:32 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/21/2020 09:07:26 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/21/2020 09:07:50 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/21/2020 09:18:14 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/21/2020 09:25:37 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/21/2020 10:48:47 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/21/2020 11:43:37 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/21/2020 11:44:12 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/21/2020 11:44:41 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/21/2020 11:45:08 PM:__main__:Saving comparison df to CSV
+05/21/2020 11:45:08 PM:__main__:Total Run Time: 465.09 minutes
+05/21/2020 11:45:08 PM:__main__:PROGRAM FINISHED
+05/22/2020 12:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/22/2020 12:00:03 AM:__main__:Class Labels: ['linux4noobs' 'tensorflow' 'postgresql' 'learnsql' 'bigdata'
+ 'scikit_learn' 'etl' 'apachespark']
+05/22/2020 12:00:03 AM:__main__:Data Source: sqlite
+05/22/2020 12:00:03 AM:__main__:Number of Iterations: 100
+05/22/2020 12:00:03 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/22/2020 12:46:44 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/22/2020 12:47:21 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/22/2020 12:51:46 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/22/2020 12:54:26 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/22/2020 12:54:46 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/22/2020 01:01:06 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/22/2020 01:07:51 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/22/2020 04:00:03 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/22/2020 04:00:03 AM:__main__:Class Labels: ['postgresql' 'awscertifications' 'javascript' 'scala' 'html'
+ 'scikit_learn' 'aws' 'deeplearning']
+05/22/2020 04:00:03 AM:__main__:Data Source: sqlite
+05/22/2020 04:00:03 AM:__main__:Number of Iterations: 100
+05/22/2020 04:00:04 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/22/2020 05:22:33 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/22/2020 05:23:41 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/22/2020 05:30:48 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/22/2020 05:36:13 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/22/2020 05:36:51 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/22/2020 05:50:50 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/22/2020 06:02:08 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/22/2020 06:40:48 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/22/2020 10:27:13 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/22/2020 12:00:02 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/22/2020 12:00:02 PM:__main__:Class Labels: ['softwarearchitecture' 'python' 'sql' 'datascience' 'postgresql'
+ 'javascript' 'java' 'shittyprogramming']
+05/22/2020 12:00:02 PM:__main__:Data Source: sqlite
+05/22/2020 12:00:02 PM:__main__:Number of Iterations: 100
+05/22/2020 12:00:03 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/22/2020 12:58:35 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/22/2020 01:53:36 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/22/2020 01:55:13 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/22/2020 02:05:49 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/22/2020 02:14:55 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/22/2020 02:15:52 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/22/2020 02:42:13 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/22/2020 02:50:02 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/22/2020 02:58:16 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/22/2020 03:54:12 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/22/2020 03:55:44 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/22/2020 03:56:58 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/22/2020 03:58:11 PM:__main__:Saving comparison df to CSV
+05/22/2020 03:58:11 PM:__main__:Total Run Time: 1198.14 minutes
+05/22/2020 03:58:11 PM:__main__:PROGRAM FINISHED
+05/22/2020 04:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/22/2020 04:00:03 PM:__main__:Class Labels: ['html' 'dataengineering' 'javascript' 'tensorflow' 'linux' 'deeplearning'
+ 'etl' 'aws']
+05/22/2020 04:00:03 PM:__main__:Data Source: sqlite
+05/22/2020 04:00:03 PM:__main__:Number of Iterations: 100
+05/22/2020 04:00:04 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/22/2020 04:45:23 PM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/22/2020 04:46:26 PM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/22/2020 04:47:22 PM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/22/2020 04:48:17 PM:__main__:Saving comparison df to CSV
+05/22/2020 04:48:17 PM:__main__:Total Run Time: 1008.23 minutes
+05/22/2020 04:48:17 PM:__main__:PROGRAM FINISHED
+05/22/2020 05:41:59 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/22/2020 05:43:10 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/22/2020 05:51:09 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/22/2020 05:57:07 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/22/2020 05:57:48 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/22/2020 06:13:36 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/22/2020 06:26:14 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/22/2020 06:31:47 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/22/2020 08:00:03 PM:__main__:PROGRAM STARTED -- "compare_models"
+05/22/2020 08:00:03 PM:__main__:Class Labels: ['shittyprogramming' 'scikit_learn' 'machinelearning' 'awscertifications'
+ 'linux4noobs' 'sql' 'css' 'etl']
+05/22/2020 08:00:03 PM:__main__:Data Source: sqlite
+05/22/2020 08:00:03 PM:__main__:Number of Iterations: 100
+05/22/2020 08:00:04 PM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/22/2020 10:12:09 PM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/22/2020 10:13:45 PM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/22/2020 10:23:30 PM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/22/2020 10:31:55 PM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/22/2020 10:32:51 PM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/22/2020 10:52:23 PM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/22/2020 11:09:13 PM:__main__:Fitting model with TfidfVectorizer and Extra Trees Classifier
+05/22/2020 11:09:20 PM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/23/2020 12:00:04 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/23/2020 12:00:04 AM:__main__:Class Labels: ['linux' 'awscertifications' 'tensorflow' 'mongodb' 'dataengineering'
+ 'html' 'apachespark' 'learnsql']
+05/23/2020 12:00:04 AM:__main__:Data Source: sqlite
+05/23/2020 12:00:04 AM:__main__:Number of Iterations: 100
+05/23/2020 12:00:05 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/23/2020 01:32:00 AM:__main__:Fitting model with TfidfVectorizer and Passive Agressive Classifier
+05/23/2020 01:33:37 AM:__main__:Fitting model with TfidfVectorizer and Stochastic Gradient Descent Classifier
+05/23/2020 01:35:03 AM:__main__:Fitting model with TfidfVectorizer and Linear SVC
+05/23/2020 01:36:24 AM:__main__:Saving comparison df to CSV
+05/23/2020 01:36:24 AM:__main__:Total Run Time: 1296.35 minutes
+05/23/2020 01:36:24 AM:__main__:PROGRAM FINISHED
+05/23/2020 01:44:45 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
+05/23/2020 01:46:02 AM:__main__:Fitting model with TfidfVectorizer and Random Forest
+05/23/2020 01:53:35 AM:__main__:Fitting model with TfidfVectorizer and K Nearest Neighbors
+05/23/2020 01:58:52 AM:__main__:Fitting model with TfidfVectorizer and Multinomial Bayes Classifier
+05/23/2020 01:59:36 AM:__main__:Fitting model with TfidfVectorizer and Support Vector Classifier
+05/23/2020 02:13:25 AM:__main__:Fitting model with TfidfVectorizer and AdaBoost Classifier
+05/23/2020 02:28:54 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier Logistic Regression
+05/23/2020 06:00:04 AM:__main__:PROGRAM STARTED -- "compare_models"
+05/23/2020 06:00:04 AM:__main__:Class Labels: ['linux' 'linux4noobs' 'dataengineering' 'scala' 'javascript' 'aws'
+ 'shittyprogramming' 'python']
+05/23/2020 06:00:04 AM:__main__:Data Source: sqlite
+05/23/2020 06:00:04 AM:__main__:Number of Iterations: 100
+05/23/2020 06:00:05 AM:__main__:Fitting model with TfidfVectorizer and XGBoost Classifier
+05/23/2020 09:29:51 AM:__main__:Fitting model with TfidfVectorizer and Bagging Classifier
+05/23/2020 09:39:04 AM:__main__:Fitting model with TfidfVectorizer and Logistic Regression
