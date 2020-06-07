@@ -19,6 +19,7 @@ seaborn = "*"
 wordcloud = "*"
 numpy = "*"
 xgboost = "*"
+jupyter = "*"
 
 [requires]
 python_version = "3.8.2"

@@ -51,8 +51,8 @@ preprocessors = {
             "tfidfvectorizer__strip_accents": [None, 'ascii', 'unicode'],
             "tfidfvectorizer__ngram_range": [(1, 1), (1, 2)],
             "tfidfvectorizer__max_features": [5000, 6000, 7000],
-            "tfidfvectorizer__min_df": [1, 2],
-            "tfidfvectorizer__max_df": np.linspace(.8, .99, 5),
+            "tfidfvectorizer__min_df": [1],
+            "tfidfvectorizer__max_df": [.95001, .99001, 1],
             "tfidfvectorizer__norm": ["l2"],
             "tfidfvectorizer__use_idf": [True, False]
         }
@@ -148,13 +148,14 @@ estimators = {
             "adaboostclassifier__n_estimators": [200, 500]
         }
     },
-    "baggingclassifierlog": {
-        "name": "Bagging Classifier Logistic Regression",
-        "estimator": BaggingClassifier(LogisticRegression(max_iter=1000)),
-        "pipe_params": {
-            "baggingclassifier__n_estimators": [100, 200, 300]
-        }
-    },
+    # TOO SLOW #
+    # "baggingclassifierlog": {
+    #     "name": "Bagging Classifier Logistic Regression",
+    #     "estimator": BaggingClassifier(LogisticRegression(max_iter=1000)),
+    #     "pipe_params": {
+    #         "baggingclassifier__n_estimators": [100, 200]
+    #     }
+    # },
     "baggingclassifier": {
         "name": "Bagging Classifier",
         "estimator": BaggingClassifier(),
