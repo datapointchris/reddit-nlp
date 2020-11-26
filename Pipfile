@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+autopep8 = "*"
 
 [packages]
 pandas = "*"
@@ -14,6 +15,7 @@ jupyter = "*"
 wordcloud = "*"
 seaborn = "*"
 xgboost = "*"
+tqdm = "*"
 
 [requires]
 python_version = "3.8"
