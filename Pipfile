@@ -12,6 +12,8 @@ numpy = "*"
 scikit-learn = "*"
 jupyter = "*"
 wordcloud = "*"
+seaborn = "*"
+xgboost = "*"
 
 [requires]
 python_version = "3.8"
