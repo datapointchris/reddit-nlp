@@ -5,21 +5,13 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
-autopep8 = "*"
-rope = "*"
-ipykernel = "*"
 
 [packages]
 pandas = "*"
-requests = "*"
-tqdm = "*"
-sklearn = "*"
-matplotlib = "*"
-seaborn = "*"
-wordcloud = "*"
 numpy = "*"
-xgboost = "*"
+scikit-learn = "*"
 jupyter = "*"
+wordcloud = "*"
 
 [requires]
-python_version = "3.8.2"
+python_version = "3.8"
