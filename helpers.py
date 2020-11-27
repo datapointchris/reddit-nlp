@@ -61,6 +61,20 @@ def load_sqlite(database, query=None, class_labels=None):
             raise ValueError(f'No data for "{label}"')
     return df
 
+
+def resample_to_average(df, labels_to_resample):
+    '''Resamples each label to the average number of posts across labels
+    Note: Oversample AFTER splitting to train and test set in order to avoid duplicates between
+        the train and test set which will give falsely better metrics
+    '''
+    average = int(len(df) / len(labels_to_resample))
+    resampled_df = pd.DataFrame()
+    for label in labels_to_resample:
+        sampled_df = df[df['subreddit'] == label].sample(n=average, replace=True)
+        resampled_df = pd.concat([resampled_df, sampled_df])
+    return resampled_df
+
+
 def plot_confusion_matrix(model, y_true, y_pred, classes, cmap='Blues'):
     '''
     Plots confusion matrix for fitted model, better than scikit-learn version
