@@ -70,17 +70,28 @@ def label_distribution(df, y, labels):
     print(f'AVERAGE: {int(len(df) / len(labels))}')
 
 
-def resample_to_average(df, y, labels):
+def resample_to_average(X, y, sample_method='max', random_state=None):
     '''Resamples each label to the average number of posts across labels
     Note: Oversample AFTER splitting to train and test set in order to avoid duplicates between
         the train and test set which will give falsely better metrics
     '''
-    average = int(len(df) / len(labels))
-    resampled_df = pd.DataFrame()
-    for label in labels:
-        sampled_df = df[y == label].sample(n=average, replace=True)
-        resampled_df = pd.concat([resampled_df, sampled_df])
-    return resampled_df
+    if sample_method == 'max':
+        n_samples = int(np.unique(y, return_counts=True)[1].max())
+    elif sample_method == 'average':
+        n_samples = int(np.unique(y, return_counts=True)[1].mean())
+    elif sample_method == 'min':
+        n_samples = int(np.unique(y, return_counts=True)[1].min())
+
+    resampled_X = pd.Series()
+    resampled_y = pd.Series()
+    np.random.seed(random_state)
+
+    for label in np.unique(y):
+        indexes = y[y == label].index
+        sampled_indexes = np.random.choice(indexes, size=n_samples, replace=True)
+        resampled_X = resampled_X.append(X[sampled_indexes])
+        resampled_y = resampled_y.append(y[sampled_indexes])
+    return resampled_X, resampled_y
 
 
 def plot_confusion_matrix(model, y_true, y_pred, classes, cmap='Blues'):
