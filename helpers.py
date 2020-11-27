@@ -62,15 +62,23 @@ def load_sqlite(database, query=None, class_labels=None):
     return df
 
 
-def resample_to_average(df, labels_to_resample):
+def label_distribution(df, y, labels):
+    '''Prints the number of rows per label'''
+    for label in labels:
+        print(f'{label}: {len(df[y == label])}')
+    print()
+    print(f'AVERAGE: {int(len(df) / len(labels))}')
+
+
+def resample_to_average(df, y, labels):
     '''Resamples each label to the average number of posts across labels
     Note: Oversample AFTER splitting to train and test set in order to avoid duplicates between
         the train and test set which will give falsely better metrics
     '''
-    average = int(len(df) / len(labels_to_resample))
+    average = int(len(df) / len(labels))
     resampled_df = pd.DataFrame()
-    for label in labels_to_resample:
-        sampled_df = df[df['subreddit'] == label].sample(n=average, replace=True)
+    for label in labels:
+        sampled_df = df[y == label].sample(n=average, replace=True)
         resampled_df = pd.concat([resampled_df, sampled_df])
     return resampled_df
 
