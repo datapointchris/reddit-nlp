@@ -16,6 +16,8 @@ wordcloud = "*"
 seaborn = "*"
 xgboost = "*"
 tqdm = "*"
+imblearn = "*"
+jupyter-contrib-nbextensions = "*"
 
 [requires]
 python_version = "3.8"
