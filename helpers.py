@@ -62,7 +62,7 @@ def load_sqlite(database, query=None, class_labels=None):
     return df
 
 
-def label_distribution(df, y, labels):
+def print_label_distribution(df, y, labels):
     '''Prints the number of rows per label'''
     for label in labels:
         print(f'{label}: {len(df[y == label])}')
@@ -70,12 +70,24 @@ def label_distribution(df, y, labels):
     print(f'AVERAGE: {int(len(df) / len(labels))}')
 
 
-def resample_to_average(X, y, sample_method='max', random_state=None):
+def resample_data(X, y, sample_method='max', distribution='concatenate', random_state=None):
     '''Resamples each label to the average number of posts across labels
     Note: Oversample AFTER splitting to train and test set in order to avoid duplicates between
         the train and test set which will give falsely better metrics
+    
+    Parameters
+    ----------
+    X : pd.Series
+    y : pd.Series
+    sample_method : {'max', 'average', 'min', None}
+        Method to use to determine the sample numbers.  Methods are calculated between all classes.
+    distribution : {'concatenate', 'sample'}
+        `concatenate` adds extra samples onto original data
+        `resample` resamples the entire dataset, possibly not including all of the original data 
     '''
-    if sample_method == 'max':
+    if sample_method is None:
+        return X, y
+    elif sample_method == 'max':
         n_samples = int(np.unique(y, return_counts=True)[1].max())
     elif sample_method == 'average':
         n_samples = int(np.unique(y, return_counts=True)[1].mean())
@@ -86,38 +98,26 @@ def resample_to_average(X, y, sample_method='max', random_state=None):
     resampled_y = pd.Series()
     np.random.seed(random_state)
 
-    for label in np.unique(y):
-        indexes = y[y == label].index
-        sampled_indexes = np.random.choice(indexes, size=n_samples, replace=True)
-        resampled_X = resampled_X.append(X[sampled_indexes])
-        resampled_y = resampled_y.append(y[sampled_indexes])
+    if distribution == 'resample':
+        for label in np.unique(y):
+            indexes = y[y == label].index
+            sampled_indexes = np.random.choice(indexes, size=n_samples, replace=True)
+            resampled_X = resampled_X.append(X[sampled_indexes])
+            resampled_y = resampled_y.append(y[sampled_indexes])
+    elif distribution == 'concatenate':
+        for label in np.unique(y):
+            indexes = y[y == label].index
+            if len(indexes) <= n_samples:
+                # Original data
+                resampled_X = resampled_X.append(X[indexes])
+                resampled_y = resampled_y.append(y[indexes])
+                # Add extra samples
+                sample_difference = n_samples - len(indexes)
+                sampled_indexes = np.random.choice(indexes, size=sample_difference, replace=True)
+                resampled_X = resampled_X.append(X[sampled_indexes])
+                resampled_y = resampled_y.append(y[sampled_indexes])
+            else:
+                sampled_indexes = np.random.choice(indexes, size=n_samples, replace=False)
+                resampled_X = resampled_X.append(X[sampled_indexes])
+                resampled_y = resampled_y.append(y[sampled_indexes])       
     return resampled_X, resampled_y
-
-
-def plot_confusion_matrix(model, y_true, y_pred, classes, cmap='Blues'):
-    '''
-    Plots confusion matrix for fitted model, better than scikit-learn version
-    '''
-    cm = confusion_matrix(y_true, y_pred)
-    fontdict = {'fontsize': 16}
-    fig, ax = plt.subplots(figsize=(2.2 * len(classes), 2.2 * len(classes)))
-
-    sns.heatmap(cm,
-                annot=True,
-                annot_kws=fontdict,
-                fmt="d",
-                square=True,
-                cbar=False,
-                cmap=cmap,
-                ax=ax,
-                norm=LogNorm(),  # to get color diff on small values
-                vmin=0.00001  # to avoid non-positive error for '0' cells
-                )
-
-    ax.set_xlabel('Predicted labels', fontdict=fontdict)
-    ax.set_ylabel('True labels', fontdict=fontdict)
-    ax.set_yticklabels(
-        labels=classes, rotation='horizontal', fontdict=fontdict)
-    ax.set_xticklabels(labels=classes, rotation=20, fontdict=fontdict)
-    ax.xaxis.set_ticks_position('top')
-    ax.xaxis.set_label_position('top')
