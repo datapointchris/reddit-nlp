@@ -3,10 +3,12 @@ import configparser
 import datetime
 import os
 import sqlite3
+import tempfile
 import time
+from io import StringIO
 from pathlib import PurePath
-from sqlite3 import Error
 
+import boto3
 import pandas as pd
 import requests
 from tqdm import tqdm
@@ -39,15 +41,16 @@ class RedditScraper:
     """
 
     def __init__(self, project_name=None, sorting='new',
-                 include_comments=True, save_method='sqlite'):
+                 include_comments=True, save_method='sqlite', save_location='folder'):
         self.project_name = project_name
         self.sorting = sorting
         self.include_comments = include_comments
         self.save_method = save_method
+        self.save_location = save_location
         self.date = str(datetime.datetime.now().date())
         self.project_directory = PurePath(__file__).parent / 'scraped' / self.project_name
-        if not os.path.exists(self.project_directory):
-            os.makedirs(self.project_directory)
+        # if not os.path.exists(self.project_directory):
+        #     os.makedirs(self.project_directory)
 
     def get_post_urls(self, sub_url):
         """Get post URLs for a given subreddit"""
@@ -168,60 +171,79 @@ class RedditScraper:
             return (posts_df, comments_df)
         return (posts_df, None)
 
-    def save_to_csv(self, df, table_name, subreddit):
-        csv_path = self.project_directory / 'data' / 'csv'
-        if not os.path.exists(csv_path):
-            os.makedirs(csv_path)
-        df.to_csv(f'{csv_path}/{self.date}_{subreddit}_{table_name}.csv', index=False)
-
-    def save_to_sqlite(self, df, table_name, subreddit):
-        sqlite_path = self.project_directory / 'data'
-        if not os.path.exists(sqlite_path):
-            os.makedirs(sqlite_path)
-        try:
-            connection = sqlite3.connect(f'{sqlite_path}/{self.project_name}.sqlite')
-        except Error as e:
-            print(f"Connection error: {e}")
-        cursor = connection.cursor()
-
+    def create_sqlite_tables(self, df, table_name, subreddit, cursor):
         if table_name == 'posts':
             create_posts_table = """
-            CREATE TABLE IF NOT EXISTS posts (
-            post_id TEXT PRIMARY KEY,
-            post_title TEXT NOT NULL,
-            post_body TEXT NOT NULL,
-            upvotes INTEGER NOT NULL,
-            subreddit TEXT NOT NULL,
-            date TEXT NOT NULL
-            );
-            """
+                CREATE TABLE IF NOT EXISTS posts (
+                post_id TEXT PRIMARY KEY,
+                post_title TEXT NOT NULL,
+                post_body TEXT NOT NULL,
+                upvotes INTEGER NOT NULL,
+                subreddit TEXT NOT NULL,
+                date TEXT NOT NULL
+                );
+                """
             cursor.execute(create_posts_table)
-
             for row in df.itertuples():
                 row_values = [row.post_id, row.post_title, row.post_body, row.upvotes, row.subreddit, row.date]
                 cursor.execute('''INSERT or REPLACE into posts (post_id, post_title, post_body, upvotes, subreddit, date)
-                    values (?, ?, ?, ?, ?, ?)''', row_values)
-
-            connection.commit()
+                        values (?, ?, ?, ?, ?, ?)''', row_values)
 
         if table_name == 'comments':
             create_comments_table = """
-            CREATE TABLE IF NOT EXISTS comments (
-            comment_id TEXT PRIMARY KEY,
-            post_id TEXT NOT NULL,
-            comment TEXT,
-            upvotes INTEGER
-            );
-            """
+                CREATE TABLE IF NOT EXISTS comments (
+                comment_id TEXT PRIMARY KEY,
+                post_id TEXT NOT NULL,
+                comment TEXT,
+                upvotes INTEGER
+                );
+                """
             cursor.execute(create_comments_table)
-
             for row in df.itertuples():
                 row_values = [row.comment_id, row.post_id, row.comment, row.upvotes]
                 cursor.execute('''INSERT or REPLACE into comments (comment_id, post_id, comment, upvotes)
-                values (?, ?, ?, ?)''', row_values)
+                    values (?, ?, ?, ?)''', row_values)
 
         print('Data saved to sqlite database successfully')
-        connection.close()
+
+    def save_to_csv(self, df, table_name, subreddit):
+        filename = f'{self.date}_{subreddit}_{table_name}.csv'
+        if self.save_location == 'folder':
+            path = self.project_directory / 'csv'
+            if not os.path.exists(path):
+                os.makedirs(path)
+            df.to_csv(f'{path}/{filename}', index=False)
+        elif self.save_location == 's3':
+            s3_path = f'{self.project_name}/csv/{filename}'
+            buffer = StringIO()
+            df.to_csv(buffer, index=False)
+            buffer.seek(0)
+            s3_resource = boto3.resource('s3')
+            db_object = s3_resource.Object(bucket_name=s3_bucket_name, key=s3_path)
+            db_object.put(Body=buffer.getvalue())
+
+    def save_to_sqlite(self, df, table_name, subreddit):
+        if self.save_location == 'folder':
+            filename = f'{self.project_name}.sqlite'
+            path = self.project_directory / 'sqlite'
+            if not os.path.exists(path):
+                os.makedirs(path)
+            connect_path = f'{path}/{filename}'
+            with sqlite3.connect(connect_path) as conn:
+                cursor = conn.cursor()
+                self.create_sqlite_tables(df=df, table_name=table_name,
+                                          subreddit=subreddit, cursor=cursor)
+        elif self.save_location == 's3':
+            filename = f'{self.date}_{self.project_name}.sqlite'
+            s3_path = f'{self.project_name}/sqlite/{filename}'
+            connect_path = tempfile.gettempdir() + '/temp.db'
+            with sqlite3.connect(connect_path) as conn:
+                cursor = conn.cursor()
+                self.create_sqlite_tables(df=df, table_name=table_name,
+                                          subreddit=subreddit, cursor=cursor)
+                s3_resource = boto3.resource('s3')
+                db_object = s3_resource.Object(bucket_name=s3_bucket_name, key=s3_path)
+                db_object.put(Body=connect_path)
 
     def save_choice(self, df, choice, table_name, subreddit):
         '''
@@ -239,7 +261,8 @@ class RedditScraper:
 
 def main():
     print('PROGRAM STARTED')
-    scraper = RedditScraper(project_name=project_name, sorting=sorting, include_comments=include_comments)
+    scraper = RedditScraper(project_name=project_name, sorting=sorting, include_comments=include_comments,
+                            save_method=save_method, save_location=save_location)
     if len(subreddit_list) > 1:
         print(f'{len(subreddit_list)} total subreddits to scrape.')
     for i, sub in enumerate(tqdm(subreddit_list), start=1):
@@ -278,5 +301,6 @@ if __name__ == '__main__':
     include_comments = scraper_config.getboolean('SCRAPER', 'include_comments')
     sorting = scraper_config.get('SCRAPER', 'sorting')
     save_method = scraper_config.get('SCRAPER', 'save_method')
-
+    save_location = scraper_config.get('SCRAPER', 'save_location')
+    s3_bucket_name = scraper_config.get('SCRAPER', 's3_bucket_name')
     main()
