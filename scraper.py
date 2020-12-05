@@ -234,7 +234,7 @@ class RedditScraper:
                 self.create_sqlite_tables(df=df, table_name=table_name,
                                           subreddit=subreddit, cursor=cursor)
         elif self.save_location == 's3':
-            filename = f'{self.date}_{self.project_name}.sqlite'
+            filename = f'{self.date}_{subreddit}.sqlite'
             s3_path = f'{self.project_name}/sqlite/{filename}'
             connect_path = tempfile.gettempdir() + '/temp.db'
             with sqlite3.connect(connect_path) as conn:
