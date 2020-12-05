@@ -19,6 +19,7 @@ tqdm = "*"
 imblearn = "*"
 jupyter-contrib-nbextensions = "*"
 boto3 = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
