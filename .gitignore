@@ -243,3 +243,4 @@ dmypy.json
 /data/best_models
 /data/databases
 /backups.planning/
+.planning
