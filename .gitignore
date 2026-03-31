@@ -242,4 +242,4 @@ dmypy.json
 /data/scraped
 /data/best_models
 /data/databases
-/backups
+/backups.planning/
