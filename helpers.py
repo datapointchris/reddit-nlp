@@ -1,19 +1,38 @@
 import sqlite3
+
 import numpy as np
-from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-from sklearn.metrics import confusion_matrix
-import matplotlib.pyplot as plt
-import seaborn as sns
-from matplotlib.colors import LogNorm
 import pandas as pd
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 
 # ========================= CLASS LABELS ========================= #
 
-class_labels_all = ["deeplearning", "tensorflow", "scikit_learn", "bigdata", "aws",
-                    "awscertifications", "css", "html", "javascript", "shittyprogramming",
-                    "java", "sql", "learnsql", "postgresql", "softwarearchitecture", "scala",
-                    "apachespark", "mongodb", "linux", "linux4noobs", "datascience", "machinelearning",
-                    "etl", "python", "dataengineering"]
+class_labels_all = [
+    'deeplearning',
+    'tensorflow',
+    'scikit_learn',
+    'bigdata',
+    'aws',
+    'awscertifications',
+    'css',
+    'html',
+    'javascript',
+    'shittyprogramming',
+    'java',
+    'sql',
+    'learnsql',
+    'postgresql',
+    'softwarearchitecture',
+    'scala',
+    'apachespark',
+    'mongodb',
+    'linux',
+    'linux4noobs',
+    'datascience',
+    'machinelearning',
+    'etl',
+    'python',
+    'dataengineering',
+]
 
 
 def get_random_class_labels(num=8):
@@ -22,9 +41,33 @@ def get_random_class_labels(num=8):
 
 # ========================= STOP WORDS ========================= #
 
-useless_words = set(['postgres', 'big', 'panda', 'using', 'scikit', 'sklearn', 'apache', 'spark', 'lambda', 's3',
-                     'does', 'looking', 'help', 'new', 'data', 'science', 'scientist', 'machine', 'learning', 'use',
-                     'need', 'engineer', 'engineering'])
+useless_words = set(
+    [
+        'postgres',
+        'big',
+        'panda',
+        'using',
+        'scikit',
+        'sklearn',
+        'apache',
+        'spark',
+        'lambda',
+        's3',
+        'does',
+        'looking',
+        'help',
+        'new',
+        'data',
+        'science',
+        'scientist',
+        'machine',
+        'learning',
+        'use',
+        'need',
+        'engineer',
+        'engineering',
+    ]
+)
 
 custom_stop_words = ENGLISH_STOP_WORDS.union(useless_words).union(set(class_labels_all))
 
@@ -39,15 +82,15 @@ def load_sqlite(database, query=None, class_labels=None):
     placeholders = ','.join('?' for label in class_labels)
 
     ### FIX ###
-    # this query needs to be explicitely given in each notebook
+    # this query needs to be explicitly given in each notebook
     # to allow for different databases
-    subreddit_query = """
+    subreddit_query = f"""
     SELECT
         title,
         subreddit,
         date
     FROM subreddits
-    WHERE subreddit IN (%s);""" % str(placeholders)
+    WHERE subreddit IN ({placeholders});"""
 
     cursor = connection.cursor()
     cursor.execute(subreddit_query, class_labels)
@@ -63,7 +106,7 @@ def load_sqlite(database, query=None, class_labels=None):
 
 
 def print_label_distribution(df, y, labels):
-    '''Prints the number of rows per label'''
+    """Prints the number of rows per label"""
     for label in labels:
         print(f'{label}: {len(df[y == label])}')
     print()
@@ -71,10 +114,10 @@ def print_label_distribution(df, y, labels):
 
 
 def resample_data(X, y, sample_method='max', distribution='concatenate', random_state=None):
-    '''Resamples each label to the average number of posts across labels
+    """Resamples each label to the average number of posts across labels
     Note: Oversample AFTER splitting to train and test set in order to avoid duplicates between
         the train and test set which will give falsely better metrics
-    
+
     Parameters
     ----------
     X : pd.Series
@@ -83,8 +126,8 @@ def resample_data(X, y, sample_method='max', distribution='concatenate', random_
         Method to use to determine the sample numbers.  Methods are calculated between all classes.
     distribution : {'concatenate', 'sample'}
         `concatenate` adds extra samples onto original data
-        `resample` resamples the entire dataset, possibly not including all of the original data 
-    '''
+        `resample` resamples the entire dataset, possibly not including all of the original data
+    """
     if sample_method is None:
         return X, y
     elif sample_method == 'max':
@@ -119,5 +162,5 @@ def resample_data(X, y, sample_method='max', distribution='concatenate', random_
             else:
                 sampled_indexes = np.random.choice(indexes, size=n_samples, replace=False)
                 resampled_X = resampled_X.append(X[sampled_indexes])
-                resampled_y = resampled_y.append(y[sampled_indexes])       
+                resampled_y = resampled_y.append(y[sampled_indexes])
     return resampled_X, resampled_y
